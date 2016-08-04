@@ -1,0 +1,9 @@
+
+img.avatar{
+	width: 64px !important;
+	height: 64px !important;
+}
+
+.table-input{
+	width: inherit !important;
+}
