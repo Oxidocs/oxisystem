@@ -107,20 +107,17 @@
                         </ul>
                     </li>
                     <li><a><i class="fa fa-facebook-square"></i> Editar Redes Sociales </a></li>
-                </ul>
-                <ul class="nav side-menu">
-                    <li class="<?php echo $index_aside; ?>"><a href="index.php"><i class="fa fa-desktop"></i> Secciones </a></li>
-                    <li><a><i class="fa fa-home"></i> Editar Sitio Web <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-th-large"></i> Secciones <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                         <!-- class="current-page" -->
-                            <li class="<?php echo $portada_aside; ?>"><a class="<?php echo $portada_link; ?>" href="portada.php">Imágenes Portada</a></li>
-                            <li class="<?php echo $quienes_aside; ?>"><a class="<?php echo $quienes_link; ?>" href="quienes_somos.php">Misión / Visión</a></li>
-                            <li class="<?php echo $productos_servicios_aside; ?>"><a class="<?php echo $productos_servicios_link; ?>" href="productos_servicios.php">Noticias</a></li>
-                            <li class="<?php echo $clientes_aside; ?>"><a class="<?php echo $clientes_link; ?>" href="clientes.php">Galeria de Imágenes</a></li>
-                            <li class="<?php echo $contacto_aside; ?>"><a class="<?php echo $contacto_link; ?>" href="contacto.php">Contacto</a></li>
+                            <li class=""><a class="" href="#">Normativas</a></li>
+                            <li class=""><a class="" href="#">Pautas de Investigación y Exámenes</a></li>
+                            <li class=""><a class="" href="#">Perfil</a></li>
+                            <li class=""><a class="" href="#">Admisión</a></li>
+                            <li class=""><a class="" href="#">Cuerpo Docente</a></li>
+                            <li class=""><a class="" href="#">Publicaciones</a></li>
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-facebook-square"></i> Editar Redes Sociales </a></li>
                 </ul>
             </div>
         </div>
