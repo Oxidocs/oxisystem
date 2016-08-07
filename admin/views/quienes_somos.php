@@ -2,14 +2,11 @@
 	
 	require_once('../controllers/all_controllers.php');
 
-	if(count($_POST)>0){
-
-		echo 'post';
-
+	extract($_POST);
+	$controller = new Controllers();
+	if (isset($id)) {
+		echo $controller->createContent($id, $section_id, 1, '' , $data, '' , '' , '');
 	}else{
-
-		$controller = new Controllers();
-		print_r($controller->getContent(1));
-
+		echo json_encode([$controller->getContent(2),$controller->getContent(3)]);
 	}
 ?>

@@ -37,8 +37,10 @@
                                 <h2>Misión</h2>
                                 <div class="clearfix"></div>
                             </div>
-                            <form id="mision" action="../controllers/test.php" method="POST">
+                            <form id="mision" action="../views/quienes_somos.php" method="POST">
                                 <div class="x_content">
+                                    <input type="hidden" id="id_mision" name="id_mision">
+                                    <input type="hidden" class="seccion" value="2">
                                     <div id="text_area_mision" class="summernote"></div>
                                     <button type="submit" class="btn btn-success pull-right"><i class="fa fa-floppy-o"></i> &nbsp;Guardar Cambios </button>
                                 </div>
@@ -49,8 +51,10 @@
                                 <h2>Visión</h2>
                                 <div class="clearfix"></div>
                             </div>
-                            <form id="vision" action="../controllers/test.php" method="POST">
+                            <form id="vision" action="../views/quienes_somos.php" method="POST">
                                 <div class="x_content">
+                                    <input type="hidden" id="id_vision" name="id_vision">
+                                    <input type="hidden" class="seccion" value="3">
                                     <div id="text_area_vision" class="summernote"></div>
                                     <button type="submit" class="btn btn-success pull-right"><i class="fa fa-floppy-o"></i> &nbsp;Guardar Cambios </button>
                                 </div>

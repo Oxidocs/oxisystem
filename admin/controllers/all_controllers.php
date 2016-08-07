@@ -5,20 +5,25 @@
 
 		public function getContent($id_section) {
 
-			$quienes = array();
-			$Quienes = Contenido::getContent($id_section);
-			
-			array_push($quienes, $Quienes->id);
-			array_push($quienes, $Quienes->secciones_id);
-			array_push($quienes, $Quienes->estados_id);
-			array_push($quienes, $Quienes->titulo);
-			array_push($quienes, $Quienes->descripcion);
-			array_push($quienes, $Quienes->imagenes);
-			array_push($quienes, $Quienes->redes_sociales);
-			array_push($quienes, $Quienes->links);
 
-			return $quienes;
+			$content_list = Contenido::getContent($id_section);
 
+			return $content_list;
+
+		}
+
+		public function createContent($id, $secciones_id, $estados_id, $titulo, $descripcion, $imagenes, $redes_sociales, $link){
+			if ($id == '') {
+
+				$mensaje_insert = Contenido::createContent($secciones_id, $estados_id, $titulo, $descripcion, $imagenes, $redes_sociales, $link);
+
+				return $mensaje_insert;
+
+			}else{
+				$mensaje_insert = Contenido::updateContent($id, $secciones_id, $estados_id, $titulo, $descripcion, $imagenes, $redes_sociales, $link);
+
+				return $mensaje_insert;
+			}
 		}
 	}
 ?>

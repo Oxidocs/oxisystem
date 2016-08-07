@@ -1,14 +1,29 @@
 $(document).ready(function() {
-	$('.summernote').summernote({
+	var markupStr = 'hola mundo';
+
+	$('.summernote').summernote(
+	{
 		toolbar: [
 			['font', ['bold', 'italic', 'underline', 'clear']],
 			['insert', ['link']],
 		],
-		height: 300,                 // set editor height
-		minHeight: 150,             // set minimum height of editor
-		maxHeight: 300,             // set maximum height of editor
+		code: function(){
+			return markupStr
+		},
+		height: 300,
+		minHeight: 150,
+		maxHeight: 300,
 		lang: 'es-ES'
 	});
+
+	$.getJSON('../views/quienes_somos.php',function(data){
+		$('#id_mision').val(data[0][0].id);
+		$('#text_area_mision').summernote('code',data[0][0].descripcion);
+		$('#id_vision').val(data[1][0].id);
+		$('#text_area_vision').summernote('code',data[1][0].descripcion);
+	});
+
+	
 });
 
 $('form').on('submit', function (e) {
@@ -17,10 +32,13 @@ $('form').on('submit', function (e) {
 
 	var form_id = $(this).attr('id');
 	var text_area_id = $('#'+form_id+' div div.summernote').attr('id');
+	var inputid_id = $('#'+form_id+' div input[type="hidden"]').attr('id');
+	var section_id = $('#'+form_id+' div input[type="hidden"].seccion').val();
 	var text_area = $('#'+text_area_id).summernote('code');
+	var inputid = $('#'+inputid_id).val();
 
-	$.post($(this).attr('action'),{data: text_area},function(data){
-		console.log(data);
+	$.post($(this).attr('action'),{id: inputid, data: text_area, section_id: section_id},function(data){
+		alert(data);
 	});
 
 });
