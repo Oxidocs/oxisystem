@@ -106,7 +106,7 @@
                             <li class="<?php echo $contacto_aside; ?>"><a class="<?php echo $contacto_link; ?>" href="contacto.php">Contacto</a></li>
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-facebook-square"></i> Editar Redes Sociales </a></li>
+                    <li><a><i class="fa fa-share-alt"></i> Editar Redes Sociales </a></li>
                     <li><a><i class="fa fa-th-large"></i> Secciones <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                         <!-- class="current-page" -->
