@@ -57,7 +57,7 @@ class SliderModel
     public function Actualizar(SliderHome $data)
     {
         try 
-        {
+        {   
             $model = new Crud();
             $model->update = 'path_imagenes';
             $model->set    = 'ESTADOS_ID ='.$data->getSliderHome('ESTADOS_ID').',
