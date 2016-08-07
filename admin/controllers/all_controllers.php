@@ -14,7 +14,7 @@
 			array_push($quienes, $Quienes->descripcion);
 			array_push($quienes, $Quienes->imagenes);
 			array_push($quienes, $Quienes->redes_sociales);
-			array_push($quienes,'');
+			array_push($quienes, $Quienes->links);
 
 			return $quienes;
 

@@ -73,7 +73,7 @@ class Contenido {
 						`links`.`ESTADOS_ID`,
 						`links`.`URL`";
 		$model->from = "`links`";
-		$model->condition = "`links`.`CONTENIDOS_ID`, = $id AND `links`.`ESTADOS_ID` = 1";
+		$model->condition = "`links`.`CONTENIDOS_ID` = $id AND `links`.`ESTADOS_ID` = 1";
 		$model->Read();
 		$enlaces = $model->rows;
 
