@@ -1,6 +1,6 @@
 <?php 
-require_once 'home.php';
-require_once 'home.model.php';
+require_once '../models/home.php';
+require_once '../models/home.model.php';
 
 // Logica
 $SliderHome = new SliderHome();
@@ -10,35 +10,58 @@ if(isset($_REQUEST['action']))
 {
     switch($_REQUEST['action'])
     {
-        case 'actualizar':
-            $alm->__SET('id',              $_REQUEST['id']);
-            $alm->__SET('Nombre',          $_REQUEST['Nombre']);
-            $alm->__SET('Apellido',        $_REQUEST['Apellido']);
-            $alm->__SET('Sexo',            $_REQUEST['Sexo']);
-            $alm->__SET('FechaNacimiento', $_REQUEST['FechaNacimiento']);
+        case 'listar':
+            
+             $sliders = $SliderModel->Listar();
+            //print_r($arr[1]->ESTADOS_ID);
+             $result = array();
+             foreach ($sliders as $slider) {
+                 # code...
+                $result = array(
+                "ID"=>$slider->ID,
+                "ESTADOS_ID"=>$slider->ESTADOS_ID,
+                "PATH"=>$slider->PATH,
+                "TITULO"=>$slider->TITULO,
+                "DESCRIPCION"=>$slider->DESCRIPCION
+                           );
+                echo json_encode(($result));
+             }           
+            break;
 
-            $model->Actualizar($alm);
-            header('Location: index.php');
+        case 'actualizar':
+            $SliderHome->setSliderHome('ID',              $_REQUEST['ID_PATH']);
+            $SliderHome->setSliderHome('ESTADOS_ID',          $_REQUEST['ESTADOS_ID']);
+            $SliderHome->setSliderHome('PATH',        $_REQUEST['PATH']);
+            $SliderHome->setSliderHome('TITULO',            $_REQUEST['TITULO']);
+            $SliderHome->setSliderHome('DESCRIPCION', $_REQUEST['DESCRIPCION']);
+
+            $SliderModel->Actualizar($SliderHome);
+            //header('Location: portada.php');
             break;
 
         case 'registrar':
-            $alm->__SET('Nombre',          $_REQUEST['Nombre']);
-            $alm->__SET('Apellido',        $_REQUEST['Apellido']);
-            $alm->__SET('Sexo',            $_REQUEST['Sexo']);
-            $alm->__SET('FechaNacimiento', $_REQUEST['FechaNacimiento']);
+           
+            $SliderHome->setSliderHome('ESTADOS_ID',          $_REQUEST['ESTADOS_ID']);
+            $SliderHome->setSliderHome('PATH',        $_REQUEST['PATH']);
+            $SliderHome->setSliderHome('TITULO',            $_REQUEST['TITULO']);
+            $SliderHome->setSliderHome('DESCRIPCION', $_REQUEST['DESCRIPCION']);
 
-            $model->Registrar($alm);
-            header('Location: index.php');
+            $id = $SliderModel->Registrar($SliderHome);
+            $SliderModel->insertar_contenido_path(1,$id);
+           // header('Location: index.php');
             break;
 
         case 'eliminar':
-            $model->Eliminar($_REQUEST['id']);
-            header('Location: index.php');
+        if ( $SliderModel->Eliminar($_REQUEST['ID_PATH']) =="Registro eliminado con exito") {
+            # code...
+            
+            $SliderModel->eliminar_contenido_path($_REQUEST['ID_PATH']);
+        }
+            
+           
             break;
 
-        case 'editar':
-            $alm = $model->Obtener($_REQUEST['id']);
-            break;
+        
     }
 }
 ?>

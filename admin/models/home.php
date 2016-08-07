@@ -1,16 +1,13 @@
 <?php
-
-require_once("crud.php");
-
 /**
 * 
 */
 class SliderHome
-{
-	private $ESTADOS_ID;
-	private $PATH;
-	private $TITULO;
-	private $DESCRIPCION;
+{	PUBLIC $ID;
+	PUBLIC $ESTADOS_ID;
+	PUBLIC $PATH;
+	PUBLIC $TITULO;
+	PUBLIC $DESCRIPCION;
 
 	
 	public function getSliderHome($k)

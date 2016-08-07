@@ -4,7 +4,7 @@ class Conexion
 	private $usuario = 'root';
 	private $password = 'root';
 	private $host = 'localhost';
-	private $db = '';
+	private $db = 'web_uls';
 	
 	public function conectar()
 	{
