@@ -8,6 +8,7 @@ require_once("crud.php");
 */
 class Contenido {
 
+	public $id;
 	public $secciones_id;
 	public $estados_id;
 	public $titulo;
@@ -17,7 +18,8 @@ class Contenido {
 	public $redes_sociales = array();
 	public $links = array();
 
-	public function __construct($secciones_id, $estados_id, $titulo, $descripcion, $imagenes, $redes_sociales, $links) {
+	public function __construct($id, $secciones_id, $estados_id, $titulo, $descripcion, $imagenes, $redes_sociales, $links) {
+		$this->id = $id;
 		$this->secciones_id = $secciones_id;
 		$this->estados_id = $estados_id;
 		$this->titulo = $titulo;
@@ -78,10 +80,10 @@ class Contenido {
 		$enlaces = $model->rows;
 
 
-		return new Contenido($content['SECCIONES_ID'],$content['ESTADOS_ID'],$content['TITULO'],$content['DESCRIPCION'],$imgs,$social_media, $enlaces);
+		return new Contenido($id, $content['SECCIONES_ID'],$content['ESTADOS_ID'],$content['TITULO'],$content['DESCRIPCION'],$imgs,$social_media, $enlaces);
 	}
 
-	public function setContent($secciones_id, $estados_id, $titulo, $descripcion, $imagenes, $redes_sociales, $link) {
+	public function setContent($id, $secciones_id, $estados_id, $titulo, $descripcion, $imagenes, $redes_sociales, $link) {
 
 		$this->secciones_id = $secciones_id;
 		$this->estados_id = $estados_id;

@@ -7,7 +7,8 @@
 
 			$quienes = array();
 			$Quienes = Contenido::getContent($id_section);
-
+			
+			array_push($quienes, $Quienes->id);
 			array_push($quienes, $Quienes->secciones_id);
 			array_push($quienes, $Quienes->estados_id);
 			array_push($quienes, $Quienes->titulo);
