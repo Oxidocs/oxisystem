@@ -40,7 +40,7 @@ if(isset($_REQUEST['action']))
             break;
 
         case 'registrar':
-            echo " estoy aki";
+            
             $SliderHome->setSliderHome('ESTADOS_ID',          $_REQUEST['ESTADOS_ID']);
             $SliderHome->setSliderHome('PATH',        $_REQUEST['PATH']);
             $SliderHome->setSliderHome('TITULO',            $_REQUEST['TITULO']);

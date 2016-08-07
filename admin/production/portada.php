@@ -46,7 +46,13 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-                            <div id="dropzone" class="dropzone"></div>
+                            <div id="dropzone" class="dropzone">
+                                 <div class="dz-message">Carga aquí tus imágenes 
+                            <br> <i class="fa fa-cloud-upload fa-5x" aria-hidden="true" style="
+    color: #a1d302;"></i>
+
+                        </div>
+                            </div>
                         </div>
                     </div>
                     <div class="x_panel">
@@ -71,22 +77,23 @@
                                     </thead>
                                     <tbody id="table_portada" class="form-group">
                                         <tr>
-                                            <td><img src="images/user.png" class="avatar avatar-portada center-block" alt="Avatar"></td>
+                                            <td><img src="images/user.png" class="avatar avatar-portada0 center-block" alt="Avatar"></td>
                                             <td>
-                                                <select class="form-control image-select table-input">
+                                                <select id="0" name="select_img0" class="form-control image-select table-input" onchange="cambiaImg(this.id)">
                                                     <option value="0"> Seleccionar Imagen </option>
                                                 </select>                                               
                                             </td>
                                             <td>
-                                                <input type="text" name="titulo" class="form-control table-input" size="20">
+                                                <input id="titulo0" name="titulo0" type="text" name="titulo" class="form-control table-input" size="20">
                                             </td>
                                             <td>
-                                                <input type="text" name="descripcion" class="form-control table-input" size="30">
+                                                <input id="descripcion0" name="descripcion0" type="text" name="descripcion" class="form-control table-input" size="30">
                                             </td>
                                             <td>
-                                                <select class="form-control table-input">
-                                                    <option value="0"> Seleccionar Estado </option>
-                                                    <option value="eliminar"> Eliminar </option>
+                                                <select id="estados0" name="estados0" class="form-control table-input">
+                                                    <option value="no"> Seleccionar Estado </option>
+                                                    <option value="1"> Activa </option>
+                                                    <option value="0"> Inactiva </option>
                                                 </select>
                                             </td>
                                         </tr>

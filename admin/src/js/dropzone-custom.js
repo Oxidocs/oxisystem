@@ -6,6 +6,8 @@ function iniciarDropzone(url){
     $("#dropzone").dropzone({
         init: function(){
             thisDropzone = this;
+          
+      
             $.get('../controllers/upload-images.php?dir='+url, function(data) {
                 $.each(data, function(key,value){
                     var mockFile = { name: value.name, size: value.size };
@@ -82,7 +84,16 @@ function iniciarDropzone(url){
                     $.post('../controllers/listar_archivos.php', {dir:url},function(data){
                         $('select.image-select').empty();
                         $('select.image-select').append('<option value="0"> Seleccionar Imagen </option>');
+                        var count = Object.keys(data).length;
+                            console.log(count);
+                            if (count==0) 
+                            {
+                                setImg();
+                                thisDropzone.removeAllFiles();
+                            }
                         $.each(data,function(index,value){
+                            
+                            
                             $('select.image-select').append(value);
                         });
                     },'json').error(function(e){
