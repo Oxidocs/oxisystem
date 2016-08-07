@@ -14,6 +14,7 @@ function iniciarDropzone(url){
                     $('.dz-image img').addClass("img-thumb-dropzone");
                 });
                 $.post('../controllers/listar_archivos.php', {dir:url},function(data){
+                    console.log(url);
                     $('select.image-select').empty();
                     $('select.image-select').append('<option value="0"> Seleccionar Imagen </option>');
                     $.each(data,function(index,value){

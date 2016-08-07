@@ -11,10 +11,10 @@ $("select.image-select").on('change',function(){
 		$('img.avatar-portada').attr('src','images/user.png');
 	}
 });
-
+var i = 1;
 $("#agregar_portada").on('click',function(){
-	var table_portada = '<tr>'+
-	                    '<td><img src="images/user.png" class="avatar avatar-portada center-block" alt="Avatar"></td>'+
+	var table_portada = '<tr id=fila'+i+'>'+
+	                    '<td><img src="images/user.png" class="avatar avatar-portada'+i+' center-block" alt="Avatar"></td>'+
 						'<td>'+
 	                    '<select class="form-control image-select table-input">'+
 	                    '<option value="0"> Seleccionar Imagen </option>'+
@@ -27,9 +27,6 @@ $("#agregar_portada").on('click',function(){
                         '<input type="text" name="descripcion" class="form-control table-input" size="30">'+
 	                    '</td>'+
 	                    '<td>'+
-	                    '<input type="text" name="link" class="form-control table-input" size="20">'+
-	                    '</td>'+
-	                    '<td>'+
 	                    '<select class="form-control table-input">'+
 	                    '<option value="0"> Seleccionar Estado </option>'+
 	                    '<option value="eliminar"> Eliminar </option>'+
@@ -37,4 +34,5 @@ $("#agregar_portada").on('click',function(){
 	                    '</td>'+
 	                    '</tr>';
 	$("#table_portada").append(table_portada);
+	i++;
 });

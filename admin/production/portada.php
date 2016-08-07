@@ -66,7 +66,6 @@
                                             <th>Imagen</th>
                                             <th>Titulo</th>
                                             <th>Descripción</th>
-                                            <th>Link</th>
                                             <th>Estado</th>
                                         </tr>
                                     </thead>
@@ -83,9 +82,6 @@
                                             </td>
                                             <td>
                                                 <input type="text" name="descripcion" class="form-control table-input" size="30">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="link" class="form-control table-input" size="20">
                                             </td>
                                             <td>
                                                 <select class="form-control table-input">

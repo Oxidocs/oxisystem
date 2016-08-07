@@ -7,18 +7,20 @@ require_once("crud.php");
 */
 class SliderHome
 {
+	private $ESTADOS_ID;
+	private $PATH;
+	private $TITULO;
+	private $DESCRIPCION;
 
-	private $img;
-	private $title;
-	private $description;
-	private $link
 	
-	public function getSliderHome(){
-
+	public function getSliderHome($k)
+	{ 
+		return $this->$k; 
 	}
 
-	public function setSliderHome(){
-		
+	public function setSliderHome($k, $v)
+	{ 
+		return $this->$k = $v; 
 	}
 }
 
