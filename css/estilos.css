@@ -178,6 +178,27 @@ footer{
 	margin-top: 20px;
 }
 
+.docentesbg{
+	background-color: #ffffff;
+	border: 1px solid #dbd7d2;
+}
+.docentes{
+	margin-top: -20px;
+	padding-bottom: 20px;
+	background-color: #f5f5f5
+}
+.docentes img{
+	padding-top: 30px;
+}
+
+.docentesdatos{
+	padding: 20px;
+}
+
+.docentes h5{
+	color: #3d5dd1
+}
+
 @media(max-width:767px) {
 	#datosfooter{
 		text-align: center;
@@ -209,5 +230,12 @@ footer{
 		background-color: #5da423;
 		text-align: center;
 	}
-
+	.docentesdatos h5{
+		background-color: #3d5dd1;
+		color: #ffffff;
+		padding: 10px;
+	}
+	.docentes h3{
+		text-align: center;
+	}
 }
