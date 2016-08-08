@@ -1,4 +1,3 @@
-<?include('../controllers/listar_archivos.php');?>
 <!DOCTYPE html>
 <html lang="ES-CL">
 <head>
@@ -73,30 +72,12 @@
                                             <th>Titulo</th>
                                             <th>Descripción</th>
                                             <th>Estado</th>
+                                            <th>Acción</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody id="table_portada" class="form-group">
-                                        <tr>
-                                            <td><img src="images/user.png" class="avatar avatar-portada0 center-block" alt="Avatar"></td>
-                                            <td>
-                                                <select id="0" name="select_img0" class="form-control image-select table-input" onchange="cambiaImg(this.id)">
-                                                    <option value="0"> Seleccionar Imagen </option>
-                                                </select>                                               
-                                            </td>
-                                            <td>
-                                                <input id="titulo0" name="titulo0" type="text" name="titulo" class="form-control table-input" size="20">
-                                            </td>
-                                            <td>
-                                                <input id="descripcion0" name="descripcion0" type="text" name="descripcion" class="form-control table-input" size="30">
-                                            </td>
-                                            <td>
-                                                <select id="estados0" name="estados0" class="form-control table-input">
-                                                    <option value="no"> Seleccionar Estado </option>
-                                                    <option value="1"> Activa </option>
-                                                    <option value="0"> Inactiva </option>
-                                                </select>
-                                            </td>
-                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -120,7 +101,7 @@
         </div>
     </div>
     <!-- jQuery -->
-     <script src="../vendors/jquery/dist/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->

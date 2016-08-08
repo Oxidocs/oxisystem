@@ -16,7 +16,7 @@ function iniciarDropzone(url){
                     $('.dz-image img').addClass("img-thumb-dropzone");
                 });
                 $.post('../controllers/listar_archivos.php', {dir:url},function(data){
-                    console.log(url);
+                    //console.log(url);
                     $('select.image-select').empty();
                     $('select.image-select').append('<option value="0"> Seleccionar Imagen </option>');
                     $.each(data,function(index,value){
@@ -73,29 +73,55 @@ function iniciarDropzone(url){
                 url: "../controllers/upload-images.php?delete=true&dir="+url,
                 data: "filename="+name,
                 success: function(data){
-                    console.log(data);
+                    
                     var json = JSON.parse(data);
                     if(json.res == true){
                         var element;
                         (element = file.previewElement) != null ? 
                         element.parentNode.removeChild(file.previewElement) : 
                         false;
-                    }
+                    }                  
                     $.post('../controllers/listar_archivos.php', {dir:url},function(data){
                         $('select.image-select').empty();
                         $('select.image-select').append('<option value="0"> Seleccionar Imagen </option>');
                         var count = Object.keys(data).length;
-                            console.log(count);
+                          //console.log(data);
                             if (count==0) 
                             {
                                 setImg();
                                 thisDropzone.removeAllFiles();
                             }
-                        $.each(data,function(index,value){
-                            
-                            
+                        $.each(data,function(index,value){                            
+                          //console.log(value);
                             $('select.image-select').append(value);
                         });
+                        var z = 0;
+                        while(document.getElementById('img_portada'+z))
+                        {   
+
+                            console.log('img_portada'+z)
+                            var img_portada = document.getElementById('img_portada'+z).src;
+                            var result = recuperaPath(img_portada);
+                                if (comparaCadena(img_portada,name)) 
+                                {
+                                    $('img.avatar-portada'+z).attr('src','../../img/default.png');
+                                }
+                                else
+                                {   
+                                    console.log(result);
+                                    if (result == "default.png") 
+                                    {
+                                        SelectElement(0,z);
+                                    }
+                                    else
+                                    {
+                                        SelectElement(result, z);
+                                    }
+                                    
+                                }
+                            z++;
+                           
+                        }   
                     },'json').error(function(e){
                         alert('Se ha producido un error al cargar las imagenes, refresque la página para volver a intentarlo');
                     });

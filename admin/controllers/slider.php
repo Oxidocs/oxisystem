@@ -17,15 +17,34 @@ if(isset($_REQUEST['action']))
              $result = array();
              foreach ($sliders as $slider) {
                  # code...
-                $result = array(
+                $result[] = array(
                 "ID"=>$slider->ID,
                 "ESTADOS_ID"=>$slider->ESTADOS_ID,
                 "PATH"=>$slider->PATH,
                 "TITULO"=>$slider->TITULO,
                 "DESCRIPCION"=>$slider->DESCRIPCION
                            );
-                echo json_encode(($result));
-             }           
+                
+             } 
+             echo json_encode($result);          
+            break;
+        case 'listaractivas':
+            
+             $sliders = $SliderModel->ListarActivas();
+            //print_r($arr[1]->ESTADOS_ID);
+             $result = array();
+             foreach ($sliders as $slider) {
+                 # code...
+                $result[] = array(
+                "ID"=>$slider->ID,
+                "ESTADOS_ID"=>$slider->ESTADOS_ID,
+                "PATH"=>$slider->PATH,
+                "TITULO"=>$slider->TITULO,
+                "DESCRIPCION"=>$slider->DESCRIPCION
+                           );
+                
+             } 
+             echo json_encode($result);          
             break;
 
         case 'actualizar':
@@ -34,7 +53,6 @@ if(isset($_REQUEST['action']))
             $SliderHome->setSliderHome('PATH',        $_REQUEST['PATH']);
             $SliderHome->setSliderHome('TITULO',            $_REQUEST['TITULO']);
             $SliderHome->setSliderHome('DESCRIPCION', $_REQUEST['DESCRIPCION']);
-
             $SliderModel->Actualizar($SliderHome);
             //header('Location: portada.php');
             break;
