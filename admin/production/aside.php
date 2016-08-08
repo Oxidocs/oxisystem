@@ -1,6 +1,6 @@
 <?php 
     
-    if(strpos($_SERVER['REQUEST_URI'], 'index.php')) {
+    if(strpos($_SERVER['REQUEST_URI'], 'index.php') || (strpos($_SERVER['REQUEST_URI'], 'index.php') == "") ) {
         $index_aside = "active";
         $portada_aside = "";
         $portada_link = "";
