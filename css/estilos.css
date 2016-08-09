@@ -35,16 +35,10 @@ body{
 	color: #f5f5f5;
 }
 
-.admision h3, p{
+.admision h3, .admision p{
 	color: #f5f5f5;
 }
 
-/*.admision li{
-	list-style: none;
-	line-height: 40px;
-	color: #ffffff;
-
-}*/
 .perfillead {
 	padding: 10px;
 }
