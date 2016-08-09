@@ -19,8 +19,8 @@
         $portada_link = "current-page";
         $quienes_aside = "";
         $quienes_link = "";
-        $productos_servicios_aside="";
-        $productos_servicios_link="";
+        $noticias_aside="";
+        $noticias_link="";
         $clientes_aside="";
         $clientes_link="";
         $contacto_aside="";
@@ -32,21 +32,21 @@
         $portada_link = "";
         $quienes_aside = "active";
         $quienes_link = "current-page";
-        $productos_servicios_aside="";
-        $productos_servicios_link="";
+        $noticias_aside="";
+        $noticias_link="";
         $clientes_aside="";
         $clientes_link="";
         $contacto_aside="";
         $contacto_link="";
 
-    }else if(strpos($_SERVER['REQUEST_URI'], 'productos_servicios.php')) {
+    }else if(strpos($_SERVER['REQUEST_URI'], 'noticias.php')) {
         $index_aside= "";
         $portada_aside = "";
         $portada_link = "";
         $quienes_aside = "";
         $quienes_link = "";
-        $productos_servicios_aside="active";
-        $productos_servicios_link="current-page";
+        $noticias_aside="active";
+        $noticias_link="current-page";
         $clientes_aside="";
         $clientes_link="";
         $contacto_aside="";
@@ -58,8 +58,8 @@
         $portada_link = "";
         $quienes_aside = "";
         $quienes_link = "";
-        $productos_servicios_aside="";
-        $productos_servicios_link="";
+        $noticias_aside="";
+        $noticias_link="";
         $clientes_aside="active";
         $clientes_link="current-page";
         $contacto_aside="";
@@ -71,8 +71,8 @@
         $portada_link = "";
         $quienes_aside = "";
         $quienes_link = "";
-        $productos_servicios_aside="";
-        $productos_servicios_link="";
+        $noticias_aside="";
+        $noticias_link="";
         $clientes_aside="";
         $clientes_link="";
         $contacto_aside="active";
@@ -101,7 +101,7 @@
                         <!-- class="current-page" -->
                             <li class="<?php echo $portada_aside; ?>"><a class="<?php echo $portada_link; ?>" href="portada.php">Imágenes Portada</a></li>
                             <li class="<?php echo $quienes_aside; ?>"><a class="<?php echo $quienes_link; ?>" href="quienes_somos.php">Misión / Visión</a></li>
-                            <li class="<?php echo $productos_servicios_aside; ?>"><a class="<?php echo $productos_servicios_link; ?>" href="productos_servicios.php">Noticias</a></li>
+                            <li class="<?php echo $noticias_aside; ?>"><a class="<?php echo $noticias_link; ?>" href="noticias.php">Noticias</a></li>
                             <li class="<?php echo $clientes_aside; ?>"><a class="<?php echo $clientes_link; ?>" href="clientes.php">Galeria de Imágenes</a></li>
                             <li class="<?php echo $contacto_aside; ?>"><a class="<?php echo $contacto_link; ?>" href="contacto.php">Contacto</a></li>
                         </ul>

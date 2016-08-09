@@ -89,9 +89,7 @@ class Contenido {
 				array_push($content_list, $contenido);
 			}
 		}
-
 		
-
 		return $content_list;
 	}
 

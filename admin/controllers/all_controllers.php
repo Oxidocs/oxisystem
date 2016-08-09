@@ -9,7 +9,6 @@
 			$content_list = Contenido::getContent($id_section);
 
 			return $content_list;
-
 		}
 
 		public function createContent($id, $secciones_id, $estados_id, $titulo, $descripcion, $imagenes, $redes_sociales, $link){

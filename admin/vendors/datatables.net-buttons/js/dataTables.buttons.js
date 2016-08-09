@@ -1255,8 +1255,8 @@ $.extend( _dtButtons, {
 		var lang = $.isArray( lengthMenu[0] ) ? lengthMenu[1] : lengthMenu;
 		var text = function ( dt ) {
 			return dt.i18n( 'buttons.pageLength', {
-				"-1": 'Show all rows',
-				_:    'Show %d rows'
+				"-1": 'Mostrar Todos',
+				_:    'Mostrar %d Filas'
 			}, dt.page.len() );
 		};
 
