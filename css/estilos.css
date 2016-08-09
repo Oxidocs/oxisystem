@@ -29,17 +29,17 @@ body{
 }
 
 /*barra navegacion*/
-
-.navbar-inverse { background-color: #001F90}
+/*.navbar-inverse { background-color: #2264b4}*/
+.navbar-inverse { background-color: #466189}
 .navbar-inverse { border-radius: 0px}
-.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #3D5DD1}
-.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #3D5DD1}
-.dropdown-menu { background-color: #001f90}
+.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #19344E}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #19344E}
+.dropdown-menu { background-color: #466189}
 .dropdown-menu { border-radius: 0px}
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #3d5dd1}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #19344E}
 .navbar-inverse { background-image: none; }
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-image: none; }
-.navbar-inverse { border-color: #001252}
+.navbar-inverse { border-color: #466189}
 .navbar-inverse .navbar-brand { color: #FFFFFF}
 .navbar-inverse .navbar-brand:hover { color: #FFFFFF}
 .navbar-inverse .navbar-nav>li>a { color: #F2F2F2}
@@ -52,9 +52,9 @@ body{
 .navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-top-color: #FFFFFF}
 .navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #ffffff}
 .navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
-.navbar-inverse .navbar-toggle { border-color: #001f90 !important}
+.navbar-inverse .navbar-toggle { border-color: #466189 !important}
 .navbar-inverse .navbar-toggle { border-radius: 0px !important}
-.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {background-color: #3d5dd1 !important}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {background-color: #19344E !important}
 
 /*separacion carousel*/
 
@@ -63,6 +63,7 @@ body{
 }
 
 #hilonoticias{
+
 	margin-top: 20px;
 	background-color: #ffffff;
 	padding: 20px;
@@ -70,10 +71,24 @@ body{
 	border: 1px solid #dbd7d2;
 }
 
+
+
 .aside{
-	padding: 20px;
+	width: 280px;
+	margin: 5px;
+	background-color: #FFFFFF;
+	margin-top: 20px;
+	padding: 10px;
+	border: 1px solid #dbd7d2;
+}
 
-
+.aside2{
+	width: 280px;
+	margin: 5px;
+	background-color: #FFFFFF;
+	margin-top: 20px;
+	padding: 10px;
+	border: 1px solid #dbd7d2;
 }
 
 .pager{
@@ -89,15 +104,21 @@ body{
 
 
 #tituloseccion{
-	background-color: #3D5DD1;
-	width: 110px;
+	background-color: #78B800;
+	width: 150px;
 	color: #ffffff;
 	text-align: center;
 	padding: 10px;
+	margin-left: -20px;
+	margin-top: -20px;
 }
 
 .aside h4{
-	color: #3d5dd1;
+	color: #466189;
+}
+
+.aside2 h4{
+	color: #466189;
 }
 
 /*estilo seccion galerias*/
@@ -117,7 +138,8 @@ body{
 
 footer{
 /*	background-color: #78b800*/
-	background-color: #001F90
+	/*background-color: #001F90*/
+	background-color: #19344E
 }
 
 #datosfooter {
@@ -134,7 +156,11 @@ footer{
 }
 
 #mision h2{
-	color: #3d5dd1;
+	color: #78b800;
+}
+
+#mision img{
+	margin-top: 50px;
 }
 
 #mision h2, #mision p{
@@ -147,13 +173,16 @@ footer{
 }
 
 #vision h2{
-	color: #3d5dd1;
+	color: #78b800;
 }
 
 #vision h2, #vision p{
 	padding: 20px;
 }
 
+#vision img{
+	margin-top: 50px;
+}
 .normativas{
 	background-color: #78b800
 }
@@ -195,11 +224,41 @@ footer{
 	padding: 20px;
 }
 
+.docentes h1{
+	color: #466189;
+
+}
+
 .docentes h5{
-	color: #3d5dd1
+	color: #466189
 }
 
 @media(max-width:767px) {
+	.aside{
+		margin: 0px;
+		width: auto;
+		margin-top: 10px;
+	}
+
+	.img-responsive-parent{
+    margin:-10px -60px;
+	}
+
+	.aside2{
+		/*margin: 0px;*/
+		width: 100%;
+		margin: 0px;
+		/*margin-top: 10px;*/
+	}
+
+	#tituloseccion{
+
+		background-color: #78B800;
+		width: 340px;
+		color: #ffffff;
+		text-align: center;
+		margin-top: -40px;
+	}
 	#datosfooter{
 		text-align: center;
 	}
@@ -208,7 +267,7 @@ footer{
 		text-align: center
 	}
 	#hilonoticias{
-		height: 1700px;
+		height: 1970px;
 		margin-top: 20px;
 		background-color: #ffffff;
 		padding: 20px;
