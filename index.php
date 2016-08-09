@@ -125,21 +125,40 @@ require_once 'admin/controllers/contenido_slider.php';
 	<header id="myCarousel" class="carousel slide">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			<li data-target="#myCarousel" data-slide-to="1"></li>
-			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<?php 
+		    if(!$objs == null)
+		    {
+			    $i=0; 
+			    foreach ($objs as $obj) 
+			    {
+		   ?>
+			<li data-target="#myCarousel" data-slide-to="<?php echo $i;?>" class="<?php if($i==0){echo "active";}$i++;?>"></li>
+			<?php
+					}
+				}
+			 ?>
 		</ol>
 
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner">
 		    <?php 
 		    if(!$objs == null){
-			    $i=0; foreach ($objs as $obj) 
+			    $i=0; 
+			    foreach ($objs as $obj) 
 			    {
 		    ?>
 				<div class="item <?php if($i==0){echo "active";}$i++;?>">	
 
-					<div class="fill" style="background-image:url('<?php echo $obj->PATH;?>');">		
+					<div class="fill" style="background-image:url('<?php 
+						if ($obj->PATH=="default.png")
+						{
+							echo "img/".$obj->PATH;
+						}
+						else
+						{
+							echo "img/slider-img/".$obj->PATH;
+						}?>');
+					">		
 					</div>
 					<div class="carousel-caption">
 						<h2><?php echo $obj->DESCRIPCION;?></h2>
@@ -155,7 +174,7 @@ require_once 'admin/controllers/contenido_slider.php';
 					<div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Imagen Uno');">					
 					</div>
 					<div class="carousel-caption">
-						<h2>Descripción 1</h2>
+						<h2>Descripción</h2>
 					</div>
 				</div>
 

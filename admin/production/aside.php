@@ -6,8 +6,9 @@
         $portada_link = "";
         $quienes_aside = "";
         $quienes_link = "";
-        $productos_servicios_aside="";
-        $productos_servicios_link="";
+        $noticias_aside="";
+        $noticias_link="";
+        
         $clientes_aside="";
         $clientes_link="";
         $contacto_aside="";

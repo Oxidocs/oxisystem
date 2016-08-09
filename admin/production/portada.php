@@ -1,3 +1,6 @@
+<?php 
+require_once '../controllers/contenido_slider_back.php';
+?>
 <!DOCTYPE html>
 <html lang="ES-CL">
 <head>
@@ -24,6 +27,10 @@
     <link href="../src/css/dropzone.css" type="text/css" rel="stylesheet" />
     <!-- Custom Style -->
     <link href="css/custom/style.css" type="text/css" rel="stylesheet" />
+    <!-- jQuery -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body class="nav-md">
     <div class="container body">
@@ -62,6 +69,7 @@
                             </ul>
                             <div class="clearfix"></div>
                         </div>
+                        <form id="portada">
                         <div class="x_content">
                             <div class="table-responsive">
                                 <table class="table table-bordered">
@@ -77,15 +85,54 @@
                                         </tr>
                                     </thead>
                                     <tbody id="table_portada" class="form-group">
-                                        
+                                    <?php 
+                                    if(!$objs == null)
+                                    {
+                                        $i=0; 
+                                        foreach ($objs as $obj) 
+                                        {
+                                    ?>
+                                    <tr id="fila<?php echo $i ?>" >
+                                    <td class="center">
+                                    <input type="hidden" id="id_path_imagenes<?php echo $i ?>" name="id_path_imagenes<?php echo $i ?>" value="<?php echo $obj->ID ?>">
+                                    <input type="hidden" id="path<?php echo $i ?>" name="path<?php echo $i ?>" value="<?php echo $obj->PATH ?>">
+                                    <img id="img_portada<?php echo $i ?>" name="img_portada<?php echo $i ?>" src="../../img/default.png" class="avatar avatar-portada<?php echo $i ?> center-block" alt="Avatar">
+                                    </td>
+                                    <td class="center">
+                                    <select id="<?php echo $i ?>" name="select_img<?php echo $i ?>" class="form-control image-select selector<?php echo $i ?>" onchange="cambiaImg(this.id)" style="vertical-align:middle;">
+                                    <option value="<?php echo $obj->PATH ?>" selected=""><?php echo $obj->PATH ?></option>
+                                    </select>
+                                    </td>
+                                    <td class="center">
+                                    <input id="titulo<?php echo $i ?>" name="titulo<?php echo $i ?>" type="text" class="form-control table-input" size="20" placeholder="Ingresa un titulo">
+                                    </td>
+                                    <td class="center">
+                                    <input id="descripcion<?php echo $i ?>" name="descripcion<?php echo $i ?>" type="text" class="form-control table-input" size="30" placeholder="Descripcion de la Imagen o Portada">
+                                    </td>
+                                    <td class="center">
+                                    <select id="estados<?php echo $i ?>" name="estados<?php echo $i ?>" class="form-control table-input">
+                                    <option value="1"> Activa </option>
+                                    <option value="0"> Inactiva </option>
+                                    </select>
+                                    </td>
+                                    <td class="center">
+                                    <a href="javascript:void(0);" onclick="eliminar_filas('<?php echo $i ?>')" >eliminar</a>
+                                    </td>
+                                    </tr>
+                                    <?php 
+                                        $i++;
+                                        }
+                                    }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="">
                                 <button id="agregar_portada" type="button" class="btn btn-default pull-left"><i class="fa fa-plus"></i> &nbsp;Agregar Portada </button>
-                                <button type="submit" class="btn btn-success pull-right"><i class="fa fa-floppy-o"></i> &nbsp; Guardar Cambios </button>
+                                <button id="guardar" type="button" class="btn btn-success pull-right"><i class="fa fa-floppy-o"></i> &nbsp; Guardar Cambios </button>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -100,10 +147,7 @@
             <!-- /footer content -->
         </div>
     </div>
-    <!-- jQuery -->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    
     <!-- FastClick -->
     <script src="../vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->

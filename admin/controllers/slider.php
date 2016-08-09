@@ -5,7 +5,8 @@ require_once '../models/home.model.php';
 // Logica
 $SliderHome = new SliderHome();
 $SliderModel = new SliderModel();
-
+$i=0;
+extract($_POST);
 if(isset($_REQUEST['action']))
 {
     switch($_REQUEST['action'])
@@ -70,16 +71,73 @@ if(isset($_REQUEST['action']))
             break;
 
         case 'eliminar':
-        if ( $SliderModel->Eliminar($_REQUEST['ID_PATH']) =="Registro eliminado con exito") {
-            # code...
+        if(isset($id_path_imagenes))
+        {
+            if ( $SliderModel->Eliminar($id_path_imagenes) =="Registro eliminado con exito") 
+            {
+            # code...            
             
-            $SliderModel->eliminar_contenido_path($_REQUEST['ID_PATH']);
+            return $SliderModel->eliminar_contenido_path($id_path_imagenes);
+
+            }
         }
-            
-           
-            break;
+        break;
+        case 'guardar':
+        while (isset($_POST["id_path_imagenes".(string)$i])) 
+        {
+            if($_POST["id_path_imagenes".(string)$i]=="")
+            {
+                guardar($i);
+            }
+            else
+            {
+                editar($i);
+            }
+            $i++;
+        }
+        break;
 
         
     }
+}
+function guardar($i)
+{   
+    $SliderHome = new SliderHome();
+    $SliderModel = new SliderModel();
+    if ($_POST["path".(string)$i]=="") 
+    {
+        $path = "default.png"; # code...
+    }
+    else
+    {
+        $path = $_POST["path".(string)$i];
+    }
+
+    $SliderHome->setSliderHome('ESTADOS_ID',  $_POST["estados".(string)$i]);
+    $SliderHome->setSliderHome('PATH',        "'".$path."'");
+    $SliderHome->setSliderHome('TITULO',      "'".$_POST["titulo".(string)$i]."'");
+    $SliderHome->setSliderHome('DESCRIPCION', "'".$_POST["descripcion".(string)$i]."'");
+    $id = $SliderModel->Registrar($SliderHome);
+    $SliderModel->insertar_contenido_path(1,$id);
+}
+
+function editar($i)
+{   
+    if ($_POST["path".(string)$i]=="") 
+    {
+        $path = "default.png"; # code...
+    }
+    else
+    {
+        $path = $_POST["path".(string)$i];
+    }
+    $SliderHome = new SliderHome();
+    $SliderModel = new SliderModel();
+    $SliderHome->setSliderHome('ID',          $_POST["id_path_imagenes".(string)$i]);
+    $SliderHome->setSliderHome('ESTADOS_ID',  $_POST["estados".(string)$i]);
+    $SliderHome->setSliderHome('PATH',        "'".$path."'");
+    $SliderHome->setSliderHome('TITULO',      "'".$_POST["titulo".(string)$i]."'");
+    $SliderHome->setSliderHome('DESCRIPCION', "'".$_POST["descripcion".(string)$i]."'");
+    $SliderModel->Actualizar($SliderHome);
 }
 ?>

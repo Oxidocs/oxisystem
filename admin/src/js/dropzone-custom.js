@@ -15,16 +15,7 @@ function iniciarDropzone(url){
                     thisDropzone.options.thumbnail.call(thisDropzone, mockFile, url+value.name);
                     $('.dz-image img').addClass("img-thumb-dropzone");
                 });
-                $.post('../controllers/listar_archivos.php', {dir:url},function(data){
-                    //console.log(url);
-                    $('select.image-select').empty();
-                    $('select.image-select').append('<option value="0"> Seleccionar Imagen </option>');
-                    $.each(data,function(index,value){
-                        $('select.image-select').append(value);
-                    });
-                },'json').error(function(e){
-                    alert('Se ha producido un error al cargar, refresque la página para volver a intentarlo');
-                });
+                
             });
 
         },
@@ -44,7 +35,27 @@ function iniciarDropzone(url){
                     $('select.image-select').append('<option value="0"> Seleccionar Imagen </option>');
                     $.each(data,function(index,value){
                         $('select.image-select').append(value);
+                        
                     });
+                    var z =0;
+                    while(document.getElementById('img_portada'+z))
+                        {   
+                            
+                            var img_portada = document.getElementById('img_portada'+z).src;
+                            console.log(img_portada);
+                            var result = recuperaPath(img_portada);
+                            console.log(result);
+                            if (result == "default.png") 
+                                    {
+                                        SelectElement(0,z);
+                                    }
+                                    else
+                                    {
+                                        SelectElement(result, z);
+                                    }
+                            z++;
+                           
+                        } 
                 },'json').error(function(e){
                     alert('Se ha producido un error al cargar, refresque la página para volver a intentarlo');
                 });
@@ -84,15 +95,8 @@ function iniciarDropzone(url){
                     $.post('../controllers/listar_archivos.php', {dir:url},function(data){
                         $('select.image-select').empty();
                         $('select.image-select').append('<option value="0"> Seleccionar Imagen </option>');
-                        var count = Object.keys(data).length;
-                          //console.log(data);
-                            if (count==0) 
-                            {
-                                setImg();
-                                thisDropzone.removeAllFiles();
-                            }
                         $.each(data,function(index,value){                            
-                          //console.log(value);
+                          console.log(value);
                             $('select.image-select').append(value);
                         });
                         var z = 0;
@@ -122,7 +126,16 @@ function iniciarDropzone(url){
                             z++;
                            
                         }   
-                    },'json').error(function(e){
+                    },'json').done(function(data){
+                        var count = Object.keys(data).length;
+                          //console.log(data);
+                            if (count==0) 
+                            {
+                                setImg();
+                                thisDropzone.removeAllFiles();
+                            }
+                            guardarCambios();
+                    }).error(function(e){
                         alert('Se ha producido un error al cargar las imagenes, refresque la página para volver a intentarlo');
                     });
                 }
