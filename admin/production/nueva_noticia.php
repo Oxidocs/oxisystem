@@ -47,7 +47,12 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-                            <div id="dropzone" class="dropzone"></div>
+                            <div id="dropzone" class="dropzone">
+                                <div class="dz-message">Carga aquí tus imágenes 
+                                    <br /> 
+                                    <i class="fa fa-cloud-upload fa-5x" aria-hidden="true" style="color: #a1d302;"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="x_panel table-responsive">
@@ -140,14 +145,13 @@
                                                     </div>
                                                 </div>
                                                 <div id="editor" class="editor-wrapper"></div>
-                                                <textarea name="descr" id="descr" style="display:none;"></textarea>    
+                                                <textarea name="descr" id="descr" style="display:none;"></textarea>
                                             </div>
                                         </div>                                        
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <button id="agregar_portada" type="button" class="btn btn-default pull-left"><i class="fa fa-plus"></i> &nbsp;Agregar Portada </button>
                         <button id="btnSave" type="submit" class="btn btn-success pull-right"><i class="fa fa-floppy-o"></i> &nbsp;Guardar Cambios </button>
                     </div>
                 </div>
@@ -181,9 +185,9 @@
     <script src="../build/js/custom.min.js"></script>
     <!-- Dropzone Scripts -->
     <script src="../src/js/dropzone.js"></script>
-    <script src="../src/js/dropzone-custom.js" type="text/javascript"></script>
+    <script src="../src/js/dropzone-noticia.js" type="text/javascript"></script>
     <!--Custom JS-->
-    <script src="js/custom/productos_servicios.js" type="text/javascript"></script>
+    <script src="js/custom/nueva_noticia.js" type="text/javascript"></script>
     <script src="js/custom/wyswyg.js"></script>
 </body>
 </html>

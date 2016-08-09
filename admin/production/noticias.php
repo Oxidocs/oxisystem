@@ -48,7 +48,7 @@
                         </div>
                         <div class="x_content">
                             <div class="text-center">
-                                <button class="btn btn-default"><span><i class="fa fa-pencil-square-o fa-3x"></i></span> Crear Noticia </button>
+                                <a type="button" href="nueva_noticia.php" class="btn btn-default"><span><i class="fa fa-pencil-square-o fa-3x center"></i></span> <span>Crear Noticia</span> </a>
                             </div>                            
                             <div class="table-responsive">
                                 <table id="datatable-keytable" class="table table-striped table-bordered">
