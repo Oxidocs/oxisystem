@@ -86,7 +86,13 @@ body{
 
 /*estilo caption carousel*/
 
+#hilonoticias h2{
+	font-family: 'Lato', sans-serif;
+}
 
+#hilonoticias p{
+	font-family: 'Roboto', sans-serif;
+}
 
 #hilonoticias{
 

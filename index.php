@@ -23,6 +23,9 @@
 
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+	<!-- fuentes -->
+	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+
 	<!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
 
 	<link rel="apple-touch-icon" href="favicon.png">
