@@ -134,7 +134,7 @@
 		</div>
 		<!-- /.container -->
 	</nav>
-
+	<!-- silder -->
 	<?php
 	include 'admin/controllers/contenido_slider.php';
 	?>
