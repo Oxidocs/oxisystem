@@ -1,16 +1,16 @@
 <?php
-$json = file_get_contents('http://localhost:8888/web_uls/oxisystem/admin/controllers/slider.php?action=listaractivas');
+$json = file_get_contents('http://localhost:8888/oxisystem/admin/controllers/slider.php?action=listaractivas');
 $objs = json_decode($json);
 ?>
 <!-- Header Carousel -->
 	<header id="myCarousel" class="carousel slide">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
-			<?php 
+			<?php
 		    if(!$objs == null)
 		    {
-			    $i=0; 
-			    foreach ($objs as $obj) 
+			    $i=0;
+			    foreach ($objs as $obj)
 			    {
 		   ?>
 			<li data-target="#myCarousel" data-slide-to="<?php echo $i;?>" class="<?php if($i==0){echo "active";}$i++;?>"></li>
@@ -22,15 +22,15 @@ $objs = json_decode($json);
 
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner">
-		    <?php 
+		    <?php
 		    if(!$objs == null){
-			    $i=0; 
-			    foreach ($objs as $obj) 
+			    $i=0;
+			    foreach ($objs as $obj)
 			    {
 		    ?>
-				<div class="item <?php if($i==0){echo "active";}$i++;?>">	
+				<div class="item <?php if($i==0){echo "active";}$i++;?>">
 
-					<div class="fill" style="background-image:url('<?php 
+					<div class="fill" style="background-image:url('<?php
 						if ($obj->PATH=="default.png")
 						{
 							echo "img/".$obj->PATH;
@@ -39,20 +39,20 @@ $objs = json_decode($json);
 						{
 							echo "img/slider-img/".$obj->PATH;
 						}?>');
-					">		
+					">
 					</div>
 					<div class="carousel-caption">
 						<h2><?php echo $obj->DESCRIPCION;?></h2>
 					</div>
 
 				</div>
-			<?php 
+			<?php
 				}
 			}
 			else
 			{?>
 				<div class="item active">
-					<div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Imagen Uno');">					
+					<div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Imagen Uno');">
 					</div>
 					<div class="carousel-caption">
 						<h2>Descripción</h2>
