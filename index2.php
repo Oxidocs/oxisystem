@@ -11,21 +11,17 @@
 
 	<title>ULS | Escuela de Periodismo</title>
 
-
+	<!-- Bootstrap Core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 
-
+	<!--    estilos-->
 	<link rel="stylesheet" href="css/estilos.css">
 
-
+	<!-- Custom CSS -->
 	<link href="css/modern-business.css" rel="stylesheet">
 
-
+	<!-- Custom Fonts -->
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-	<!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
-
-	<link rel="apple-touch-icon" href="favicon.png">
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,28 +37,15 @@
 	<section id="logos">
 		<div class="container">
 			<div class="row">
-				<div class="hidden-xs hidden-sm col-md-4 col-lg-4">
+				<div class="col-lg-4">
 					<img src="img/logo.jpg" class="img-responsive" alt="escuela_periodismo">
 				</div>
-				<div class="hidden-xs hidden-sm col-md-4 col-lg-8">
+				<div class="col-lg-8">
 					<img src="img/ULS.png" class="img-responsive pull-right" alt="uls">
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--	cabecera con logos para movil-->
-  	<section class="logosmovil">
-  		<div class="container">
-  			<div class="row">
-  				<div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
-  					<img src="img/ULS.png" class="img-responsive center-block" alt="escuela_periodismo">
-  				</div>
-  				<div class="logoperiodismo col-xs-12 col-sm-12 hidden-md hidden-lg">
-  					<img src="img/logo.jpg" class="img-responsive pull-right" alt="uls">
-  				</div>
-  			</div>
-  		</div>
-  	</section>
 	<!-- Navegacion -->
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container">
@@ -80,7 +63,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active">
-						<a href="index.html">Home</a>
+						<a href="#">Home</a>
 					</li>
 					<li class="dropdown">
 						<a href="escuela.html" class="dropdown-toggle" data-toggle="dropdown">Escuela <b class="caret"></b></a>
@@ -103,7 +86,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Carrera <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="perfil.html">Perfil</a>
+								<a href="#">Perfil</a>
 							</li>
 							<li>
 								<a href="#">Admisión</a>
@@ -111,7 +94,7 @@
 						</ul>
 					</li>
 					<li>
-						<a href="docentes.html">Cuerpo Docente</a>
+						<a href="#">Cuerpo Docente</a>
 					</li>
 					<li>
 						<a href="#">Noticias</a>
@@ -120,7 +103,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Publicaciones <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="#">Artículos de Académicos</a>
+								<a href="#">Artículos de Acádemicos</a>
 							</li>
 							<li>
 								<a href="#">Seminarios de Investigación</a>
@@ -138,65 +121,61 @@
 	<?php
 	include 'admin/controllers/contenido_slider.php';
 	?>
-
 	<!-- contenidos -->
 	<section id="contenidos" class="fondo">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3">
-					<div class="aside">
-							<h4 class="text-left">Calendario Académico <i class="fa fa-angle-right"></i></h4>
-					</div>
+				<div class="col-lg-3 aside">
+					<h4 class="text-left">Calendario Acádemico <i class="fa fa-angle-right"></i></h4>
+					<hr>
+					
 				</div>
-				<div class="col-md-6">
-					<div id="hilonoticias">
-						<h4 id="tituloseccion" class="col-lg-3 col-md-3 col-xs-12">NOTICIAS</h4>
-						<!-- First Blog Post -->
-
-							<img class="img-responsive" src="http://placehold.it/900x400&text=Imagen Noticias 1" alt="">
-
-						<h2>
-							<a href="#">Investigación de Académicas de Periodismo es Publicado por Sitio SciELO</a>
-						</h2>
-						<p><i class="fa fa-clock-o"></i> Publicado el 5 de Agosto, 2016</p>
-						<hr>
-						<p>Hace unos meses, las académicas de la carrera Mg. Carolina Rodríguez Malebrán y Mg. Marcela Altamirano, se encontraron con la gratificante noticia que su investigación de casi dos años fue publicada por la revista Actualidades Investigativas en Educación de la Universidad de Costa Rica y que fue indexada al prestigioso sitio Scientific Electronic Library Online (SciElo).</p>
-						<a class="leermas btn btn-primary pull-right" href="#">Leer más <i class="fa fa-angle-right"></i></a>
-
-
-						<!-- Second Blog Post -->
-
-							<img class="img-responsive" src="http://placehold.it/900x400&text=Imagen Noticias 2" alt="">
-
-						<h2>
-							<a href="#">Jefe de Carrera Asiste a Encuentro Nacional de Directores de Escuelas de Periodismo</a>
-						</h2>
-						<p><i class="fa fa-clock-o"></i> Publicado el 5 de Agosto, 2016</p>
-						<hr>
-						<p>Con el objetivo de discutir y apoyar la organización del XVI Encuentro de la Federación Latinoamericana de Facultades de Comunicación Social (FELAFACS), es que durante la semana pasada el Director de carrera, Cristian Muñoz Catalán, visitó la Escuela de Periodismo de la Pontificia Universidad Católica de Valparaíso...</p>
-						<a class="leermas btn btn-primary pull-right" href="#">Leer más <i class="fa fa-angle-right"></i></a>
+				<div id="hilonoticias" class="col-lg-6">
+					<h4 id="tituloseccion">NOTICIAS</h4>
+					<!-- First Blog Post -->
+					<a href="#">
+						<img class="img-responsive img-hover" src="http://placehold.it/900x400&text=Imagen Noticias 1" alt="">
+					</a>
+					<h2>
+						<a href="#">Titulo Noticia</a>
+					</h2>
+					<p><i class="fa fa-clock-o"></i> Publicado el 5 de Agosto, 2016</p>
+					<hr>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
+					<a class="leermas btn btn-primary pull-right" href="#">Leer más <i class="fa fa-angle-right"></i></a>
 
 
+					<!-- Second Blog Post -->
+					<a href="#">
+						<img class="img-responsive img-hover" src="http://placehold.it/900x400&text=Imagen Noticias 2" alt="">
+					</a>
+					<h2>
+						<a href="#">Titulo Noticia</a>
+					</h2>
+					<p><i class="fa fa-clock-o"></i> Publicado el 5 de Agosto, 2016</p>
+					<hr>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
+					<a class="leermas btn btn-primary pull-right" href="#">Leer más <i class="fa fa-angle-right"></i></a>
 
-						<!-- Third Blog Post -->
 
-							<img class="img-responsive img-hover" src="http://placehold.it/900x400&text=Imagen Noticias 3" alt="">
 
-						<h2>
-							<a href="#">Generación 2016 Participa en Debates Sobre Temas de Interés Nacional</a>
-						</h2>
-						<p><i class="fa fa-clock-o"></i> Publicado el 5 de Agosto, 2016</p>
-						<hr>
-						<p>Los alumnos de primer año de la cátedra de Historia y Geografía, que imparte la profesora Marcela Altamirano, visitaron la muestra Fragmentos del Museo de la Memoria y los Derechos Humanos, que se encuentra en exhibición en la ex iglesia.</p>
-						<a class="leermas btn btn-primary pull-right" href="#">Leer más <i class="fa fa-angle-right"></i></a>
-					<div class="clearfix"></div>
-					</div>
-			</div>
+					<!-- Third Blog Post -->
+					<a href="#">
+						<img class="img-responsive img-hover" src="http://placehold.it/900x400&text=Imagen Noticias 3" alt="">
+					</a>
+					<h2>
+						<a href="#">Titulo Noticia</a>
+					</h2>
+					<p><i class="fa fa-clock-o"></i> Publicado el 5 de Agosto, 2016</p>
+					<hr>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
+					<a class="leermas btn btn-primary pull-right" href="#">Leer más <i class="fa fa-angle-right"></i></a>
+
+				</div>
 				<!-- calendario-->
-				<div class="col-md-3">
-					<div class="aside">
-						<h4 class="text-left">Redes Sociales <i class="fa fa-angle-right"></i></h4>
-					</div>
+				<div class="col-lg-3 aside">
+					<h4 class="text-left">Redes Sociales <i class="fa fa-angle-right"></i></h4>
+					<hr>
 				</div>
 			</div>
 		</div>
