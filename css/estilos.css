@@ -1,57 +1,41 @@
-/*body*/
-body{
-/*	background-color: #f5f5f5*/
+h1, h2, h3, h4{
+	font-family: 'lato', sans-serif;
 }
 
-/*header logos*/
+p{
+	font-family: 'Roboto',sans-serif;
+}
+	.pager{
 
-#logos{
+		padding-top: 40px;
+	}
+
+/*header logos*/
+/*logo cabecera normal*/
+.logos{
 	background-color: #ffffff;
 	padding: 20px;
 }
 
+/*logos para movil*/
 .logosmovil{
 	background-color: #FFFFFF;
 	padding: 10px;
+
 }
 
-.perfil h2{
-	padding: 10px;
-	color: #466189;
+/*redimensionado logo movil*/
+#logouls{
+	width: 30%;
+	height: 30%;
+	margin-top: 20px;
+
 }
 
-.perfil p{
-	padding: 10px;
-	color: #191919
-}
-
-.admision{
-	background-color: #466189
-}
-
-.admision h2{
-	padding: 10px;
-	text-align: right;
-	color: #f5f5f5;
-}
-
-.admision h3, .admision p{
-	color: #f5f5f5;
-}
-
-.perfillead {
-	padding: 10px;
-}
-.fondo{
-	background-color: #f5f5f5;
-}
-
-#contenidos{
-	padding-bottom: 20px;
-}
+/*estilos barra de navegacion*/
 
 /*barra navegacion*/
-/*.navbar-inverse { background-color: #2264b4}*/
+
 .navbar-inverse { background-color: #466189}
 .navbar-inverse { border-radius: 0px}
 .navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #19344E}
@@ -78,143 +62,163 @@ body{
 .navbar-inverse .navbar-toggle { border-radius: 0px !important}
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {background-color: #19344E !important}
 
-/*separacion carousel*/
+
+
+/*estilo separacion carousel*/
 
 #myCarousel{
 	margin-top: -20px;
 }
 
-/*estilo caption carousel*/
+/******estilo hilo de noticias y asides******/
 
-#hilonoticias h2{
-	font-family: 'Lato', sans-serif;
-}
+	/*background de la sección*/
+	.fondocontenidos{
+		background-color: #f5f5f5;
+	}
 
-#hilonoticias p{
-	font-family: 'Roboto', sans-serif;
-}
+	/*estilos aside*/
 
-#hilonoticias{
+	.aside{
+		margin-top: 20px;
+		padding: 10px;
+		background-color: #FFFFFF;
+		border: 1px solid #dbd7d2;
+	}
 
-	margin-top: 20px;
-	background-color: #ffffff;
-	padding: 20px;
-	margin-bottom: 20px;
-	border: 1px solid #dbd7d2;
-}
-
-.aside{
-	margin-top: 20px;
-	padding: 10px;
-	background-color: #FFFFFF;
-}
-
-
-.pager{
-
-	padding-top: 40px;
-}
-
-.leermas{
-	border-radius: 0px;
-	margin-bottom: 20px;
-}
+	.aside h4{
+		color: #466189;
+		font-family: 'lato', sans-serif;
+	}
 
 
 
-#tituloseccion{
-	background-color: #78B800;
-	color: #ffffff;
-	text-align: center;
-	padding: 10px;
-	margin-left: -20px;
-	margin-top: -20px;
+	/*estilos hilo de noticias*/
 
-}
+	.hilonoticias{
 
-.aside h4{
-	color: #466189;
-}
+		margin-top: 20px;
+		background-color: #ffffff;
+		padding: 20px;
+		margin-bottom: 20px;
+		border: 1px solid #dbd7d2;
+	}
 
-.aside2 h4{
-	color: #466189;
-}
+	.hilonoticias h4{
+		background-color: #78B800;
+		color: #ffffff;
+		text-align: center;
+		padding: 10px;
+		margin-left: -20px;
+		margin-top: -20px;
+	}
 
-/*estilo seccion galerias*/
+	.hilonoticias #leermas{
+		border-radius: 0px !important;
+		margin-bottom: 20px;
+	}
 
-#galerias{
+	.hilonoticias h2, .hilonoticias h4{
+		font-family: 'Lato', sans-serif;
+	}
+
+
+
+/*estilos galerias home*/
+
+.galerias{
 	background-color: #2e2e2e;
 }
 
-#galerias h2{
+.galerias h2{
 	color: #f5f5f5
 }
 
-#galeriaimg{
+.galerias img{
 	padding: 20px;
 
 }
 
+/*estilos footer*/
+
+/*estilo footer*/
+
 footer{
-/*	background-color: #78b800*/
-	/*background-color: #001F90*/
 	background-color: #19344E
 }
 
-#datosfooter {
+.logosydatos{
+	padding: 20px;
+}
+
+.logosydatos img{
+	margin-top: 30px;
+}
+
+.logosydatos address{
 	color: #f5f5f5 !important;
 	padding: 20px;
-	font-size: 8pt;
-	text-align: right
+	text-align: right;
+	font-family: 'Roboto',sans-serif;
 
 }
 
-#logosydatos{
-	margin-top: 20px;
-	padding: 20px;
-}
+/*********estilos pagina escuela.html*********/
+/*mision y vision*/
 
-#mision h2{
-	color: #78b800;
-}
-
-#mision img{
+.mision img{
 	margin-top: 50px;
 }
 
-#mision h2, #mision p{
+.mision h2, .vision h2{
+
+	color: #78b800;
 	padding: 20px;
 }
 
-#vision{
+
+
+.vision{
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
 
-#vision h2{
-	color: #78b800;
-}
 
-#vision h2, #vision p{
+.vision h2, .vision p, .mision p, {
 	padding: 20px;
 }
 
-#vision img{
+.vision img{
 	margin-top: 50px;
 }
+
+/*normativas seccion de descarga*/
+
 .normativas{
 	background-color: #78b800
 }
 
 .normativas h2{
 	color: #ffffff;
+	padding: 10px;
+	text-align: left;
+}
+
+.normativas h4{
+	font-family: 'lato',sans-serif;
+}
+
+.marquesina2{
+	background-color: #37820C
+}
+
+.paneles{
+	margin-top: 20px;
 }
 
 .panel{
 	padding: 20px;
 	border-radius: 0px;
-
-
 }
 
 .pdficon{
@@ -225,6 +229,41 @@ footer{
 	border-radius: 0px;
 	margin-top: 20px;
 }
+
+/*********estilos pagina carrera.html*********/
+
+.perfil h2{
+	padding: 10px;
+	color: #466189;
+}
+
+.perfil p{
+
+	padding: 10px;
+	color: #696969
+}
+
+.admision{
+	background-color: #466189
+}
+
+.admision h2{
+	padding: 10px;
+	text-align: left;
+	color: #f5f5f5;
+
+}
+
+.marquesina{
+	background-color: #820333;
+}
+
+.admision h3, .admision p{
+	color: #f5f5f5;
+}
+
+/*********estilos pagina docentes.html*********/
+
 
 .docentesbg{
 	background-color: #ffffff;
@@ -252,31 +291,55 @@ footer{
 	color: #466189
 }
 
+/*media querie*/
+
 @media(max-width:768px) {
 
-	#tituloseccion{
-		/*margin-top: 0px;*/
-		margin-left: 0px;
-		margin-top: 0px;
-	}
-	#datosfooter{
-		text-align: center;
-	}
-	#galerias h2{
-		color: #f5f5f5;
-		text-align: center
-	}
-	#hilonoticias{
+	.hilonoticias{
 		height: 1970px;
 		margin-top: 20px;
 		background-color: #ffffff;
 		padding: 20px;
 		border: 1px solid #dbd7d2;
 	}
-	#mision p, #mision h2{
+
+	.hilonoticias h4{
+		margin-left: 0px;
+		margin-top: 0px;
+	}
+
+	.logosydatos img{
+		margin-top: 20px;
+	}
+
+	.logosydatos address{
+		text-align: center;
+
+
+	}
+
+	#datosfooter{
+		text-align: center;
+	}
+	.galerias h2{
+		color: #f5f5f5;
+		text-align: center
+	}
+
+	.mision p, .mision h2{
 		text-align: left !important;
 		padding: 0px;
 
+	}
+
+	.vision p, .vision h2{
+		text-align: left !important;
+		padding: 0px;
+
+	}
+	.normativas h2{
+		padding: 10px;
+		text-align: center;
 	}
 
 	.perfil h2{
@@ -286,21 +349,11 @@ footer{
 	}
 
 	.admision h2{
-
-		text-align: center;
-
-	}
-
-	#vision p, #vision h2{
-		text-align: left !important;
-		padding: 0px;
-
-	}
-	.normativas h2{
-		padding: 10px;
-		background-color: #5da423;
 		text-align: center;
 	}
+
+
+
 	.docentesdatos h5{
 		background-color: #5da423;
 		color: #ffffff;
@@ -309,4 +362,6 @@ footer{
 	.docentes h3{
 		text-align: center;
 	}
+
+
 }

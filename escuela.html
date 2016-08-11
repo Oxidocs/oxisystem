@@ -3,33 +3,36 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-    <title>ULS | Escuela de Periodismo</title>
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<title>ULS | Escuela de Periodismo</title>
 
 
-    <link rel="stylesheet" href="css/estilos.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 
 
-    <link href="css/modern-business.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/estilos.css">
 
 
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/modern-business.css" rel="stylesheet">
 
-    <!-- favicons -->
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
+	<!-- fuentes -->
 
-  	<link rel="apple-touch-icon" href="favicon.png">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
+
+	<link rel="apple-touch-icon" href="favicon.png">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -37,29 +40,29 @@
 </head>
 
 <body>
-<!--	cabecera con logos para laptop y desktop-->
-	<section id="logos">
+	<!--	cabecera con logos-->
+	<section class="hidden-xs hidden-sm logos">
 		<div class="container">
 			<div class="row">
-				<div class="hidden-xs hidden-sm col-md-4 col-lg-4">
-					<img src="img/logo.jpg" class="img-responsive" alt="escuela_periodismo">
-				</div>
-				<div class="hidden-xs hidden-sm col-md-8 col-lg-8">
-					<img src="img/ULS.png" class="img-responsive pull-right" alt="uls">
+				<div class="col-lg-12">
+					<img src="img/cabecerafull.png" class="img-responsive" alt="escuela_periodismo_uls">
 				</div>
 			</div>
 		</div>
 	</section>
-  <!--	cabecera con logos para movil-->
-  	<section class="logosmovil">
+	<!--	cabecera con logos para movil-->
+  	<section class="hidden-md hidden-lg logosmovil">
   		<div class="container">
   			<div class="row">
-  				<div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
-  					<img src="img/ULS.png" class="img-responsive center-block" alt="escuela_periodismo">
+					<div class="col-lg-12">
+						<img src="img/cabeceramovil.png" class="img-responsive" alt="">
+					</div>
+  				<!-- <div class="col-xs-4 col-sm-4">
+  					<img id="logouls" src="img/ULS.png" class="img-responsive center-block" alt="escuela_periodismo">
   				</div>
-  				<div class="logoperiodismo col-xs-12 col-sm-12 hidden-md hidden-lg">
+  				<div class="col-xs-8 col-sm-8 hidden-md hidden-lg">
   					<img src="img/logo.jpg" class="img-responsive pull-right" alt="uls">
-  				</div>
+  				</div> -->
   			</div>
   		</div>
   	</section>
@@ -135,7 +138,7 @@
 		<!-- /.container -->
 	</nav>
     <!-- contenidos -->
-	<section id="mision">
+	<section class="mision">
     	<div class="container">
     		<div class="row">
     			<div class="hidden-xs hidden-sm col-md-6">
@@ -150,7 +153,7 @@
     		</div>
     	</div>
   </section>
-  <section id="vision">
+  <section class="vision">
     <div class="container">
     	<div class="row">
     		<div class="col-md-6">
@@ -169,21 +172,21 @@
 <!-- Aqui comienza la sección normativa de descargas de documentos -->
     <section class="normativas">
     	<div class="container">
-    		<div class="row">
-    			<div class="col-lg-12">
-    				<h2>Normativas</h2>
-    			</div>
-    			<div class="col-md-6">
-					<div class="panel panel-info">
-						<div class="panel-heading">
-							<h4><i class="pdficon fa fa-file-pdf-o"></i> Decreto Exento N° 028 / 2010 - 19 enero de 2010</h4>
+				<div class="row marquesina2">
+					<h2>Normativas</h2>
+				</div>
+    		<div class="row paneles">
+					<div class="col-md-6">
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<h4><i class="pdficon fa fa-file-pdf-o"></i> Decreto Exento N° 028 / 2010 - 19 enero de 2010</h4>
+							</div>
+							<div class="panel-body">
+	                <!-- la idea es que la descripción de la descarga no sobrepase esta cantidad de caracteres -->
+								<p>Aprueba Reglamento de Régimen de Estudio de la Universidad de La Serena y deroga Decreto de Rectoría Exento Nº 04/2005, de fecha 05 de enero de 2005.</p>
+								<a href="#" class="descargabtn btn btn-success pull-right">Descargar</a>
+							</div>
 						</div>
-						<div class="panel-body">
-                <!-- la idea es que la descripción de la descarga no sobrepase esta cantidad de caracteres -->
-							<p>Aprueba Reglamento de Régimen de Estudio de la Universidad de La Serena y deroga Decreto de Rectoría Exento Nº 04/2005, de fecha 05 de enero de 2005.</p>
-							<a href="#" class="descargabtn btn btn-success pull-right">Descargar</a>
-						</div>
-					</div>
           </div>
           <div class="col-md-6">
   					<div class="panel panel-info">
@@ -200,28 +203,25 @@
         </div>
     	</div>
     </section>
-         <!-- Footer -->
-        <footer>
-            <div class="container">
-            	<div id="logosydatos" class="row">
-            		<div class="col-lg-6">
-            			<img src="img/logoweb.png" alt="" class="img-responsive pull-left">
-            		</div>
-					<div id="datosfooter" class="col-lg-6 pull-right">
-
-						<p>Escuela de Periodismo
-						   Universidad de La Serena</p>
-
-						<p>Campus Andrés Bello, Avenida Raúl Bitrán Nachary S/N
-							La Serena, Chile</p>
-
-						<p>+56 (51) 2204352
-							eperiodismo@userena.cl</p>
-					</div>
-            </div>
-            </div>
-        </footer>
-
+    <!-- Footer -->
+  	<footer class="logosydatos">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-lg-6">
+  					<img src="img/logoweb.png" alt="" class="img-responsive pull-left">
+  				</div>
+  				<div class="col-lg-6">
+  					<address class="pull-right">
+  					  <strong>Escuela de Periodismo Universidad de La Serena</strong><br>
+  					  Campus Andrés Bello, Avenida Raúl Bitrán Nachary S/N<br>
+  					  La Serena, Chile<br>
+  					  <abbr title="Télefono"></abbr> +56 (51) 2204352<br>
+  						<a href="mailto:#">eperiodismo@userena.cl</a>
+  					</address>
+  				</div>
+  			</div>
+  		</div>
+  	</footer>
         <!-- /.container -->
 
    <!-- jQuery -->
