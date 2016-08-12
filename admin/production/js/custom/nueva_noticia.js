@@ -18,7 +18,7 @@ $('form').on('submit',function(e){
 	$("#descr").val($("#editor").html().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'));
 
 
-	$.post('../views/noticias.php',$(this).serialize(),function(data){
+	$.post('../routes/noticias.php',$(this).serialize(),function(data){
 		console.log(data);
 	});
 
