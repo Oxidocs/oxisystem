@@ -65,6 +65,40 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <img src="../../img/default.png" class="img-responsive" alt="portada">
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-6 form-group">
+                                            <label class="col-sm-2">Titulo</label>
+                                            <div class="col-sm-10">
+                                                <input id="titulo" type="text" name="titulo" class="form-control table-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 form-group">
+                                            <label class="col-sm-2">Portada</label>
+                                            <div class="col-sm-10">
+                                                <select id="portada" name="portada" class="form-control image-select">
+                                                    <option>Selecionar Imagen</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 form-group">
+                                        <label class="col-sm-1">Bajada</label>
+                                        <div class="col-sm-11">
+                                            <input id="bajada" type="text" name="bajada" class="form-control table-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
@@ -75,29 +109,11 @@
                                     <tbody id="table_portada" class="form-group">
                                         <tr>
                                             <td style="width:10%">
-                                                <img src="images/user.png" class="" alt="Avatar">
+                                                
                                             </td>
                                             <td>
-                                                <div class="col-lg-6 form-group">
-                                                    <label class="col-sm-2">Titulo</label>
-                                                    <div class="col-sm-10">
-                                                        <input id="titulo" type="text" name="titulo" class="form-control table-input">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 form-group">
-                                                    <label class="col-sm-2">Portada</label>
-                                                    <div class="col-sm-10">
-                                                        <select id="portada" name="portada" class="form-control image-select">
-                                                            <option>Selecionar Imagen</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12 form-group">
-                                                    <label class="col-sm-1">Bajada</label>
-                                                    <div class="col-sm-11">
-                                                        <input id="bajada" type="text" name="bajada" class="form-control table-input">
-                                                    </div>                                            
-                                                </div>
+                                                
+                                                
                                                 <div class="clearfix"></div>
                                                 <div class="tiles">
                                                     <div class="col-lg-12 form-group text-center">
