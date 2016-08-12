@@ -140,7 +140,7 @@
 
 	<!-- slider -->
 	<?php
-	include 'admin/controllers/contenido_slider.php';
+	include 'admin/routes/contenido_slider.php';
 	?>
 
 	<!-- contenidos -->

@@ -1,5 +1,5 @@
 <?php 
-require_once '../controllers/contenido_slider_back.php';
+require_once '../routes/contenido_slider_back.php';
 ?>
 <!DOCTYPE html>
 <html lang="ES-CL">
