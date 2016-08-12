@@ -107,6 +107,7 @@
     <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
 
     <script type="text/javascript">
+    
         $('#datatable-keytable').DataTable({
             dom: "Bfrtip",
             lengthMenu: [
@@ -126,7 +127,7 @@
                 "sInfoFiltered": "(Filtrado de _MAX_ registros)",
                 "sZeroRecords": "No se han encontrado resultados"
             },
-            ajax: "js/custom/test.txt",
+            ajax: "../routes/listar_noticia.php",
             deferRender: true,
             scrollY: 380,
             scrollCollapse: true,
