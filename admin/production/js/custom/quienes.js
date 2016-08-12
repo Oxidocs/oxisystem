@@ -16,7 +16,7 @@ $(document).ready(function() {
 		lang: 'es-ES'
 	});
 
-	$.getJSON('../views/quienes_somos.php',function(data){
+	$.getJSON('../routes/quienes_somos.php',function(data){
 		$('#id_mision').val(data[0][0].id);
 		$('#text_area_mision').summernote('code',data[0][0].descripcion);
 		$('#id_vision').val(data[1][0].id);

@@ -32,7 +32,7 @@ class Contenido {
 	public static function getContent($id_seccion) {
 
 		$content_list = array();
-
+		
 		if ($id_seccion > 0) {
 			
 			$model = new Crud();
