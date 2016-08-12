@@ -93,15 +93,28 @@ class Contenido {
 		return $content_list;
 	}
 
-	public static function createContent($secciones_id, $estados_id, $titulo, $descripcion, $imagenes, $redes_sociales, $link) {
+	public static function createContent($secciones_id, $estados_id, $titulo, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link) {
 
 		$model = new Crud();
 		$model->insertInto = "contenido";
-		$model->insertColumns = "SECCIONES_ID, ESTADOS_ID, TITULO, DESCRIPCION";
-		$model->insertValues = "$secciones_id, $estados_id, '$titulo', '$descripcion'";
+		$model->insertColumns = "SECCIONES_ID, ESTADOS_ID, TITULO, DESCRIPCION, FECHA_CREACION";
+		$model->insertValues = "$secciones_id, $estados_id, '$titulo', '$descripcion', '$fecha_creacion'";
 		$model->Create();
-		$mensaje = $model->mensaje;
-		return $mensaje;
+		$idfk_contenido = $model->id;
+
+		$model = new Crud();
+        $model->insertInto    = 'path_imagenes';
+        $model->insertColumns = 'ESTADOS_ID, PATH, TITULO, DESCRIPCION';
+        $model->insertValues  = '$estados_id';
+        $model->Create();
+        $idfk_path = $model->id;
+
+        $model = new Crud();
+        $model->insertInto    = 'contenido_path';
+        $model->insertColumns = 'CON_ID, PAT_ID';
+        $model->insertValues  = "$idfk_contenido, $idfk_path";
+        $model->Create();
+
 	}
 
 	public static function updateContent($id, $secciones_id, $estados_id, $titulo, $descripcion, $imagenes, $redes_sociales, $link){

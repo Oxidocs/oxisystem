@@ -1,9 +1,9 @@
 $(document).ready(function(){
-	iniciarDropzone('../../img/ps-img/');
+	iniciarDropzone('../../img/galeria/noticias/');
 });
 
 $("select.image-select").on('change',function(){
-	var dir = '../../img/ps-img/';
+	var dir = '../../img/galeria/noticias/';
 	var option_value = $(this).val();
 	if (option_value != 0) {
 		$('img.avatar-portada').attr('src',dir+option_value);
@@ -12,7 +12,14 @@ $("select.image-select").on('change',function(){
 	}
 });
 
-$('#btnSave').bind('click', function () {
-    $("#descr").val($("#editor").html().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'));
-    console.log($("#descr").val());
+$('form').on('submit',function(e){
+	e.preventDefault();
+
+	$("#descr").val($("#editor").html().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'));
+
+
+	$.post('../views/noticias.php',$(this).serialize(),function(data){
+		console.log(data);
+	});
+
 });
