@@ -93,27 +93,28 @@ class Contenido {
 		return $content_list;
 	}
 
-	public static function createContent($secciones_id, $estados_id, $titulo, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link) {
+	public static function createContent($secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link) {
 
 		$model = new Crud();
 		$model->insertInto = "contenido";
-		$model->insertColumns = "SECCIONES_ID, ESTADOS_ID, TITULO, DESCRIPCION, FECHA_CREACION";
-		$model->insertValues = "$secciones_id, $estados_id, '$titulo', '$descripcion', '$fecha_creacion'";
+		$model->insertColumns = "SECCIONES_ID, ESTADOS_ID, TITULO, DESCRIPCION, FECHA_CREACION, PORTADA_CONTENIDO, SUBTITULO";
+		$model->insertValues = "$secciones_id, $estados_id, '$titulo', '$descripcion', '$fecha_creacion', '$portada', '$bajada'";
 		$model->Create();
 		$idfk_contenido = $model->id;
+		echo $model->mensaje;
 
-		$model = new Crud();
-        $model->insertInto    = 'path_imagenes';
-        $model->insertColumns = 'ESTADOS_ID, PATH, TITULO, DESCRIPCION';
-        $model->insertValues  = '$estados_id';
-        $model->Create();
-        $idfk_path = $model->id;
+		// $model = new Crud();
+  //       $model->insertInto    = 'path_imagenes';
+  //       $model->insertColumns = 'ESTADOS_ID, PATH, TITULO, DESCRIPCION';
+  //       $model->insertValues  = '$estados_id';
+  //       $model->Create();
+  //       $idfk_path = $model->id;
 
-        $model = new Crud();
-        $model->insertInto    = 'contenido_path';
-        $model->insertColumns = 'CON_ID, PAT_ID';
-        $model->insertValues  = "$idfk_contenido, $idfk_path";
-        $model->Create();
+  //       $model = new Crud();
+  //       $model->insertInto    = 'contenido_path';
+  //       $model->insertColumns = 'CON_ID, PAT_ID';
+  //       $model->insertValues  = "$idfk_contenido, $idfk_path";
+  //       $model->Create();
 
 	}
 

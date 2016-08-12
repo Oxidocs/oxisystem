@@ -81,13 +81,13 @@
                                                 <div class="col-lg-6 form-group">
                                                     <label class="col-sm-2">Titulo</label>
                                                     <div class="col-sm-10">
-                                                        <input id="nombre" type="text" name="nombre" class="form-control table-input">
+                                                        <input id="titulo" type="text" name="titulo" class="form-control table-input">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 form-group">
-                                                    <label class="col-sm-2">Imagen</label>
+                                                    <label class="col-sm-2">Portada</label>
                                                     <div class="col-sm-10">
-                                                        <select id="imagen" name="imagen" class="form-control image-select">
+                                                        <select id="portada" name="portada" class="form-control image-select">
                                                             <option>Selecionar Imagen</option>
                                                         </select>
                                                     </div>
@@ -167,7 +167,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <!-- <button id="btnSave" type="submit" class="btn btn-success pull-right"><i class="fa fa-floppy-o"></i> &nbsp;Guardar Cambios </button> -->
+                                <button id="btnSave" type="submit" class="btn btn-success pull-right"><i class="fa fa-floppy-o"></i> &nbsp;Guardar Cambios </button>
                             </div>
                         </div>
 
