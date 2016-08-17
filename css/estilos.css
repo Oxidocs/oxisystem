@@ -291,7 +291,40 @@ footer{
 	color: #466189
 }
 
-/*media querie*/
+.nombre-docente{
+	background-color: rgb(15, 114, 217);
+	padding: 10px;
+	color: #f5f5f5;
+	margin-left: -20px;
+}
+
+/*estilo tabla admision*/
+
+.table-responsive{
+	border:none !important;
+
+	}
+
+.tabla_antecedentes{
+	background-color: #f5f5f5;
+}
+
+
+.tabla_ingreso{
+	background-color: #f5f5f5;
+}
+
+.tabla_ingreso, .tabla_antecedentes{
+	margin-bottom: 10px;
+}
+
+.dato{
+	background-color: #820333;
+	color: #f5f5f5;
+	font-weight: bold;
+
+}
+/*media queries*/
 
 @media(max-width:768px) {
 
@@ -352,8 +385,6 @@ footer{
 		text-align: center;
 	}
 
-
-
 	.docentesdatos h5{
 		background-color: #5da423;
 		color: #ffffff;
@@ -361,6 +392,14 @@ footer{
 	}
 	.docentes h3{
 		text-align: center;
+	}
+
+	.nombre-docente{
+		width: 90%;
+		margin-left: 5px;
+		font-size: 20px;
+		padding: 5px;
+
 	}
 
 
