@@ -123,10 +123,10 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Publicaciones <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="#">Artículos de Académicos</a>
+								<a href="publicaciones.html">Artículos de Académicos</a>
 							</li>
 							<li>
-								<a href="#">Seminarios de Investigación</a>
+								<a href="publicaciones.html">Seminarios de Investigación</a>
 							</li>
 						</ul>
 					</li>
