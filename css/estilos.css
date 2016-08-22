@@ -351,6 +351,29 @@ footer{
 	margin-top: -20px;
 }
 
+.single-noticia{
+	padding: 10px;
+}
+
+.single-noticia img{
+	margin-bottom: 10px
+}
+
+.single p{
+	text-align: justify;
+
+}
+
+.fecha{
+	color:#c0c0c0;
+}
+
+.sharing{
+	padding: 10px;
+}
+.smallt{
+	margin-bottom: 10px;
+}
 /*media queries*/
 
 @media(max-width:768px) {
@@ -428,6 +451,8 @@ footer{
 		padding: 5px;
 
 	}
+
+
 
 
 }
