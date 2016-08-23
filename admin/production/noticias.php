@@ -56,7 +56,8 @@
                                         <tr>
                                             <th>Titulo</th> <!-- Titulo -->
                                             <th>Bajada</th> <!-- Bajada -->
-                                            <th>Imágen</th> <!-- Imagen -->                                           
+                                            <th>Imágen</th> <!-- Imagen -->
+                                            <th>Acciones</th> <!-- Acciones -->                                           
                                         </tr>
                                     </thead>
                                 </table>

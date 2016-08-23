@@ -10,7 +10,9 @@
 		$tmp = array(			
 				"$obj->titulo",
 				"$obj->subtitulo",
-				"$obj->portada_contenido"
+				"<img  src='../../img/$obj->portada_contenido' class='avatar avatar-portada0 center-block' alt='Avatar'>",
+				"<a href='#'>Editar $obj->id</a>"
+
 			    );
 		array_push($result, $tmp);
 	}

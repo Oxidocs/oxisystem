@@ -66,39 +66,29 @@
                             </div>
                             <div class="x_content">
                                 <div class="row">
-                                    <div class="col-lg-12">
-                                        <img src="../../img/default.png" class="img-responsive" alt="portada">
+                                    <div class="col-lg-6">
+                                        <img src="../../img/default.png" class="img-responsive portada-noticia center-block" alt="portada" style="max-height:200px;min-height:200px">
                                     </div>
-                                </div>
-                                <div class="tiles"></div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="col-lg-6 form-group">
-                                            <label class="col-sm-2">Titulo</label>
-                                            <div class="col-sm-10">
-                                                <input id="titulo" type="text" name="titulo" class="form-control table-input">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 form-group">
-                                            <label class="col-sm-2">Portada</label>
-                                            <div class="col-sm-10">
+                                    <div class="col-lg-6">
+                                        <div class="col-lg-12 text-center">
+                                            <label>Portada</label>
+                                            
                                                 <select id="portada" name="portada" class="form-control image-select">
                                                     <option>Selecionar Imagen</option>
                                                 </select>
-                                            </div>
+                                            
                                         </div>
-                                    </div>
-                                </div>                                
-                                <div class="row">
-                                    <div class="col-lg-12">
                                         <div class="col-lg-12 text-center">
-                                            <label>Bajada</label>
+                                            <label>Titulo Noticia</label>
+                                            <input id="titulo" type="text" name="titulo" class="col-lg-12 form-control table-input">                                    
+                                        </div>
+                                        <div class="col-lg-12 text-center">
+                                            <label>Bajada Noticia</label>
                                             <input id="bajada" type="text" name="bajada" class="col-lg-12 form-control table-input">                                    
                                         </div>
+
                                     </div>
                                 </div>
-                                <br>
                                 <div class="row">
                                     <div class="col-lg-12 form-group">
                                         <div class="tiles">

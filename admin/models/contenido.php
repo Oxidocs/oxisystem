@@ -113,7 +113,11 @@ class Contenido {
 		$model->insertValues = "$secciones_id, $estados_id, '$titulo', '$descripcion', '$fecha_creacion', '$portada', '$bajada'";
 		$model->Create();
 		$idfk_contenido = $model->id;
-		echo $model->mensaje;
+		if($model->mensaje=="Guardado Exitosamente")
+		{
+			echo $idfk_contenido;
+		}
+		
 
 		// $model = new Crud();
   //       $model->insertInto    = 'path_imagenes';

@@ -1,14 +1,15 @@
 $(document).ready(function(){
-	iniciarDropzone('../../img/galeria/noticias/');
+	iniciarDropzone('../../img/galeria/tmp/');
 });
 
 $("select.image-select").on('change',function(){
-	var dir = '../../img/galeria/noticias/';
+	var dir = '../../img/galeria/tmp/';
 	var option_value = $(this).val();
 	if (option_value != 0) {
-		$('img.avatar-portada').attr('src',dir+option_value);
+		$('img.portada-noticia').attr('src',dir+option_value);
+		console.log("aca");
 	}else{
-		$('img.avatar-portada').attr('src','images/user.png');
+		$('img.portada-noticia').attr('src','images/user.png');
 	}
 });
 
