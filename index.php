@@ -57,13 +57,7 @@
 					<div class="col-lg-12">
 						<img src="img/cabeceramovil.png" class="img-responsive" alt="">
 					</div>
-  				<!-- <div class="col-xs-4 col-sm-4">
-  					<img id="logouls" src="img/ULS.png" class="img-responsive center-block" alt="escuela_periodismo">
-  				</div>
-  				<div class="col-xs-8 col-sm-8 hidden-md hidden-lg">
-  					<img src="img/logo.jpg" class="img-responsive pull-right" alt="uls">
-  				</div> -->
-  			</div>
+				</div>
   		</div>
   	</section>
 	<!-- Navegacion -->
