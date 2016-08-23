@@ -73,7 +73,7 @@
                                         <div class="col-lg-12 text-center">
                                             <label>Portada</label>
                                             
-                                                <select id="portada" name="portada" class="form-control image-select">
+                                                <select id="portada" name="portada" class="form-control image-select text-center">
                                                     <option>Selecionar Imagen</option>
                                                 </select>
                                             
