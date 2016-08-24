@@ -66,23 +66,21 @@
                             </div>
                             <div class="x_content">
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-sm-6 col-xs-12">
                                         <img src="../../img/default.png" class="img-responsive portada-noticia center-block" alt="portada" style="max-height:200px;min-height:200px">
                                     </div>
-                                    <div class="col-lg-6">
-                                        <div class="col-lg-12 text-center">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="col-xs-12 text-center">
                                             <label>Portada</label>
-                                            
                                                 <select id="portada" name="portada" class="form-control image-select text-center">
                                                     <option>Selecionar Imagen</option>
                                                 </select>
-                                            
                                         </div>
-                                        <div class="col-lg-12 text-center">
+                                        <div class="col-xs-12 text-center">
                                             <label>Titulo Noticia</label>
                                             <input id="titulo" type="text" name="titulo" class="col-lg-12 form-control table-input">                                    
                                         </div>
-                                        <div class="col-lg-12 text-center">
+                                        <div class="col-xs-12 text-center">
                                             <label>Bajada Noticia</label>
                                             <input id="bajada" type="text" name="bajada" class="col-lg-12 form-control table-input">                                    
                                         </div>

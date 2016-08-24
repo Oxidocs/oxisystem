@@ -55,7 +55,6 @@ function iniciarDropzone(url){
                             $(this).children().attr('class','fa fa-check');
                         }
                     });
-
                 }).error(function(e){
                     alert('Se ha producido un error al cargar, refresque la página para volver a intentarlo');
                 });
