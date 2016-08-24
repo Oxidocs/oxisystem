@@ -20,6 +20,12 @@
 
 	<link href="css/modern-business.css" rel="stylesheet">
 
+	<!-- databases io -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/b-1.2.2/b-colvis-1.2.2/r-2.1.0/sc-1.4.2/datatables.min.css"/>
+
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.12/b-1.2.2/b-colvis-1.2.2/r-2.1.0/sc-1.4.2/datatables.min.js"></script>
+
+
 	<!-- fuentes -->
 
 	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
