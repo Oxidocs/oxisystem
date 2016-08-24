@@ -5,6 +5,6 @@
 	extract($_POST);
 	print_r($_POST);
 	$controller = new Controllers();
-	echo $controller->createContent('', 4, 1, $titulo , $bajada, $descr, $portada , '' , '', '');
+	print_r($controller->createContent('', 4, 1, $titulo , $bajada, $descr, $portada , '' , '', ''));
 	
 ?>

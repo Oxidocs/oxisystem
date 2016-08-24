@@ -70,7 +70,6 @@ function iniciarDropzone(url){
                 url: "../controllers/upload-images.php?delete=true&dir="+url,
                 data: "filename="+name,
                 success: function(data){
-
                     var json = JSON.parse(data);
                     if(json.res == true){
                         var element;
@@ -78,10 +77,14 @@ function iniciarDropzone(url){
                         element.parentNode.removeChild(file.previewElement) : 
                         false;
                     }
-
                     $.post('../controllers/listar_archivos.php', {dir:url},function(data){
                         $('select.image-select').empty();
                         $('select.image-select').append('<option value="0"> Seleccionar Imagen </option>');
+                    }).done(function(data){
+                        var count = Object.keys(data).length;
+                        if (count==0){
+                            thisDropzone.removeAllFiles();
+                        }
                     });
                 }
             });

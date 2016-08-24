@@ -18,6 +18,7 @@ class Contenido {
 	public $portada_contenido;
 	public $subtitulo;
 	public $mensaje;
+	public $contenido_response = array();
 	public $imagenes = array();
 	public $redes_sociales = array();
 	public $links = array();
@@ -58,7 +59,7 @@ class Contenido {
 			$model->condition = "`contenido`.`SECCIONES_ID` = $id_seccion AND `contenido`.`ESTADOS_ID` = 1";
 			$model->Read();
 			$response = $model->rows;
-			//print_r($response);
+
 			foreach ($response as $content) {
 
 				$id = $content['ID']; //id obtenido de contenido para realizar las demás consultas
@@ -112,36 +113,48 @@ class Contenido {
 		$model->insertColumns = "SECCIONES_ID, ESTADOS_ID, TITULO, DESCRIPCION, FECHA_CREACION, PORTADA_CONTENIDO, SUBTITULO";
 		$model->insertValues = "$secciones_id, $estados_id, '$titulo', '$descripcion', '$fecha_creacion', '$portada', '$bajada'";
 		$model->Create();
-		$idfk_contenido = $model->id;
-		if($model->mensaje=="Guardado Exitosamente")
-		{
-			echo $idfk_contenido;
-		}
+		$contenido_response = array('idfk' => $model->id, 'mensaje' => $model->mensaje);
 		
 
 		// $model = new Crud();
-  //       $model->insertInto    = 'path_imagenes';
-  //       $model->insertColumns = 'ESTADOS_ID, PATH, TITULO, DESCRIPCION';
-  //       $model->insertValues  = '$estados_id';
-  //       $model->Create();
-  //       $idfk_path = $model->id;
+		// $model->insertInto    = 'path_imagenes';
+		// $model->insertColumns = 'ESTADOS_ID, PATH, TITULO, DESCRIPCION';
+		// $model->insertValues  = '$estados_id';
+		// $model->Create();
+		// $idfk_path = $model->id;
 
-  //       $model = new Crud();
-  //       $model->insertInto    = 'contenido_path';
-  //       $model->insertColumns = 'CON_ID, PAT_ID';
-  //       $model->insertValues  = "$idfk_contenido, $idfk_path";
-  //       $model->Create();
+		//$model = new Crud();
+		//$model->insertInto    = 'contenido_path';
+		//$model->insertColumns = 'CON_ID, PAT_ID';
+		//$model->insertValues  = "$idfk_contenido, $idfk_path";
+		//$model->Create();
+
+		return $contenido_response;
 
 	}
 
-	public static function updateContent($id, $secciones_id, $estados_id, $titulo, $descripcion, $imagenes, $redes_sociales, $link){
+	public static function updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link){
 
 		$model = new Crud();
 		$model->update = "contenido";
-		$model->set = "SECCIONES_ID = $secciones_id, ESTADOS_ID = $estados_id, TITULO = '$titulo', DESCRIPCION = '$descripcion'";
+		$model->set = "SECCIONES_ID = $secciones_id, ESTADOS_ID = $estados_id, TITULO = '$titulo', DESCRIPCION = '$descripcion', FECHA_CREACION = '$fecha_creacion', PORTADA_CONTENIDO = '$portada', SUBTITULO = '$bajada'";
 		$model->condition = "ID = $id";
 		$model->Update();
 		$mensaje = $model->mensaje;
+
+		// $model = new Crud();
+		// $model->insertInto    = 'path_imagenes';
+		// $model->insertColumns = 'ESTADOS_ID, PATH, TITULO, DESCRIPCION';
+		// $model->insertValues  = '$estados_id';
+		// $model->Create();
+		// $idfk_path = $model->id;
+
+		//$model = new Crud();
+		//$model->insertInto    = 'contenido_path';
+		//$model->insertColumns = 'CON_ID, PAT_ID';
+		//$model->insertValues  = "$idfk_contenido, $idfk_path";
+		//$model->Create();
+
 		return $mensaje;
 
 	}

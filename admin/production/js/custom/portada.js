@@ -2,23 +2,49 @@ var i = 0;
 
 $(document).ready(function(){
 	iniciarDropzone('../../img/slider-img/');
-	$.getJSON("../controllers/slider.php?action=listar", function(json) {
-
+	$.getJSON("routes/cargar_imagenes.php", function(json) {
 		cargaSelect();  
-	});	
-		 
+	});
 });
 
+var getLocation = function(href) {
+	var l = document.createElement("a");
+	l.href = href;
+	return l;
+};
+
+var getJSON = function(url, successHandler, errorHandler) {
+	var xhr = typeof XMLHttpRequest != 'undefined'
+		? new XMLHttpRequest()
+		: new ActiveXObject('Microsoft.XMLHTTP');
+	xhr.open('get', url, true);
+	xhr.onreadystatechange = function() {
+		var status;
+		var data;
+		// https://xhr.spec.whatwg.org/#dom-xmlhttprequest-readystate
+		if (xhr.readyState == 4) { // `DONE`
+			status = xhr.status;
+			if (status == 200) {
+				data = JSON.parse(xhr.responseText);
+				successHandler && successHandler(data);
+			} else {
+				errorHandler && errorHandler(status);
+			}
+		}
+	};
+	xhr.send();
+};
 
 
-//----------------------------------------------------------------------------------------------------------
+
 $("#agregar_portada").on('click',function(){	
 	agregar_filas();
 });
-//----------------------------------------------------------------------------------------------------------
+
 $("#guardar").on('click',function(){	
 	guardarCambios();
 });
+
 //----------------------------------------------------------------------------------------------------------
 function agregar_filas()
 {
@@ -114,6 +140,7 @@ function cargar_select_img(i)
 					alert('Se ha producido un error al cargar, refresque la página para volver a intentarlo');
 				});
 }
+//--------------------------------------------------------------------------------------------------------
 function cambiaImg(id)
 {
 	//console.log(id);
@@ -131,6 +158,7 @@ function cambiaImg(id)
 		$('#path'+id).val("default.png");
 	}
 }
+//--------------------------------------------------------------------------------------------------------
 function setImg()
 {
 	
@@ -138,17 +166,15 @@ function setImg()
 	$('img.avatar').attr('src','../../img/default.png');
 	
 }
+//--------------------------------------------------------------------------------------------------------
 function existeUrl(url) {
    var http = new XMLHttpRequest();
    http.open('HEAD', url, false);
    http.send();
    return http.status!=404;
 }
-var getLocation = function(href) {
-	var l = document.createElement("a");
-	l.href = href;
-	return l;
-};
+
+//--------------------------------------------------------------------------------------------------------
 function comparaCadena(cadena, palabra){
 	if (cadena.indexOf(palabra)==-1)
 	{
@@ -161,6 +187,7 @@ function comparaCadena(cadena, palabra){
 		return true;
 	}
 }
+//--------------------------------------------------------------------------------------------------------
 //selecciona un select por el value
 function SelectElement(valueToSelect,id)
 {    
@@ -169,39 +196,22 @@ function SelectElement(valueToSelect,id)
 	
 	element.value = valueToSelect;
 }
+//--------------------------------------------------------------------------------------------------------
 function SetSelect(id,value)
 {	
 	console.log(id+" "+value)
 	$('.selector'+id).val(value);
 	console.log($('.selector'+id));
 }
+//--------------------------------------------------------------------------------------------------------
 //recupera nombre de archivo
 function recuperaPath(url)
 {
 	var result = url.match(/[-_\w]+[.][\w]+$/i)[0];
 	return result;
 }
-var getJSON = function(url, successHandler, errorHandler) {
-	var xhr = typeof XMLHttpRequest != 'undefined'
-		? new XMLHttpRequest()
-		: new ActiveXObject('Microsoft.XMLHTTP');
-	xhr.open('get', url, true);
-	xhr.onreadystatechange = function() {
-		var status;
-		var data;
-		// https://xhr.spec.whatwg.org/#dom-xmlhttprequest-readystate
-		if (xhr.readyState == 4) { // `DONE`
-			status = xhr.status;
-			if (status == 200) {
-				data = JSON.parse(xhr.responseText);
-				successHandler && successHandler(data);
-			} else {
-				errorHandler && errorHandler(status);
-			}
-		}
-	};
-	xhr.send();
-};
+
+//--------------------------------------------------------------------------------------------------------
 function cargaSelect()
 {
 	$.post('../controllers/listar_archivos.php', {dir:'../../img/slider-img/'},function(data){
@@ -224,6 +234,7 @@ function cargaSelect()
 					alert('Se ha producido un error al cargar, refresque la página para volver a intentarlo');
 				});
 }
+//--------------------------------------------------------------------------------------------------------
 function cargarDatos()
 {
 	getJSON('../controllers/slider.php?action=listar', function(data) {
@@ -253,13 +264,12 @@ function cargarDatos()
 		alert('Something went wrong.');
 	});
 }
+//--------------------------------------------------------------------------------------------------------
 function guardarCambios()
 {
-
-	console.log($("#portada").serialize());
-	 $.post("../controllers/slider.php?action=guardar",$("#portada").serialize(),function(res){
-                  // Hacemos desaparecer el div "formulario" con un efecto fadeOut lento.
-               console.log(res);
-            
-   });
+	// console.log($("#portada").serialize());
+	// $.post("../controllers/slider.php?action=guardar",$("#portada").serialize(),function(res){
+	// 		// Hacemos desaparecer el div "formulario" con un efecto fadeOut lento.
+	// 		console.log(res);            
+ //   });
 }

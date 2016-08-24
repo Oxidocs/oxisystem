@@ -7,7 +7,6 @@ $("select.image-select").on('change',function(){
 	var option_value = $(this).val();
 	if (option_value != 0) {
 		$('img.portada-noticia').attr('src',dir+option_value);
-		console.log("aca");
 	}else{
 		$('img.portada-noticia').attr('src','images/user.png');
 	}
