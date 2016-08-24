@@ -20,17 +20,13 @@
 
 	<link href="css/modern-business.css" rel="stylesheet">
 
-	<!-- databases io -->
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/b-1.2.2/b-colvis-1.2.2/r-2.1.0/sc-1.4.2/datatables.min.css"/>
-
-	<script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.12/b-1.2.2/b-colvis-1.2.2/r-2.1.0/sc-1.4.2/datatables.min.js"></script>
-
 
 	<!-- fuentes -->
 
 	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
 
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 
 	<!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
 
@@ -56,7 +52,7 @@
         <h2>Artículos de Académicos</h2>
 				<div class="col-md-12">
 					<div class="table-responsive">
-						<table class="table-descargas table table-bordered table-striped table-hover">
+						<table id="example" class="table-descargas table table-bordered table-striped table-hover display">
 							<tr>
 								<th>
 									Titulo
@@ -101,6 +97,7 @@
       </div>
     </div>
   </section>
+
 	<section class="seminarios-investigacion">
 		<div class="container">
 			<div class="row">
@@ -154,13 +151,16 @@
   <!-- Bootstrap Core JavaScript -->
   <script src="js/bootstrap.min.js"></script>
 
-  <!-- Script to Activate the Carousel -->
-  <script>
-    $('.carousel').carousel({
-      interval: 5000 //changes the speed
-    })
-  </script>
+	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 
-  </body>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs-3.3.6/dt-1.10.12/b-1.2.2/r-2.1.0/datatables.min.js"></script>
+
+	<script type="text/javascript">
+	(document).ready(function() {
+	$('#example').DataTable();
+	} );
+	</script>
+
+</body>
 
   </html>
