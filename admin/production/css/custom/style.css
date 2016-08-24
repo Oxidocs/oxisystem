@@ -11,4 +11,8 @@ img.avatar{
     text-align: center !important;
     vertical-align: middle !important;
 }
+.thumbnail {
+    height: auto !important;
+    overflow: hidden !important;
+}
 
