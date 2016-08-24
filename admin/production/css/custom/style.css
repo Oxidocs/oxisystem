@@ -15,4 +15,7 @@ img.avatar{
     height: auto !important;
     overflow: hidden !important;
 }
+a{
+	cursor:pointer !important;
+}
 
