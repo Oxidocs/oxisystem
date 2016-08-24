@@ -1,4 +1,8 @@
-<?php include 'admin/routes/hilo_noticia.php'; ?>
+<?php
+$domain = $_SERVER['HTTP_HOST'];
+$json = file_get_contents('http://'.$domain.'/oxisystem/admin/routes/hilo_noticia.php');
+$objs = json_decode($json);
+ ?>
 <div class="hilonoticias">
 						<h4 class="col-lg-3 col-md-3 col-xs-12">NOTICIAS</h4>
 						<!-- First Blog Post -->

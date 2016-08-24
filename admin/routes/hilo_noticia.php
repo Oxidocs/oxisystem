@@ -1,5 +1,6 @@
 <?php
-$domain = $_SERVER['HTTP_HOST'];
-$json = file_get_contents('http://'.$domain.'/oxisystem/admin/controllers/slider.php?action=listaractivas');
-$objs = json_decode($json);
+include('../controllers/all_controllers.php');
+
+	$controller = new Controllers();
+	echo json_encode(($controller->getContentNoticia('', 4, '', '', '5', 'fecha_creacion','desc')));
 ?>

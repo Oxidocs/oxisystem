@@ -39,11 +39,22 @@ class Contenido {
 		$this->links = $links;
 	}
 	
-	public static function getContent($id, $id_seccion, $limit_desde, $limit_hasta) {
+	public static function getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit, $order_by, $desc) {
 
 		if ($id!="") {
 			$id = "`contenido`.`ID` = $id and";
 		}
+		if ($order_by!="") {
+			$order_by = "ORDER BY $order_by ";
+		}
+		if ($desc!="") {
+			$desc = "DESC ";
+		}
+		if ($limit!="") {
+			$limit = "LIMIT $limit";
+		}
+		$filtro = $order_by.$desc.$limit;
+		//echo $filtro;
 
 		$content_list = array();
 		
@@ -60,7 +71,7 @@ class Contenido {
 							`contenido`.`PORTADA_CONTENIDO`,
 							`contenido`.`SUBTITULO`";
 			$model->from = "`contenido`";
-			$model->condition = "$id `contenido`.`SECCIONES_ID` = $id_seccion AND `contenido`.`ESTADOS_ID` = 1";
+			$model->condition = "$id `contenido`.`SECCIONES_ID` = $id_seccion AND `contenido`.`ESTADOS_ID` = 1 $filtro";
 			$model->Read();
 			$response = $model->rows;
 

@@ -5,15 +5,23 @@
 
 	class Controllers {
 
-		public function getContent($id, $id_seccion, $limit_desde, $limit_hasta) {
+		public function getContent($id, $id_seccion, $limit_desde, $limit_hasta,$limit, $order_by, $desc) {
 
 			if (is_numeric($id)) {
-				$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta);
+				$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit, $order_by, $desc);
 				return $content_list;
 			}else{
 				header('Location: ../../index.php');
 				exit;
 			}
+			
+		}
+		public function getContentNoticia($id, $id_seccion, $limit_desde, $limit_hasta,$limit, $order_by, $desc) {
+
+			
+				$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit, $order_by, $desc);
+				return $content_list;
+			
 			
 		}
 		public function createContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $imagenes , $redes_sociales, $link){
