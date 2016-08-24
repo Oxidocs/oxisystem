@@ -2,9 +2,10 @@ var i = 0;
 
 $(document).ready(function(){
 	iniciarDropzone('../../img/slider-img/');
-	$.getJSON("routes/cargar_imagenes.php", function(json) {
+	/*$.getJSON("routes/cargar_imagenes.php", function(json) {
 		cargaSelect();  
-	});
+	});*/
+	cargaSelect();
 });
 
 var getLocation = function(href) {
@@ -267,9 +268,8 @@ function cargarDatos()
 //--------------------------------------------------------------------------------------------------------
 function guardarCambios()
 {
-	// console.log($("#portada").serialize());
-	// $.post("../controllers/slider.php?action=guardar",$("#portada").serialize(),function(res){
-	// 		// Hacemos desaparecer el div "formulario" con un efecto fadeOut lento.
-	// 		console.log(res);            
- //   });
+console.log($("#portada").serialize());
+$.post("../controllers/slider.php?action=guardar",$("#portada").serialize(),function(res){ 	
+	console.log(res);	// Hacemos desaparecer el div "formulario" con un efecto fadeOut lento. 		console.log(res);            
+  });
 }

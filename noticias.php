@@ -60,7 +60,7 @@
                       <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
                   </a>
                   <h3>
-                      <a href="single-noticias.html">Investigación de Académicas de Periodismo es Publicado por Sitio SciELO</a>
+                      <a href="single-noticias.php">Investigación de Académicas de Periodismo es Publicado por Sitio SciELO</a>
                   </h3>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
               </div>
@@ -69,7 +69,7 @@
                       <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
                   </a>
                   <h3>
-                      <a href="single-noticias.html">Titular Noticia</a>
+                      <a href="single-noticias.php">Titular Noticia</a>
                   </h3>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
               </div>
@@ -78,7 +78,7 @@
                       <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
                   </a>
                   <h3>
-                      <a href="seccion-noticias.html">Titular Noticia</a>
+                      <a href="single-noticias.php">Titular Noticia</a>
                   </h3>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
               </div>

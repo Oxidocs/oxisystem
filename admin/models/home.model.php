@@ -11,21 +11,25 @@ class SliderModel
         {
             $model = new Crud();
 			$model->select="*";
-    		$model->from = "`slide_portada.v` ORDER BY PATH_ID";
+    		$model->from = "`slide_portada.v`";
             $model->condition = '`CONTENIDO_ID`=1 ORDER BY PATH_ID';
     		$model->Read();
             $fila = $model->rows; 
 	 		
-            //$total = count($filas);
-            foreach($fila as $filas)
+            $total = count($fila);
+            if($total > 0)
             {
-                $slider = new SliderHome();
-                $slider->setSliderHome('ID', $filas[2]);
-                $slider->setSliderHome('ESTADOS_ID', $filas[3]);
-                $slider->setSliderHome('PATH', $filas[4]);
-                $slider->setSliderHome('TITULO', $filas[5]);
-                $slider->setSliderHome('DESCRIPCION', $filas[6]);
-                $result[] = $slider;
+                foreach($fila as $filas)
+                {
+                    $slider = new SliderHome();
+                    $slider->setSliderHome('ID', $filas[2]);
+                    $slider->setSliderHome('ESTADOS_ID', $filas[3]);
+                    $slider->setSliderHome('PATH', $filas[4]);
+                    $slider->setSliderHome('TITULO', $filas[5]);
+                    $slider->setSliderHome('DESCRIPCION', $filas[6]);
+                    $result[] = $slider;
+                }
+
             }
 
 
