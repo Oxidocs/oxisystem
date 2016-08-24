@@ -169,26 +169,7 @@
                                 </ul>
                                 <div class="clearfix"></div>
                             </div>
-                            <div class="x_content">
-                                <div class="col-md-55">
-                                    <div class="thumbnail">
-                                        <div class="image view view-first">
-                                            <img src="../../img/ps-img/20160801_115852.jpg" alt="image" class="img-responsive center-block" />
-                                            <div class="mask">
-                                                <p>Your Text</p>
-                                                <div class="tools tools-bottom">
-                                                    <a href="#"><i class="fa fa-link"></i></a>
-                                                    <a href="#"><i class="fa fa-pencil"></i></a>
-                                                    <a href="#"><i class="fa fa-times"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="caption text-center">
-                                            <p>Nombre Imagen</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                            
+                            <div id="galeria" class="x_content"></div>                            
                         </div>
                         <button id="btnSave" type="submit" class="btn btn-success pull-right"> Publicar Noticia </button>
                         <button type="submit" class="btn btn-default pull-right"> Dejar como Borrador </button>

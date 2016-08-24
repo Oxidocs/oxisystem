@@ -5,7 +5,7 @@
 	extract($_POST);
 	$controller = new Controllers();
 	if (isset($id)) {
-		echo $controller->createContent($id, $section_id, 1, '' , $data, '' , '' , '');
+		echo $controller->createContent($id, $section_id, 1, '', '', $data, '', '', '', '');
 	}else{
 		echo json_encode([$controller->getContent(2),$controller->getContent(3)]);
 	}

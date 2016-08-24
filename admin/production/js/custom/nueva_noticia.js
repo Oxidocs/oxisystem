@@ -21,5 +21,4 @@ $('form').on('submit',function(e){
 	$.post('../routes/noticias.php',$(this).serialize(),function(data){
 		console.log(data);
 	});
-
 });

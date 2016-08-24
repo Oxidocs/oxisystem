@@ -23,6 +23,42 @@ function iniciarDropzone(url){
                 },'json').error(function(e){
                     alert('Se ha producido un error al cargar, refresque la página para volver a intentarlo');
                 });
+
+                $.post('../controllers/upload-images.php?dir='+url, {dir:'dir_galeria'},function(data){
+                    //console.log(url);
+                    
+                    $.each(data,function(index,value){
+                        var img_galeria = "";
+                        img_galeria += '<div class="col-md-55">';
+                        img_galeria += '<div class="thumbnail form-control">';
+                        img_galeria += '<div class="image view view-first">';
+                        img_galeria += '<img src="../../img/galeria/tmp/'+value.name+'" alt="image" class="img-responsive center-block" />';
+                        img_galeria += '<div class="mask">';
+                        img_galeria += '<p>Your Text</p>';
+                        img_galeria += '<div class="tools tools-bottom">';
+                        img_galeria += '<a class="check_img"><i class="fa fa-check"></i></a>';
+                        img_galeria += '</div>';
+                        img_galeria += '</div>';
+                        img_galeria += '</div>';
+                        img_galeria += '</div>';
+                        img_galeria += '</div>';
+                        $('#galeria').append(img_galeria);
+
+                    });
+                },'json').done(function(){
+                    $('.check_img').on('click',function(){
+                        if ($(this).parent().parent().parent().parent().parent().attr('class').indexOf('success') == -1) {
+                            $(this).parent().parent().parent().parent().parent().addClass('has-success');
+                            $(this).children().attr('class','fa fa-times');
+                        }else{
+                            $(this).parent().parent().parent().parent().parent().removeClass('has-success');
+                            $(this).children().attr('class','fa fa-check');
+                        }
+                    });
+
+                }).error(function(e){
+                    alert('Se ha producido un error al cargar, refresque la página para volver a intentarlo');
+                });
             });
         },
         url: "../controllers/upload-images.php?dir="+url,
@@ -41,6 +77,26 @@ function iniciarDropzone(url){
                     $('select.image-select').append('<option value="0"> Seleccionar Imagen </option>');
                     $.each(data,function(index,value){
                         $('select.image-select').append(value);
+                        console.log(value);
+                        var img_galeria = "";
+                        img_galeria += '<div class="col-md-55">';
+                        img_galeria += '<div class="thumbnail form-control">';
+                        img_galeria += '<div class="image view view-first">';
+                        img_galeria += '<img src="../../img/ps-img/20160801_115852.jpg" alt="image" class="img-responsive center-block" />';
+                        img_galeria += '<div class="mask">';
+                        img_galeria += '<p>Your Text</p>';
+                        img_galeria += '<div class="tools tools-bottom">';
+                        img_galeria += '<a class="check_img"><i class="fa fa-check"></i></a>';
+                        img_galeria += '<a href="#"><i class="fa fa-pencil"></i></a>';
+                        img_galeria += '<a href="#"><i class="fa fa-times"></i></a>';
+                        img_galeria += '</div>';
+                        img_galeria += '</div>';
+                        img_galeria += '</div>';
+                        img_galeria += '<div class="caption text-center">';
+                        img_galeria += '<p>Nombre Imagen</p>';
+                        img_galeria += '</div>';
+                        img_galeria += '</div>';
+                        img_galeria += '</div>';
                     });
                 },'json').error(function(e){
                 alert('Se ha producido un error al cargar, refresque la página para volver a intentarlo');
