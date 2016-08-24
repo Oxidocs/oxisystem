@@ -61,6 +61,9 @@ p{
 .navbar-inverse .navbar-toggle { border-color: #466189 !important}
 .navbar-inverse .navbar-toggle { border-radius: 0px !important}
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {background-color: #19344E !important}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border:none ;
+	}
 
 
 
@@ -381,7 +384,7 @@ footer{
 
 .descargas h2{
 	padding: 20px;
-	border-bottom: 1px solid #d4d4d4
+
 }
 
 .descarga a{
@@ -393,7 +396,7 @@ footer{
 }
 
 .table-descargas th{
-	background-color: #4bb609;
+	background-color: #78b800;
 	color: #f5f5f5
 }
 
@@ -409,6 +412,7 @@ footer{
 .seminarios-investigacion h2{
 	color: #f5f5f5;
 	padding: 20px;
+
 }
 
 .tabla-seminarios a{
@@ -508,6 +512,8 @@ footer{
 		padding: 5px;
 
 	}
+
+
 
 
 

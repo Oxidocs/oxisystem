@@ -101,8 +101,12 @@
 	<section class="seminarios-investigacion">
 		<div class="container">
 			<div class="row">
-				<h2 class="text-right">Seminarios de Investigación</h2>
-				<div class="col-md-12">
+				<div class="pull-right">
+					<h2 class="text-right">Seminarios de Investigación</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-md-12">
 					<div class="table-responsive">
 						<table class="tabla-seminarios table table-striped">
 							<tr>
@@ -155,11 +159,13 @@
 
 	<script type="text/javascript" src="https://cdn.datatables.net/v/bs-3.3.6/dt-1.10.12/b-1.2.2/r-2.1.0/datatables.min.js"></script>
 
-	<script type="text/javascript">
+	<!-- para inicializar datable i/o -->
+
+	<!-- <script type="text/javascript">
 	(document).ready(function() {
 	$('#example').DataTable();
 	} );
-	</script>
+	</script> -->
 
 </body>
 
