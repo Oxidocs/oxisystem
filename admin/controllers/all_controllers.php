@@ -19,12 +19,9 @@
 			if ($id == '') {
 				$mensaje_insert = Contenido::createContent($secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_actual, $imagenes, $redes_sociales, $link);
 				if ($mensaje_insert['idfk'] > 0) {
-
 					$id = $mensaje_insert['idfk'];
-					$this->createFolder($id,$portada);
-
+					$this->createFolder($id,$portada,$imagenes);
 					return $mensaje_insert['mensaje'];
-
 				}else{
 					return $mensaje_insert['idfk'];
 				}
@@ -37,15 +34,25 @@
 			}
 		}
 
-		private function createFolder($id, $portada){
+		private function createFolder($id, $portada, $imagenes){
 
 			if (!file_exists("../../img/galeria/noticias/".$id)) {
 				mkdir("../../img/galeria/noticias/".$id, 0777);
 			}
 
-			if (copy("../../img/galeria/tmp/".$portada, "../../img/galeria/noticias/".$id."/".$portada)) {
-			    unlink("../../img/galeria/tmp/".$portada);
+			if (file_exists("../../img/galeria/tmp/".$portada)) {
+				if (copy("../../img/galeria/tmp/".$portada, "../../img/galeria/noticias/".$id."/".$portada)) {
+					unlink("../../img/galeria/tmp/".$portada);
+				}
 			}
+			if ($imagenes!="") {
+				foreach ($imagenes as $imagen) {
+					if (copy("../../img/galeria/tmp/".$imagen['path'], "../../img/galeria/noticias/".$id."/".$imagen['path'])) {
+							unlink("../../img/galeria/tmp/".$imagen['path']);
+						}
+				}
+			}
+
 		}
 	}
 ?>

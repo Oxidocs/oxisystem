@@ -113,21 +113,25 @@ class Contenido {
 		$model->insertColumns = "SECCIONES_ID, ESTADOS_ID, TITULO, DESCRIPCION, FECHA_CREACION, PORTADA_CONTENIDO, SUBTITULO";
 		$model->insertValues = "$secciones_id, $estados_id, '$titulo', '$descripcion', '$fecha_creacion', '$portada', '$bajada'";
 		$model->Create();
+		$idfk_contenido = $model->id;
 		$contenido_response = array('idfk' => $model->id, 'mensaje' => $model->mensaje);
 		
+		if ($imagenes != "") {
+			foreach ($imagenes as $imagen) {
+				$model = new Crud();
+				$model->insertInto    = 'path_imagenes';
+				$model->insertColumns = 'ESTADOS_ID, PATH, TITULO, DESCRIPCION';
+				$model->insertValues  = "$estados_id, '".$imagen['path']."','',''";
+				$model->Create();
+				$idfk_path = $model->id;
 
-		// $model = new Crud();
-		// $model->insertInto    = 'path_imagenes';
-		// $model->insertColumns = 'ESTADOS_ID, PATH, TITULO, DESCRIPCION';
-		// $model->insertValues  = '$estados_id';
-		// $model->Create();
-		// $idfk_path = $model->id;
-
-		//$model = new Crud();
-		//$model->insertInto    = 'contenido_path';
-		//$model->insertColumns = 'CON_ID, PAT_ID';
-		//$model->insertValues  = "$idfk_contenido, $idfk_path";
-		//$model->Create();
+				$model = new Crud();
+				$model->insertInto    = 'contenido_path';
+				$model->insertColumns = 'CON_ID, PAT_ID';
+				$model->insertValues  = "$idfk_contenido, $idfk_path";
+				$model->Create();
+			}
+		}	
 
 		return $contenido_response;
 

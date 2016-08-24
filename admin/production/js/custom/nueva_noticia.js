@@ -20,7 +20,7 @@ $('form').on('submit',function(e){
 
 	$.each($('#galeria').children(),function(i,val){
 		if (val.className.indexOf('success') != -1) {
-			array_galeria .push(recuperaPath(val.children[0].children[0].children[0].src));
+			array_galeria.push({'path':recuperaPath(val.children[0].children[0].children[0].src)});
 		}
 	});
 
