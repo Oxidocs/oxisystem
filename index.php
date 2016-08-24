@@ -159,6 +159,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
 
 	<!-- Script to Activate the Carousel -->
 	<script>

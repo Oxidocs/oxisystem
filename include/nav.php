@@ -1,5 +1,5 @@
 <!-- Navegacion -->
-<nav class="navbar navbar-inverse" role="navigation">
+<nav  class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -13,8 +13,8 @@
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active">
+      <ul id="nav"  class="nav navbar-nav navbar-right">
+        <li >
           <a href="index.php">Home</a>
         </li>
         <li class="dropdown">
@@ -35,7 +35,7 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Carrera <b class="caret"></b></a>
+          <a href="perfil.php" class="dropdown-toggle" data-toggle="dropdown">Carrera <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li>
               <a href="perfil.php">Perfil</a>
@@ -52,7 +52,7 @@
           <a href="noticias.php">Noticias</a>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Publicaciones <b class="caret"></b></a>
+          <a href="publicaciones.php" class="dropdown-toggle" data-toggle="dropdown">Publicaciones <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li>
               <a href="publicaciones.php">Artículos de Académicos</a>

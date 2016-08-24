@@ -12,6 +12,7 @@ class SliderModel
             $model = new Crud();
 			$model->select="*";
     		$model->from = "`slide_portada.v` ORDER BY PATH_ID";
+            $model->condition = '`CONTENIDO_ID`=1 ORDER BY PATH_ID';
     		$model->Read();
             $fila = $model->rows; 
 	 		
@@ -43,7 +44,7 @@ class SliderModel
             $model = new Crud();
             $model->select="*";
             $model->from = "`slide_portada.v`";
-            $model->condition = '`ESTADO_PATH`=1 ORDER BY PATH_ID';
+            $model->condition = '`ESTADO_PATH`=1 and `CONTENIDO_ID`=1 ORDER BY PATH_ID';
             $model->Read();
             $fila = $model->rows; 
             
