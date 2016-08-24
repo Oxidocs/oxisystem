@@ -6,7 +6,7 @@ if (isset($_GET['dir'])) {
 
 function uploadImages($url){
 
-	$ds = DIRECTORY_SEPARATOR; 
+	$ds = DIRECTORY_SEPARATOR;
 	 
 	if (!empty($_FILES)) {
 
