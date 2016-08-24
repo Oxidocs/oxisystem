@@ -1,3 +1,4 @@
+var array_galeria = [];
 $(document).ready(function(){
 	iniciarDropzone('../../img/galeria/tmp/');
 });
@@ -17,8 +18,22 @@ $('form').on('submit',function(e){
 
 	$("#descr").val($("#editor").html().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'));
 
+	$.each($('#galeria').children(),function(i,val){
+		if (val.className.indexOf('success') != -1) {
+			array_galeria .push(recuperaPath(val.children[0].children[0].children[0].src));
+		}
+	});
 
-	$.post('../routes/noticias.php',$(this).serialize(),function(data){
+	options = $(this).serialize() + '&' + $.param({'galeria':array_galeria});
+
+	$.post('../routes/noticias.php',options,function(data){
 		console.log(data);
 	});
+
 });
+
+//recupera nombre de archivo ---------------------------------------------------------------------------------
+function recuperaPath(url) {
+	var result = url.match(/[-_\w]+[.][\w]+$/i)[0];
+	return result;
+}

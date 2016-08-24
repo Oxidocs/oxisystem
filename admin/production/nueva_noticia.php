@@ -84,7 +84,6 @@
                                             <label>Bajada Noticia</label>
                                             <input id="bajada" type="text" name="bajada" class="col-lg-12 form-control table-input">                                    
                                         </div>
-
                                     </div>
                                 </div>
                                 <div class="row">
@@ -158,7 +157,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="x_panel cargar_galeria">
                             <div class="x_title">
                                 <h2>Galería de Imágenes</h2>
