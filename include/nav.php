@@ -9,28 +9,28 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <!--                <a class="navbar-brand" href="index.html">Start Bootstrap</a>-->
+      <!--                <a class="navbar-brand" href="index.php">Start Bootstrap</a>-->
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="active">
-          <a href="index.html">Home</a>
+          <a href="index.php">Home</a>
         </li>
         <li class="dropdown">
-          <a href="escuela.html" class="dropdown-toggle" data-toggle="dropdown">Escuela <b class="caret"></b></a>
+          <a href="escuela.php" class="dropdown-toggle" data-toggle="dropdown">Escuela <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li>
-              <a href="escuela.html">Misión</a>
+              <a href="escuela.php">Misión</a>
             </li>
             <li>
-              <a href="escuela.html">Visión</a>
+              <a href="escuela.php">Visión</a>
             </li>
             <li>
-              <a href="escuela.html">Normativas</a>
+              <a href="escuela.php">Normativas</a>
             </li>
             <li>
-              <a href="escuela.html">Pautas de investigación y exámenes</a>
+              <a href="escuela.php">Pautas de investigación y exámenes</a>
             </li>
           </ul>
         </li>
@@ -38,7 +38,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Carrera <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li>
-              <a href="perfil.html">Perfil</a>
+              <a href="perfil.php">Perfil</a>
             </li>
             <li>
               <a href="#">Admisión</a>
@@ -46,19 +46,19 @@
           </ul>
         </li>
         <li>
-          <a href="docentes.html">Cuerpo Docente</a>
+          <a href="docentes.php">Cuerpo Docente</a>
         </li>
         <li>
-          <a href="noticias.html">Noticias</a>
+          <a href="noticias.php">Noticias</a>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Publicaciones <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li>
-              <a href="publicaciones.html">Artículos de Académicos</a>
+              <a href="publicaciones.php">Artículos de Académicos</a>
             </li>
             <li>
-              <a href="publicaciones.html">Seminarios de Investigación</a>
+              <a href="publicaciones.php">Seminarios de Investigación</a>
             </li>
           </ul>
         </li>

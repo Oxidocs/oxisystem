@@ -378,6 +378,59 @@ footer{
 	font-weight: bolder;
 
 }
+
+.descargas h2{
+	padding: 20px;
+	border-bottom: 1px solid #d4d4d4
+}
+
+.descarga a{
+	color: #5b9e06
+}
+
+.descarga a:hover{
+	color: #3e6a05
+}
+
+.table-descargas th{
+	background-color: #4bb609;
+	color: #f5f5f5
+}
+
+.enlace-titulo a{
+	text-decoration: none;
+	color: #000000;
+}
+
+.seminarios-investigacion{
+	background-color: #0b80ec
+}
+
+.seminarios-investigacion h2{
+	color: #f5f5f5;
+	padding: 20px;
+}
+
+.tabla-seminarios a{
+	text-decoration: none;
+	color: #0b80ec
+}
+
+
+.tabla-seminarios th{
+	color: #ffffff;
+	background-color: #06569f;
+	border-top: #0b80ec !important;
+	border-left: 4px solid #0b80ec !important;
+}
+
+
+.tabla-seminarios td{
+	background-color: #f5f5f5;
+	border-top:2px solid #0b80ec !important;
+	border-left: 4px solid #0b80ec !important;
+}
+
 /*media queries*/
 
 @media(max-width:768px) {

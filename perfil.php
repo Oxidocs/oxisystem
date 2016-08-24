@@ -40,103 +40,10 @@
 </head>
 
 <body>
-	<!--	cabecera con logos-->
-	<section class="hidden-xs hidden-sm logos">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<img src="img/cabecerafull.png" class="img-responsive" alt="escuela_periodismo_uls">
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--	cabecera con logos para movil-->
-  	<section class="hidden-md hidden-lg logosmovil">
-  		<div class="container">
-  			<div class="row">
-					<div class="col-lg-12">
-						<img src="img/cabeceramovil.png" class="img-responsive" alt="">
-					</div>
-  				<!-- <div class="col-xs-4 col-sm-4">
-  					<img id="logouls" src="img/ULS.png" class="img-responsive center-block" alt="escuela_periodismo">
-  				</div>
-  				<div class="col-xs-8 col-sm-8 hidden-md hidden-lg">
-  					<img src="img/logo.jpg" class="img-responsive pull-right" alt="uls">
-  				</div> -->
-  			</div>
-  		</div>
-  	</section>
-	<!-- Navegacion -->
-	<nav class="navbar navbar-inverse" role="navigation">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<!--                <a class="navbar-brand" href="index.html">Start Bootstrap</a>-->
-			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<a href="index.html">Home</a>
-					</li>
-					<li class="dropdown">
-						<a href="escuela.html" class="dropdown-toggle" data-toggle="dropdown">Escuela <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="escuela.html">Misión</a>
-							</li>
-							<li>
-								<a href="escuela.html">Visión</a>
-							</li>
-							<li>
-								<a href="escuela.html">Normativas</a>
-							</li>
-							<li>
-								<a href="escuela.html">Pautas de investigación y exámenes</a>
-							</li>
-						</ul>
-					</li>
-					<li class="active dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Carrera <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="perfil.html">Perfil</a>
-							</li>
-							<li>
-								<a href="#">Admisión</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="docentes.html">Cuerpo Docente</a>
-					</li>
-					<li>
-						<a href="noticias.html">Noticias</a>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Publicaciones <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="publicaciones.html">Artículos de Académicos</a>
-							</li>
-							<li>
-								<a href="publicaciones.html">Seminarios de Investigación</a>
-							</li>
-						</ul>
-					</li>
-
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-		<!-- /.container -->
-	</nav>
+	<?php
+	include 'include/header.php';
+	include 'include/nav.php';
+	?>
   <!-- contenidos -->
   <section class="perfil">
     <div class="container">
@@ -184,7 +91,7 @@
       	<div class="row">
 					<div class="col-md-4">
 						<div class="table-responsive tabla_ingreso ">
-							<table class="table table-striped">
+							<table class="table table-striped table">
 								<tr>
 									<td class="dato">PSU Lenguaje y Comunicación</td>
 									<td>30%</td>
@@ -225,26 +132,7 @@
 
 
   <!-- fin contenidos -->
-	<!-- Footer -->
-	<footer class="logosydatos">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<img src="img/logoweb.png" alt="" class="img-responsive pull-left">
-				</div>
-				<div class="col-lg-6">
-					<address class="pull-right">
-						<strong>Escuela de Periodismo Universidad de La Serena</strong><br>
-						Campus Andrés Bello, Avenida Raúl Bitrán Nachary S/N<br>
-						La Serena, Chile<br>
-						<abbr title="Télefono"></abbr> +56 (51) 2204352<br>
-						<a href="mailto:#">eperiodismo@userena.cl</a>
-					</address>
-				</div>
-			</div>
-		</div>
-	</footer>
-			<!-- /.container -->
+<?php include 'include/footer.php'; ?>
 
 	<!-- jQuery -->
 	<script src="js/jquery.js"></script>
