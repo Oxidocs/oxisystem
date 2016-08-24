@@ -4,9 +4,9 @@ $(function(){
 			
 		    $('#nav li a').each(function(){
 		        var $this = $(this);
-		        console.log(current);
+		        //console.log(current);
 		        current = recuperaPath(current);
-		        console.log(current);
+		        //console.log(current);
 		        // if the current path is like this link, make it active
 		        if (current == " ") 
 		        {
