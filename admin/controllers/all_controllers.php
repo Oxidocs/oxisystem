@@ -7,10 +7,14 @@
 
 		public function getContent($id, $id_seccion, $limit_desde, $limit_hasta) {
 
-
-			$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta);
-
-			return $content_list;
+			if (is_numeric($id)) {
+				$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta);
+				return $content_list;
+			}else{
+				header('Location: ../../index.php');
+				exit;
+			}
+			
 		}
 		public function createContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $imagenes , $redes_sociales, $link){
 
