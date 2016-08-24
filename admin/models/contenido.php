@@ -39,7 +39,11 @@ class Contenido {
 		$this->links = $links;
 	}
 	
-	public static function getContent($id_seccion) {
+	public static function getContent($id, $id_seccion, $limit_desde, $limit_hasta) {
+
+		if ($id!="") {
+			$id = "`contenido`.`ID` = $id and";
+		}
 
 		$content_list = array();
 		
@@ -56,7 +60,7 @@ class Contenido {
 							`contenido`.`PORTADA_CONTENIDO`,
 							`contenido`.`SUBTITULO`";
 			$model->from = "`contenido`";
-			$model->condition = "`contenido`.`SECCIONES_ID` = $id_seccion AND `contenido`.`ESTADOS_ID` = 1";
+			$model->condition = "$id `contenido`.`SECCIONES_ID` = $id_seccion AND `contenido`.`ESTADOS_ID` = 1";
 			$model->Read();
 			$response = $model->rows;
 

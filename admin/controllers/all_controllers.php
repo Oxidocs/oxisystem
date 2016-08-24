@@ -5,10 +5,10 @@
 
 	class Controllers {
 
-		public function getContent($id_section) {
+		public function getContent($id, $id_seccion, $limit_desde, $limit_hasta) {
 
 
-			$content_list = Contenido::getContent($id_section);
+			$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta);
 
 			return $content_list;
 		}
