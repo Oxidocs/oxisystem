@@ -1,12 +1,26 @@
-<?php include ('admin/routes/article.php'); ?>
+<?php
+
+  if ($_REQUEST['id'] && is_numeric($_REQUEST['id'])) {
+    
+    $id = $_REQUEST['id'];
+
+    $domain = $_SERVER['HTTP_HOST'];
+    $articles = file_get_contents('http://'.$domain.'/oxisystem/admin/routes/article.php?id='.$id);
+    $articles = json_decode($articles);
+
+  }else{
+    header('Location: index.php');
+  }
+  
+?>
 <!-- contenido -->
 <article class="single-noticia">
     <div class="container">
       <div class="row">
         <div class="col-md-9 single">
-          <h2>titulo</h2>
-          <p class="fecha"><i class="fa fa-clock-o" aria-hidden="true"></i> fecha de publicación </p>
-          <img src="http://placehold.it/1200x720" alt="" class="img-responsive center-block">
+          <h2><?php echo $articles[0]->titulo; ?></h2>
+          <p class="fecha"><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo 'Publicado el : '.$articles[0]->fecha_creacion; ?></p>
+            <img src='<?php echo "img/galeria/noticias/".$id."/".$articles[0]->portada_contenido; ?>' alt="" class="img-responsive center-block">
           <div class="row sharing">
             <div class="col-md-4 compartir">
 							<small class="comp">COMPARTIR:</small>
@@ -28,7 +42,10 @@
               </div>
             </div>
 					</div>
-          descripcion
+
+          <?php 
+            echo html_entity_decode($articles[0]->descripcion)       
+          ?>
         </div>
         <div class="redessociales pull-left hidden-xs hidden-sm col-md-3">
 
