@@ -5,11 +5,9 @@
     $id = $_REQUEST['id'];
 
     $domain = $_SERVER['HTTP_HOST'];
-    $articles = file_get_contents('http://'.$domain.'/oxisystem/admin/routes/article.php?id='.$id);
+    $articles = file_get_contents('http://'.$domain.'/uls/admin/routes/article.php?id='.$id);
     $articles = json_decode($articles);
 
-  }else{
-    header('Location: index.php');
   }
   
 ?>

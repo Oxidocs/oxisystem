@@ -271,5 +271,9 @@ function guardarCambios()
 console.log($("#portada").serialize());
 $.post("../controllers/slider.php?action=guardar",$("#portada").serialize(),function(res){ 	
 	console.log(res);	// Hacemos desaparecer el div "formulario" con un efecto fadeOut lento. 		console.log(res);            
-  });
+  }).done(function(data){
+
+  	location.reload(true);
+                        
+                    });
 }

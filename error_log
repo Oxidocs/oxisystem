@@ -1,0 +1,26 @@
+[24-Aug-2016 10:23:36 UTC] PHP Warning:  file_get_contents(http://oxidocs.com/oxisystem/admin/controllers/slider.php?action=listaractivas): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/oxidocs/public_html/uls/admin/routes/contenido_slider.php on line 3
+[24-Aug-2016 10:23:36 UTC] PHP Warning:  file_get_contents(http://oxidocs.com/oxisystem/admin/routes/hilo_noticia.php): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 3
+[24-Aug-2016 10:24:05 UTC] PHP Warning:  file_get_contents(http://oxidocs.com/oxisystem/admin/routes/article.php?id=70): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/oxidocs/public_html/uls/include/article.php on line 8
+[24-Aug-2016 10:27:39 UTC] PHP Warning:  file_get_contents(http://oxidocs.com/oxisystem/admin/controllers/slider.php?action=listaractivas): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/oxidocs/public_html/uls/admin/routes/contenido_slider.php on line 3
+[24-Aug-2016 10:27:39 UTC] PHP Warning:  file_get_contents(http://oxidocs.com/oxisystem/admin/routes/hilo_noticia.php): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 3
+[24-Aug-2016 10:28:03 UTC] PHP Warning:  file_get_contents(http://oxidocs.com/oxisystem/admin/controllers/slider.php?action=listaractivas): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/oxidocs/public_html/uls/admin/routes/contenido_slider.php on line 3
+[24-Aug-2016 11:08:13 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 56
+[24-Aug-2016 11:08:48 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 56
+[24-Aug-2016 11:08:51 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 56
+[24-Aug-2016 11:08:53 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 56
+[24-Aug-2016 11:12:50 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 56
+[24-Aug-2016 11:17:47 UTC] PHP Parse error:  syntax error, unexpected '$obj' (T_VARIABLE), expecting ',' or ';' in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 16
+[24-Aug-2016 11:18:07 UTC] PHP Parse error:  syntax error, unexpected '$obj' (T_VARIABLE), expecting ',' or ';' in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 16
+[24-Aug-2016 11:18:09 UTC] PHP Parse error:  syntax error, unexpected '$obj' (T_VARIABLE), expecting ',' or ';' in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 16
+[24-Aug-2016 12:30:15 UTC] PHP Warning:  date_format() expects parameter 1 to be DateTime, null given in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 21
+[24-Aug-2016 12:30:15 UTC] PHP Warning:  date_format() expects parameter 1 to be DateTime, null given in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 21
+[24-Aug-2016 12:32:57 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 21
+[24-Aug-2016 12:34:14 UTC] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 21
+[24-Aug-2016 12:34:14 UTC] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 21
+[24-Aug-2016 12:37:19 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/oxidocs/public_html/uls/include/hilo_noticia.php on line 21

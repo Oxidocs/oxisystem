@@ -62,6 +62,9 @@
             </li>
           </ul>
         </li>
+        <li >
+          <a href="contact.php">Contacto</a>
+        </li>
 
       </ul>
     </div>

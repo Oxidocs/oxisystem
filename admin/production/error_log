@@ -1,0 +1,2 @@
+[24-Aug-2016 11:54:04 UTC] PHP Warning:  file_get_contents(http://oxidocs.com/oxisystem/admin/controllers/slider.php?action=listar): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/oxidocs/public_html/uls/admin/routes/contenido_slider_back.php on line 4
