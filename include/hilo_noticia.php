@@ -1,6 +1,6 @@
 <?php
 $domain = $_SERVER['HTTP_HOST'];
-$json = file_get_contents('http://'.$domain.'/uls/admin/routes/hilo_noticia.php');
+$json = file_get_contents('http://'.$domain.'/oxisystem/admin/routes/hilo_noticia.php');
 $objs = json_decode($json);
 setlocale(LC_TIME, 'es_ES.UTF-8');
  ?>
@@ -56,5 +56,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
 	<?php 
 	}
 	?>
+	
+	<div class="clearfix"></div>
 
 </div>
