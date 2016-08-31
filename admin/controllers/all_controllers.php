@@ -17,8 +17,6 @@
 			
 		}
 		public function getContentNoticia($id, $id_seccion, $limit_desde, $limit_hasta,$limit, $order_by, $desc) {
-
-			
 				$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit, $order_by, $desc);
 				return $content_list;
 			
@@ -40,10 +38,15 @@
 				
 
 			}else{
-				$mensaje_insert = Contenido::updateContent($id, $secciones_id, $estados_id, $titulo, $descripcion, $imagenes, $redes_sociales, $link);
+				$mensaje_insert = Contenido::updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link);
 
 				return $mensaje_insert;
 			}
+		}
+
+		public function updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link) {
+			$mensaje_insert = Contenido::updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link);
+			return $mensaje_insert;
 		}
 
 		private function createFolder($id, $portada, $imagenes){

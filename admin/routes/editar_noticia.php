@@ -1,9 +1,10 @@
 <?php
-	// require_once('../controllers/all_controllers.php');
+	require_once('../controllers/all_controllers.php');
 
-	// $controller = new Controllers();
+	$controller = new Controllers();
 
-	// extract($_GET);
-	// $id = 73;
-	// echo json_encode($controller->getContent($id, 4, '', '','','',''));
+	extract($_POST);
+	print_r($controller->updateContent($id_, 4, 1, $titulo, $bajada, $descr, $portada, '', $galeria, '', ''));
+	// $id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link
+
 ?>

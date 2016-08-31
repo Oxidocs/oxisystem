@@ -1,6 +1,28 @@
 var array_galeria = [];
 var $id, dir;
 $(document).ready(function(){
+	new PNotify({
+		title: "PNotify",
+		type: "info",
+		text: "Welcome. Try hovering over me. You can click things behind me, because I'm non-blocking.",
+		nonblock: {
+			nonblock: true
+		},
+		addclass: 'dark',
+		styling: 'bootstrap3',
+		hide: false,
+		before_close: function(PNotify) {
+			PNotify.update({
+				title: PNotify.options.title + " - Enjoy your Stay",
+				before_close: null
+			});
+
+			PNotify.queueRemove();
+
+			return false;
+		}
+	});
+
 	$id = getParameterByName('id');
 	dir = '../../img/galeria/noticias/'+$id+'/';
 	iniciarDropzone(dir);
@@ -34,10 +56,10 @@ $('form').on('submit',function(e){
 		}
 	});
 
-	options = $(this).serialize() + '&' + $.param({'galeria':array_galeria});
+	options = $(this).serialize() + '&' + $.param({'galeria':array_galeria}) + '& id =' + $id;
 
-	// $.post('../routes/noticias.php',options,function(data){
-	// 	console.log(data);
-	// });
+	$.post('../routes/editar_noticia.php',options,function(data){
+		console.log(data);
+	});
 
 });
