@@ -8,10 +8,10 @@
 	foreach ($objs as $obj) {
 		$tmp = array();		
 		$tmp = array(			
-				"$obj->titulo",
+				"<a href='editar_noticia.php?id=$obj->id'>$obj->titulo</a>",
 				"$obj->subtitulo",
 				"<img  src='../../img/galeria/noticias/$obj->id/$obj->portada_contenido' class='avatar avatar-portada0 center-block' alt='Avatar'>",
-				"<a href='#'>Editar $obj->id</a>"
+				"<a href='editar_noticia.php?id=$obj->id'>Editar</a>"
 
 			    );
 		array_push($result, $tmp);

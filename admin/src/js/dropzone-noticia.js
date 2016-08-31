@@ -25,7 +25,7 @@ function iniciarDropzone(url){
                 });
 
                 $.post('../controllers/upload-images.php?dir='+url, {dir:'dir_galeria'},function(data){
-                    cargarGaleria(data);
+                    cargarGaleria(url,data);
                 },'json').done(function(){
                     $('.check_img').on('click',function(){
                         if ($(this).parent().parent().parent().parent().parent().attr('class').indexOf('success') == -1) {
@@ -63,7 +63,7 @@ function iniciarDropzone(url){
             });
 
             $.post('../controllers/upload-images.php?dir='+url, {dir:'dir_galeria'},function(data){
-                    cargarGaleria(data);
+                    cargarGaleria(url,data);
                 },'json').done(function(){
                     $('.check_img').on('click',function(){
                         if ($(this).parent().parent().parent().parent().parent().attr('class').indexOf('success') == -1) {
@@ -119,7 +119,7 @@ function iniciarDropzone(url){
                         }
                     });
                     $.post('../controllers/upload-images.php?dir='+url, {dir:'dir_galeria'},function(data){
-                        cargarGaleria(data);
+                        cargarGaleria(url,data);
                     },'json').done(function(){
                         $('.check_img').on('click',function(){
                             if ($(this).parent().parent().parent().parent().parent().attr('class').indexOf('success') == -1) {
@@ -139,14 +139,14 @@ function iniciarDropzone(url){
     });
 }
 
-function cargarGaleria(data){
+function cargarGaleria(url, data){
     $('#galeria').empty();
     $.each(data,function(index,value){
         var img_galeria = "";
         img_galeria += '<div class="col-md-55">';
         img_galeria += '<div class="thumbnail form-control">';
         img_galeria += '<div class="image view view-first">';
-        img_galeria += '<img src="../../img/galeria/tmp/'+value.name+'" alt="image" class="img-responsive center-block" />';
+        img_galeria += '<img src="'+url+value.name+'" alt="image" class="img-responsive center-block" />';
         img_galeria += '<div class="mask">';
         img_galeria += '<p>&nbsp;</p>';
         // img_galeria += '<p>Your Text</p>';
