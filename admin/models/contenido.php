@@ -66,8 +66,8 @@ class Contenido {
 							`contenido`.`ESTADOS_ID`,
 							`contenido`.`TITULO`,
 							`contenido`.`DESCRIPCION`,
-							DATE_FORMAT(`contenido`.`FECHA_CREACION`,'%d/%m/%Y') as FECHA_CREACION,
-							DATE_FORMAT(`contenido`.`FECHA_MODIFICACION`,'%d/%m/%Y') as FECHA_MODIFICACION,
+							`contenido`.`FECHA_CREACION`,
+							`contenido`.`FECHA_MODIFICACION`,
 							`contenido`.`PORTADA_CONTENIDO`,
 							`contenido`.`SUBTITULO`";
 			$model->from = "`contenido`";
