@@ -63,7 +63,7 @@
           </ul>
         </li>
         <li >
-          <a href="contact.php">Contacto</a>
+          <a href="contacto.php">Contacto</a>
         </li>
 
       </ul>

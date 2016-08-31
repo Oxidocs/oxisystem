@@ -435,6 +435,64 @@ footer{
 	border-left: 4px solid #0b80ec !important;
 }
 
+/*****ESTILOS PAGINA CONTACTO*****/
+
+.datoscontacto{
+	background-color: #002445;
+	padding: 10px;
+}
+
+.datoscontacto h3, p {
+	color: rgb(255, 255, 255)
+}
+
+.datoscontacto a{
+	/*text-decoration: none;*/
+	color: #ffffff
+}
+
+.datoscontacto a:hover{
+	color: #ffffff
+}
+
+.marcador{
+	color: #ed0000
+}
+
+.iconos a{
+	color: rgb(255, 255, 255)
+}
+
+.emailbtn{
+	border: none;
+	border-radius: 0px
+}
+
+.ubic{
+	background-color: #ed0000;
+	padding: 10px;
+	margin-top: -10px
+}
+
+.seccioncontacto{
+	background-color: #19344e;
+	width: 350px;
+	padding: 10px;
+	color: rgb(255, 255, 255)
+}
+
+.envianos{
+	background-color: #ed0000;
+	padding: 10px;
+	color: rgb(255, 255, 255);
+	width: 450px
+}
+
+.formulario{
+	margin-top: 20px;
+	padding: 10px
+}
+
 /*media queries*/
 
 @media(max-width:768px) {
@@ -512,7 +570,9 @@ footer{
 		padding: 5px;
 
 	}
-
+	.datoscontacto{
+		margin-top: 30px
+	}
 
 
 
