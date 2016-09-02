@@ -20,6 +20,8 @@
 
 	<link href="css/modern-business.css" rel="stylesheet">
 
+	<link rel="stylesheet" href="css/lightbox.min.css">
+
 	<!-- fuentes -->
 
 	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
@@ -80,7 +82,7 @@
 					<h2><i class="fa fa-camera" aria-hidden="true"></i> Galerías Fotográficas</h2>
 				</div>
 				<div class="col-md-4 col-sm-6">
-					<a href="#">
+					<a  href="http://placehold.it/700x450&text=Galería 1" data-lightbox="logo" data-title="My caption">
 						<img class="img-responsive img-hover" src="http://placehold.it/700x450&text=Galería 1" alt="">
 					</a>
 				</div>
@@ -128,6 +130,8 @@
 			interval: 5000 //changes the speed
 		})
 	</script>
+
+	<script src="js/lightbox.min.js"></script>
 
 </body>
 
