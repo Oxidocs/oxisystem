@@ -1,7 +1,7 @@
 <?php
 
   if ($_REQUEST['id'] && is_numeric($_REQUEST['id'])) {
-    
+
     $id = $_REQUEST['id'];
 
     $domain = $_SERVER['HTTP_HOST'];
@@ -9,7 +9,7 @@
     $articles = json_decode($articles);
 
   }
-  
+
 ?>
 <!-- contenido -->
 <article class="single-noticia">
@@ -40,11 +40,34 @@
               </div>
             </div>
 					</div>
+          <div class="row galerianoticia">
+            <div class="col-md-3">
+              <a href="http://placehold.it/700x450&text=Foto 1" data-lightbox="logo" data-title="My caption">
+                <img class="img-responsive img-hover" src="http://placehold.it/700x450&text=Foto 1" alt="">
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="http://placehold.it/700x450&text=Foto 2" data-lightbox="logo" data-title="My caption">
+                <img class="img-responsive img-hover" src="http://placehold.it/700x450&text=Foto 2" alt="">
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="http://placehold.it/700x450&text=Foto 3" data-lightbox="logo" data-title="My caption">
+                <img class="img-responsive img-hover" src="http://placehold.it/700x450&text=Foto 3" alt="">
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="http://placehold.it/700x450&text=Foto 4" data-lightbox="logo" data-title="My caption">
+                <img class="img-responsive img-hover" src="http://placehold.it/700x450&text=Foto 4" alt="">
+              </a>
+            </div>
+          </div>
 
-          <?php 
-            echo html_entity_decode($articles[0]->descripcion)       
+          <?php
+            echo html_entity_decode($articles[0]->descripcion)
           ?>
         </div>
+
         <div class="redessociales pull-left hidden-xs hidden-sm col-md-3">
 
           <!-- twitter-->

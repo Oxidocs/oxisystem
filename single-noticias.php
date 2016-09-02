@@ -20,6 +20,8 @@
 
 	<link href="css/modern-business.css" rel="stylesheet">
 
+	<link rel="stylesheet" href="css/lightbox.min.css">
+
 	<!-- fuentes -->
 
 	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
@@ -44,7 +46,7 @@
     include 'include/header.php';
     include 'include/nav.php';
     include 'include/article.php';
-    include 'include/footer.php'; 
+    include 'include/footer.php';
   ?>
 
 
@@ -56,7 +58,7 @@
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
 
-
+	<script src="js/lightbox.min.js"></script>
 </body>
 
 </html>
