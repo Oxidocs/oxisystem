@@ -1,28 +1,6 @@
 var array_galeria = [];
 var $id, dir;
 $(document).ready(function(){
-	new PNotify({
-		title: "PNotify",
-		type: "info",
-		text: "Welcome. Try hovering over me. You can click things behind me, because I'm non-blocking.",
-		nonblock: {
-			nonblock: true
-		},
-		addclass: 'dark',
-		styling: 'bootstrap3',
-		hide: false,
-		before_close: function(PNotify) {
-			PNotify.update({
-				title: PNotify.options.title + " - Enjoy your Stay",
-				before_close: null
-			});
-
-			PNotify.queueRemove();
-
-			return false;
-		}
-	});
-
 	$id = getParameterByName('id');
 	dir = '../../img/galeria/noticias/'+$id+'/';
 	iniciarDropzone(dir);
@@ -33,9 +11,18 @@ $(document).ready(function(){
 		$('#editor').append(convert(data[0].descripcion));
 		$("select.image-select").val(data[0].portada_contenido);
 		$('img.portada-noticia').attr('src',dir+data[0].portada_contenido);
-	},'json')
+	},'json').done(function(data){
+		$.each(data[0].imagenes,function(i,val){
+			$.each($("#galeria > div > div > div > img.img-responsive.center-block"),function(index,value){
+				if (val.PATH == recuperaPath(value.src)) {
+					value.id = val.ID;
+					$('#'+val.ID).parent().parent().parent().addClass('has-success');
+					$(value).parent().children().children().children().children().attr('class','fa fa-times');
+				}
+			});		
+		});
+	});
 });
-
 $("select.image-select").on('change',function(){
 	var option_value = $(this).val();
 	if (option_value != 0) {
@@ -44,22 +31,28 @@ $("select.image-select").on('change',function(){
 		$('img.portada-noticia').attr('src','images/user.png');
 	}
 });
-
 $('form').on('submit',function(e){
+	array_galeria = [];
 	e.preventDefault();
-
 	$("#descr").val($("#editor").html().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'));
-
 	$.each($('#galeria').children(),function(i,val){
-		if (val.className.indexOf('success') != -1) {
-			array_galeria.push({'path':recuperaPath(val.children[0].children[0].children[0].src)});			
-		}
+		array_galeria.push({'id':val.children[0].children[0].children[0].id ,'estado': $(val).hasClass('has-success'),'path':recuperaPath(val.children[0].children[0].children[0].src)});
 	});
-
 	options = $(this).serialize() + '&' + $.param({'galeria':array_galeria}) + '& id =' + $id;
-
 	$.post('../routes/editar_noticia.php',options,function(data){
 		console.log(data);
+	},'json').done(function(data){
+		new PNotify({
+			title: data.mensaje,
+			type: 'success',
+			styling: 'bootstrap3'
+		});
+	}).error(function(){
+		new PNotify({
+			title: '!Error al comunicarse con Base de Datos!',
+			text: 'Verifique su conexión a internet',
+			type: 'error',
+			styling: 'bootstrap3'
+		});
 	});
-
 });

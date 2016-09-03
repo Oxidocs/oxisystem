@@ -27,7 +27,20 @@ $('form').on('submit',function(e){
 	options = $(this).serialize() + '&' + $.param({'galeria':array_galeria});
 
 	$.post('../routes/noticias.php',options,function(data){
-		console.log(data);
+		
+	},'json').done(function(data){
+		new PNotify({
+			title: data.mensaje,
+			type: 'success',
+			styling: 'bootstrap3'
+		})
+	}).error(function(){
+		new PNotify({
+			title: '¡Error al comunicarse con Base de Datos!',
+			text: 'Verifique su conexión a internet',
+			type: 'error',
+			styling: 'bootstrap3'
+		});
 	});
 
 });

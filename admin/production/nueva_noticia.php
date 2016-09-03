@@ -24,6 +24,10 @@
     <link href="../build/css/custom.min.css" rel="stylesheet">
     <!-- Dropzone Style -->
     <link href="../src/css/dropzone.css" type="text/css" rel="stylesheet" />
+    <!-- PNotify -->
+    <link href="../vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="../vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="../vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
     <!-- Custom Style -->
     <link href="css/custom/style.css" type="text/css" rel="stylesheet" />
 </head>
@@ -202,6 +206,10 @@
     <!-- Dropzone Scripts -->
     <script src="../src/js/dropzone.js"></script>
     <script src="../src/js/dropzone-noticia.js" type="text/javascript"></script>
+    <!-- PNotify -->
+    <script src="../vendors/pnotify/dist/pnotify.js"></script>
+    <script src="../vendors/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="../vendors/pnotify/dist/pnotify.nonblock.js"></script>
     <!--Custom JS-->
     <script src="js/custom/nueva_noticia.js" type="text/javascript"></script>
     <script src="js/custom/wyswyg.js"></script>

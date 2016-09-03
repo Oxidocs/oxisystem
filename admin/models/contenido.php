@@ -156,7 +156,7 @@ class Contenido {
 
 		$model = new Crud();
 		$model->update = "contenido";
-		$model->set = "SECCIONES_ID = $secciones_id, ESTADOS_ID = $estados_id, TITULO = '$titulo', DESCRIPCION = '$descripcion', FECHA_CREACION = '$fecha_creacion', PORTADA_CONTENIDO = '$portada', SUBTITULO = '$bajada'";
+		$model->set = "SECCIONES_ID = $secciones_id, ESTADOS_ID = $estados_id, TITULO = '$titulo', DESCRIPCION = '$descripcion', PORTADA_CONTENIDO = '$portada', SUBTITULO = '$bajada'";
 		$model->condition = "ID = $id";
 		$model->Update();
 		$idfk_contenido = $id;
@@ -164,21 +164,46 @@ class Contenido {
 		$contenido_response = array('idfk' => $id, 'mensaje' => $model->mensaje);
 		
 		if ($imagenes != "") {
-			foreach ($imagenes as $imagen) {
-				$model = new Crud();
-				$model->insertInto    = 'path_imagenes';
-				$model->insertColumns = 'ESTADOS_ID, PATH, TITULO, DESCRIPCION';
-				$model->insertValues  = "$estados_id, '".$imagen['path']."','',''";
-				$model->Create();
-				$idfk_path = $model->id;
 
-				$model = new Crud();
-				$model->insertInto    = 'contenido_path';
-				$model->insertColumns = 'CON_ID, PAT_ID';
-				$model->insertValues  = "$idfk_contenido, $idfk_path";
-				$model->Create();
+			foreach ($imagenes as $imagen) {
+
+				if ($imagen['id'] != "") {
+
+					$titulo = "";
+					$desc = "";
+
+					if (isset($imagen['titulo'])) {
+						$titulo = ", TITULO = '".$imagen['titulo']."'";
+					}
+
+					if (isset($imagen['descripcion'])) {
+						$desc = ", DESCRIPCION = '".$imagen['descripcion']."'";
+					}
+
+					$model = new Crud();
+					$model->update = "path_imagenes";					
+					$model->set = "ESTADOS_ID = ".$imagen['estado'].", PATH = '".$imagen['path']."'".$titulo.$desc;
+					$model->condition = "ID = ".$imagen['id'];
+					$model->Update();
+					$contenido_response = array('idfk' => $imagen['estado'], 'mensaje' => $model->mensaje);
+				} else {
+
+					$model = new Crud();
+					$model->insertInto    = 'path_imagenes';
+					$model->insertColumns = 'ESTADOS_ID, PATH, TITULO, DESCRIPCION';
+					$model->insertValues  = "$estados_id, '".$imagen['path']."','',''";
+					$model->Create();
+					$idfk_path = $model->id;
+
+					$model = new Crud();
+					$model->insertInto    = 'contenido_path';
+					$model->insertColumns = 'CON_ID, PAT_ID';
+					$model->insertValues  = "$idfk_contenido, $idfk_path";
+					$model->Create();
+
+				}
 			}
-		}	
+		}
 
 		return $contenido_response;
 
