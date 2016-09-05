@@ -95,19 +95,18 @@
 		}
 
 
-		public function Delete (){
+		public function Delete(){
 
 			$model = new Conexion;
 			$conexion = $model->conectar();
 			$deletefrom = $this->deletefrom;
 			$condition  =  $this->condition;
 			if($condition !=''){
-				$condition = "WHERE" . $condition;
+				$condition = "WHERE " . $condition;
 				$sql = "DELETE FROM $deletefrom $condition";
 				$consulta = $conexion->prepare($sql);
-				if (!$consulta) {
-
-					$this->mensaje = "error al eliminar el registro";
+				if (!$consulta->execute()) {
+					$this->mensaje = $consulta->errorInfo();
 				}else{
 					$consulta->execute();
 					$this->mensaje = "Registro eliminado con exito";

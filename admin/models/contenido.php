@@ -229,6 +229,49 @@ class Contenido {
 		return $contenido_response;
 
 	}
+
+	public static function deleteContent($id) {
+
+		$model = new Crud();
+		$model->select    = 'CON_ID, PAT_ID';
+		$model->from = 'contenido_path';
+		$model->condition  = "CON_ID = $id";
+		$model->Read();
+		$fks = $model->rows;
+
+		$model = new Crud();
+		$model->deletefrom = "contenido_path";
+		$model->condition = "CON_ID = $id";
+		$model->Delete();
+
+		$model = new Crud();
+		$model->deletefrom = "links";
+		$model->condition = "CONTENIDOS_ID = $id";
+		$model->Delete();
+
+		$model = new Crud();
+		$model->deletefrom = "redes_sociales";
+		$model->condition = "CON_ID = $id";
+		$model->Delete();
+
+		if (count($fks)>0) {
+			foreach ($fks as $fk) {
+				$model = new Crud();
+				$model->deletefrom = "path_imagenes";
+				$model->condition = "ID = ".$fk['PAT_ID'];
+				$model->Delete();
+			}
+		}
+		
+
+		$model = new Crud();
+		$model->deletefrom = "contenido";
+		$model->condition = "ID = $id";
+		$model->Delete();
+
+		return $model->mensaje;
+
+	}
 }
 
 ?>

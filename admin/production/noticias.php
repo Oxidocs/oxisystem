@@ -24,6 +24,10 @@
     <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+    <!-- PNotify -->
+    <link href="../vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="../vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="../vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
     <!-- Custom Style -->
     <link href="css/custom/style.css" type="text/css" rel="stylesheet" />
 </head>
@@ -106,6 +110,10 @@
     <script src="../vendors/jszip/dist/jszip.min.js"></script>
     <script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+    <!-- PNotify -->
+    <script src="../vendors/pnotify/dist/pnotify.js"></script>
+    <script src="../vendors/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="../vendors/pnotify/dist/pnotify.nonblock.js"></script>
 
     <script type="text/javascript">
     
@@ -166,11 +174,20 @@
         function eliminarNoticia($id){
             if (confirm("Estas a punto de eliminar una noticia ¿Estás Seguro?")) {
                 $.post('../routes/eliminar_noticia.php', {id: $id}, function(data){
-                    console.log(data);
+
                 }).done(function(data){
-                    console.log('done');
+                    new PNotify({
+                        title: data,
+                        type: 'success',
+                        styling: 'bootstrap3'
+                    })
                 }).error(function(){
-                    console.log('error');
+                    new PNotify({
+                        title: '¡Error al comunicarse con Base de Datos!',
+                        text: 'Verifique su conexión a internet',
+                        type: 'error',
+                        styling: 'bootstrap3'
+                    });
                 });
             }
         }
