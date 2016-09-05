@@ -27,12 +27,12 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
     {
     ?>
     <div class="col-md-4 img-portfolio">
-        <a href="single-noticias.php?pagina=<?php echo $obj->id; ?>">
+        <a href="single-noticias.php?id=<?php echo $obj->id; ?>">
             <img class="img-responsive img-hover center-block" src="img/galeria/noticias/<?php echo $obj->id.'/'.$obj->portada_contenido; ?>" alt="" style="
     max-height: 260px;min-height: 260px;">
         </a>
         <h3>
-            <a href="single-noticias.php?pagina=<?php echo $obj->id; ?>">
+            <a href="single-noticias.php?id=<?php echo $obj->id; ?>">
                 <?php echo $obj->titulo; ?>
             </a>
         </h3>
