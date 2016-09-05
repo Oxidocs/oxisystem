@@ -4,15 +4,13 @@
 
 	$controller = new Controllers();
 	$objs = $controller->getContentNoticia('', 4, '', '', '', '','');
-	$result = array(); 	
-	foreach ($objs as $obj) {
-		$tmp = array();		
+	$result = array();
+	foreach ($objs as $obj) {	
 		$tmp = array(			
 				"<a href='editar_noticia.php?id=$obj->id'>$obj->titulo</a>",
 				"$obj->subtitulo",
 				"<img  src='../../img/galeria/noticias/$obj->id/$obj->portada_contenido' class='avatar avatar-portada0 center-block' alt='Avatar'>",
-				"<a href='editar_noticia.php?id=$obj->id'>Editar</a>"
-
+				"<a href='editar_noticia.php?id=$obj->id'> Editar </a> <a onClick='eliminarNoticia($obj->id)';>Eliminar</a>"
 			    );
 		array_push($result, $tmp);
 	}

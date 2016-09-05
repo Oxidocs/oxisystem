@@ -162,6 +162,18 @@
             ],
             responsive: true
         });
+
+        function eliminarNoticia($id){
+            if (confirm("Estas a punto de eliminar una noticia ¿Estás Seguro?")) {
+                $.post('../routes/eliminar_noticia.php', {id: $id}, function(data){
+                    console.log(data);
+                }).done(function(data){
+                    console.log('done');
+                }).error(function(){
+                    console.log('error');
+                });
+            }
+        }
     </script>
 </body>
 </html>
