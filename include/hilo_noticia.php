@@ -14,7 +14,9 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
 		    foreach ($objs as $obj)
 		    {
 	?>
-	<img class="img-responsive" src="img/galeria/noticias/<?php echo $obj->id.'/'.$obj->portada_contenido; ?>" alt="">
+	<a href="single-noticias.php?id=<?php echo $obj->id; ?>">
+		<img class="img-responsive" src="img/galeria/noticias/<?php echo $obj->id.'/'.$obj->portada_contenido; ?>" alt="">
+	</a>
 
 	<h2>
 	<a href="single-noticias.php?id=<?php echo $obj->id; ?>"><?php echo $obj->titulo; ?></a>
