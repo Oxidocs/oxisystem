@@ -50,8 +50,11 @@ class Contenido {
 		if ($desc!="") {
 			$desc = "DESC ";
 		}
-		if ($limit!="") {
+		if ($limit!="" && !$limit_desde!="") {
 			$limit = "LIMIT $limit";
+		}
+		if ($limit_desde!="") {
+			$limit = "LIMIT $limit_desde , $limit";
 		}
 		$filtro = $order_by.$desc.$limit;
 		//echo $filtro;
