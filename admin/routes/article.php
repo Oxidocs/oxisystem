@@ -5,5 +5,6 @@
 	$controller = new Controllers();
 
 	extract($_GET);
-	echo json_encode($controller->getContent($id, 4, '', '','','',''));
+
+	echo json_encode($controller->getContent($id, 4, '', '', '', '', '', true, false, false));
 ?>

@@ -7,12 +7,12 @@ include('../controllers/all_controllers.php');
 		if (is_numeric($_REQUEST['limite_desde'])) {
 			# code...
 				
-			echo json_encode(($controller->getContentNoticia('', 4, $_REQUEST['limite_desde'], '', '3', 'fecha_creacion','desc')));
+			echo json_encode(($controller->getContentNoticia('', 4, $_REQUEST['limite_desde'], '', '3', 'fecha_creacion','desc',false, false, false)));
 		}
 	}
 	else
 	{
-		echo json_encode(($controller->getContentNoticia('', 4, '', '', '', 'fecha_creacion','desc')));
+		echo json_encode(($controller->getContentNoticia('', 4, '', '', '', 'fecha_creacion','desc',false, false, false)));
 	}
 	
 ?>

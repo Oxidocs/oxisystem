@@ -5,10 +5,10 @@
 
 	class Controllers {
 
-		public function getContent($id, $id_seccion, $limit_desde, $limit_hasta,$limit, $order_by, $desc) {
+		public function getContent($id, $id_seccion, $limit_desde, $limit_hasta,$limit, $order_by, $desc, $img_bool, $link_bool, $social_bool) {
 
 			if (is_numeric($id)) {
-				$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit, $order_by, $desc);
+				$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit, $order_by, $desc, $img_bool, $link_bool, $social_bool);
 				return $content_list;
 			}else{
 				header('Location: ../../index.php');
@@ -16,8 +16,8 @@
 			}
 			
 		}
-		public function getContentNoticia($id, $id_seccion, $limit_desde, $limit_hasta,$limit, $order_by, $desc) {
-				$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit, $order_by, $desc);
+		public function getContentNoticia($id, $id_seccion, $limit_desde, $limit_hasta,$limit, $order_by, $desc, $img_bool, $link_bool, $social_bool) {
+				$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit, $order_by, $desc, $img_bool, $link_bool, $social_bool);
 				return $content_list;
 			
 			
@@ -27,20 +27,20 @@
 			$fecha_actual = date('Y-m-d H:i:s');
 
 			if ($id == '') {
-				$mensaje_insert = Contenido::createContent($secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_actual, $imagenes, $redes_sociales, $link);
-				if ($mensaje_insert['idfk'] > 0) {
-					$id = $mensaje_insert['idfk'];
+				$mensaje = Contenido::createContent($secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_actual, $imagenes, $redes_sociales, $link);
+				if ($mensaje['idfk'] > 0) {
+					$id = $mensaje['idfk'];
 					$this->createFolder($id,$portada,$imagenes);
 					return $mensaje_insert['mensaje'];
 				}else{
-					return $mensaje_insert['idfk'];
+					return $mensaje['idfk'];
 				}
 				
 
 			}else{
-				$mensaje_insert = Contenido::updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link);
+				$mensaje = Contenido::updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link);
 
-				return $mensaje_insert;
+				return $mensaje;
 			}
 		}
 
@@ -54,8 +54,13 @@
 					}
 				}
 
-			$mensaje_insert = Contenido::updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link);
-			return $mensaje_insert;
+			$mensaje = Contenido::updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link);
+			return $mensaje;
+		}
+
+		public function deleteContent($id) {
+			$mensaje = Contenido::deleteContent($id);
+			return $mensaje;			
 		}
 
 		private function createFolder($id, $portada, $imagenes){
@@ -72,11 +77,11 @@
 			if ($imagenes!="") {
 				foreach ($imagenes as $imagen) {
 					if (copy("../../img/galeria/tmp/".$imagen['path'], "../../img/galeria/noticias/".$id."/".$imagen['path'])) {
-							unlink("../../img/galeria/tmp/".$imagen['path']);
-						}
+						unlink("../../img/galeria/tmp/".$imagen['path']);
+					}
 				}
 			}
-
 		}
+
 	}
 ?>
