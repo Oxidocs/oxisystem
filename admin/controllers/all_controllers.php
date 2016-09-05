@@ -31,7 +31,7 @@
 				if ($mensaje['idfk'] > 0) {
 					$id = $mensaje['idfk'];
 					$this->createFolder($id,$portada,$imagenes);
-					return $mensaje_insert['mensaje'];
+					return $mensaje['mensaje'];
 				}else{
 					return $mensaje['idfk'];
 				}
@@ -60,6 +60,8 @@
 
 		public function deleteContent($id) {
 			$mensaje = Contenido::deleteContent($id);
+			$dir = "../../img/galeria/noticias/".$id."/";
+			$this->deleteFolder($dir);
 			return $mensaje;			
 		}
 
@@ -76,11 +78,29 @@
 			}
 			if ($imagenes!="") {
 				foreach ($imagenes as $imagen) {
-					if (copy("../../img/galeria/tmp/".$imagen['path'], "../../img/galeria/noticias/".$id."/".$imagen['path'])) {
-						unlink("../../img/galeria/tmp/".$imagen['path']);
+					if (file_exists("../../img/galeria/tmp/".$imagen['path'])) {
+						if (copy("../../img/galeria/tmp/".$imagen['path'], "../../img/galeria/noticias/".$id."/".$imagen['path'])) {
+							unlink("../../img/galeria/tmp/".$imagen['path']);
+						}
 					}
 				}
 			}
+		}
+
+		private function deleteFolder($carpeta) {
+	        foreach(glob($carpeta . "/*") as $archivos_carpeta)
+		    {
+		        if (is_dir($archivos_carpeta))
+		        {
+		            eliminarDir($archivos_carpeta);
+		        }
+		        else
+		        {
+		            unlink($archivos_carpeta);
+		        }
+		    }
+
+    		rmdir($carpeta);
 		}
 
 	}

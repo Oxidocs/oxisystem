@@ -117,7 +117,7 @@
 
     <script type="text/javascript">
     
-        $('#datatable-keytable').DataTable({
+        var table = $('#datatable-keytable').DataTable({
             dom: "Bfrtip",
             lengthMenu: [
                 [ 10, 25, 50, -1 ],
@@ -174,7 +174,7 @@
         function eliminarNoticia($id){
             if (confirm("Estas a punto de eliminar una noticia ¿Estás Seguro?")) {
                 $.post('../routes/eliminar_noticia.php', {id: $id}, function(data){
-
+                     table.ajax.reload();
                 }).done(function(data){
                     new PNotify({
                         title: data,

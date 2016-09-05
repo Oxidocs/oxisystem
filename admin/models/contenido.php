@@ -83,57 +83,59 @@ class Contenido {
 			$model->Read();
 			$response = $model->rows;
 
-			foreach ($response as $content) {
+			if (count($response)>0) {
+				foreach ($response as $content) {
 
-				$id = $content['ID']; //id obtenido de contenido para realizar las demás consultas
+					$id = $content['ID']; //id obtenido de contenido para realizar las demás consultas
 
-				if ($img_bool) {
-					$model = new Crud();
-					$model->select = "`path_imagenes`.`ID`,
-									`path_imagenes`.`ESTADOS_ID`,
-									`path_imagenes`.`PATH`,
-									`path_imagenes`.`TITULO`,
-									`path_imagenes`.`DESCRIPCION`";
-					$model->from = "`contenido`
-									INNER JOIN `contenido_path` ON `contenido`.`ID` = `contenido_path`.`CON_ID`
-									INNER JOIN `path_imagenes` ON `contenido_path`.`PAT_ID` = `path_imagenes`.`ID`";
-					$model->condition = "`contenido`.`ID` = $id AND `path_imagenes`.`ESTADOS_ID` = 1";
-					$model->Read();
-					$imgs = $model->rows;
+					if ($img_bool) {
+						$model = new Crud();
+						$model->select = "`path_imagenes`.`ID`,
+										`path_imagenes`.`ESTADOS_ID`,
+										`path_imagenes`.`PATH`,
+										`path_imagenes`.`TITULO`,
+										`path_imagenes`.`DESCRIPCION`";
+						$model->from = "`contenido`
+										INNER JOIN `contenido_path` ON `contenido`.`ID` = `contenido_path`.`CON_ID`
+										INNER JOIN `path_imagenes` ON `contenido_path`.`PAT_ID` = `path_imagenes`.`ID`";
+						$model->condition = "`contenido`.`ID` = $id AND `path_imagenes`.`ESTADOS_ID` = 1";
+						$model->Read();
+						$imgs = $model->rows;
+					}
+
+					if ($social_bool) {
+
+
+						$model = new Crud();
+						$model->select = "`redes_sociales`.`ID`,
+										`redes_sociales`.`TIPO_REDES_ID`,
+										`redes_sociales`.`ESTADOS_ID`,
+										`redes_sociales`.`CON_ID`,
+										`redes_sociales`.`LINK`";
+						$model->from = "`redes_sociales`";
+						$model->condition = "`redes_sociales`.`CON_ID` = $id AND `redes_sociales`.`ESTADOS_ID` = 1";
+						$model->Read();
+						$social_media = $model->rows;
+					}
+					
+					if($link_bool){
+
+						$model = new Crud();
+						$model->select = "`links`.`ID`,
+										`links`.`CONTENIDOS_ID`,
+										`links`.`ESTADOS_ID`,
+										`links`.`URL`";
+						$model->from = "`links`";
+						$model->condition = "`links`.`CONTENIDOS_ID` = $id AND `links`.`ESTADOS_ID` = 1";
+						$model->Read();
+						$enlaces = $model->rows;
+					}
+
+					
+
+					$contenido = new Contenido($id, $content['SECCIONES_ID'],$content['ESTADOS_ID'],$content['TITULO'],$content['DESCRIPCION'],$content['FECHA_CREACION'],$content['FECHA_MODIFICACION'],$content['PORTADA_CONTENIDO'],$content['SUBTITULO'],$imgs,$social_media, $enlaces);
+					array_push($content_list, $contenido);
 				}
-
-				if ($social_bool) {
-
-
-					$model = new Crud();
-					$model->select = "`redes_sociales`.`ID`,
-									`redes_sociales`.`TIPO_REDES_ID`,
-									`redes_sociales`.`ESTADOS_ID`,
-									`redes_sociales`.`CON_ID`,
-									`redes_sociales`.`LINK`";
-					$model->from = "`redes_sociales`";
-					$model->condition = "`redes_sociales`.`CON_ID` = $id AND `redes_sociales`.`ESTADOS_ID` = 1";
-					$model->Read();
-					$social_media = $model->rows;
-				}
-				
-				if($link_bool){
-
-					$model = new Crud();
-					$model->select = "`links`.`ID`,
-									`links`.`CONTENIDOS_ID`,
-									`links`.`ESTADOS_ID`,
-									`links`.`URL`";
-					$model->from = "`links`";
-					$model->condition = "`links`.`CONTENIDOS_ID` = $id AND `links`.`ESTADOS_ID` = 1";
-					$model->Read();
-					$enlaces = $model->rows;
-				}
-
-				
-
-				$contenido = new Contenido($id, $content['SECCIONES_ID'],$content['ESTADOS_ID'],$content['TITULO'],$content['DESCRIPCION'],$content['FECHA_CREACION'],$content['FECHA_MODIFICACION'],$content['PORTADA_CONTENIDO'],$content['SUBTITULO'],$imgs,$social_media, $enlaces);
-				array_push($content_list, $contenido);
 			}
 		}
 		

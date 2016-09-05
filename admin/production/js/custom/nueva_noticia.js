@@ -25,8 +25,10 @@ $('form').on('submit',function(e){
 	});
 
 	options = $(this).serialize() + '&' + $.param({'galeria':array_galeria});
+	console.log(options);
 
 	$.post('../routes/noticias.php',options,function(data){
+		console.log(data);
 	},'json').done(function(data){
 		new PNotify({
 			title: data,
