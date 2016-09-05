@@ -1,8 +1,8 @@
 <?php
 $json = "";
 $domain = $_SERVER['HTTP_HOST'];
-if (isset($_REQUEST['id']) && is_numeric($_REQUEST['id'])) {
-    $limite_desde = ($_REQUEST['id'] - 1) * 3;
+if (isset($_REQUEST['pagina']) && is_numeric($_REQUEST['pagina'])) {
+    $limite_desde = ($_REQUEST['pagina'] - 1) * 3;
     $json = file_get_contents('http://'.$domain.'/oxisystem/admin/routes/paginador_noticias.php?limite_desde='.$limite_desde);
 }
 $cant_noticias = file_get_contents('http://'.$domain.'/oxisystem/admin/routes/paginador_noticias.php');
@@ -27,11 +27,12 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
     {
     ?>
     <div class="col-md-4 img-portfolio">
-        <a href="single-noticias.php?id=<?php echo $obj->id; ?>">
-            <img class="img-responsive img-hover" src="img/galeria/noticias/<?php echo $obj->id.'/'.$obj->portada_contenido; ?>" alt="">
+        <a href="single-noticias.php?pagina=<?php echo $obj->id; ?>">
+            <img class="img-responsive img-hover center-block" src="img/galeria/noticias/<?php echo $obj->id.'/'.$obj->portada_contenido; ?>" alt="" style="
+    max-height: 260px;min-height: 260px;">
         </a>
         <h3>
-            <a href="single-noticias.php?id=<?php echo $obj->id; ?>">
+            <a href="single-noticias.php?pagina=<?php echo $obj->id; ?>">
                 <?php echo $obj->titulo; ?>
             </a>
         </h3>
@@ -80,10 +81,10 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
     <div class="col-lg-12">
         <ul class="pagination">
             <li>
-                <a href="noticias.php?id=<?php echo $_REQUEST['id']-1;?>">&laquo;</a>
+                <a href="noticias.php?pagina=<?php echo $_REQUEST['pagina']-1;?>">&laquo;</a>
             </li>
             <?php for ($i=1; $i <= $total_pages; $i++) { 
-                if ($_REQUEST['id'] == $i) {
+                if ($_REQUEST['pagina'] == $i) {
                     $clase = "active";
                     # code...
                 }
@@ -94,14 +95,14 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
             ?>
             
             <li class="<?php echo $clase; ?>">
-                <a href="noticias.php?id=<?php echo $i;?>"><?php echo $i;?></a>
+                <a href="noticias.php?pagina=<?php echo $i;?>"><?php echo $i;?></a>
             </li>
             
             <?php
             }
             ?>
             <li>
-                <a href="noticias.php?id=<?php echo $_REQUEST['id']+1;?>">&raquo;</a>
+                <a href="noticias.php?pagina=<?php echo $_REQUEST['pagina']+1;?>">&raquo;</a>
             </li>
             
         </ul>

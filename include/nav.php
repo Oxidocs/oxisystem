@@ -49,7 +49,7 @@
           <a href="docentes.php">Cuerpo Docente</a>
         </li>
         <li>
-          <a href="noticias.php">Noticias</a>
+          <a href="noticias.php?pagina=1">Noticias</a>
         </li>
         <li class="dropdown">
           <a href="publicaciones.php" class="dropdown-toggle" data-toggle="dropdown">Publicaciones <b class="caret"></b></a>
