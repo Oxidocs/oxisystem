@@ -27,10 +27,9 @@ $('form').on('submit',function(e){
 	options = $(this).serialize() + '&' + $.param({'galeria':array_galeria});
 
 	$.post('../routes/noticias.php',options,function(data){
-		
 	},'json').done(function(data){
 		new PNotify({
-			title: data.mensaje,
+			title: data,
 			type: 'success',
 			styling: 'bootstrap3'
 		})

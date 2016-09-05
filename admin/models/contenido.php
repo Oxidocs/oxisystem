@@ -145,6 +145,8 @@ class Contenido {
 				$model->insertColumns = 'CON_ID, PAT_ID';
 				$model->insertValues  = "$idfk_contenido, $idfk_path";
 				$model->Create();
+
+				$contenido_response['mensaje'] = $model->mensaje;
 			}
 		}	
 
