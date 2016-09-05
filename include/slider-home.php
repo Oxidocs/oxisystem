@@ -1,6 +1,6 @@
 <?php include 'admin/routes/contenido_slider.php'; ?>
 <!-- Header Carousel -->
-	<header id="myCarousel" class="carousel slide">
+	<header id="myCarousel" class="carousel slide carousel-fade">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
 			<?php
