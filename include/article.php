@@ -42,6 +42,8 @@
 					</div>
           <?php
             echo html_entity_decode($articles[0]->descripcion);
+            if ($articles[0]->imagenes) { # code...
+            
           ?>
           <div class="row galerianoticia">
           <?php 
@@ -57,6 +59,9 @@
             }
           ?>
           </div>
+          <?php
+        }
+           ?>
         </div>
 
         <div class="redessociales pull-left hidden-xs hidden-sm col-md-3">

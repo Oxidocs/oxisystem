@@ -39,7 +39,8 @@ class Contenido {
 		$this->links = $links;
 	}
 	
-	public static function getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit, $order_by, $desc) {
+	public static function getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit2, $order_by, $desc) {
+		$limit ="";
 
 		if ($id!="") {
 			$id = "`contenido`.`ID` = $id and";
@@ -50,11 +51,11 @@ class Contenido {
 		if ($desc!="") {
 			$desc = "DESC ";
 		}
-		if ($limit!="" && !$limit_desde!="") {
-			$limit = "LIMIT $limit";
+		if ($limit2!="" && !$limit_desde!="") {
+			$limit = "LIMIT $limit2";
 		}
 		if ($limit_desde!="") {
-			$limit = "LIMIT $limit_desde , $limit";
+			$limit = "LIMIT $limit_desde , $limit2";
 		}
 		$filtro = $order_by.$desc.$limit;
 		//echo $filtro;

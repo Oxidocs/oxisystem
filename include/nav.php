@@ -65,7 +65,6 @@
         <li >
           <a href="contacto.php">Contacto</a>
         </li>
-
       </ul>
     </div>
     <!-- /.navbar-collapse -->

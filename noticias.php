@@ -47,72 +47,9 @@
 
   <section class="seccion-noticias">
     <div class="container">
-      <!-- aglutinador noticias -->
-        <!-- Projects Row -->
-          <div class="row aglutinador">
-            <div class="row">
-              <div class="aglunoticias">
-                <h4 class="col-lg-3 col-md-3 col-xs-12">NOTICIAS</h4>
-              </div>
-            </div>
-              <div class="col-md-4 img-portfolio">
-                  <a href="portfolio-item.html">
-                      <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
-                  </a>
-                  <h3>
-                      <a href="single-noticias.php">Investigación de Académicas de Periodismo es Publicado por Sitio SciELO</a>
-                  </h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              </div>
-              <div class="col-md-4 img-portfolio">
-                  <a href="portfolio-item.html">
-                      <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
-                  </a>
-                  <h3>
-                      <a href="single-noticias.php">Titular Noticia</a>
-                  </h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              </div>
-              <div class="col-md-4 img-portfolio">
-                  <a href="portfolio-item.html">
-                      <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
-                  </a>
-                  <h3>
-                      <a href="single-noticias.php">Titular Noticia</a>
-                  </h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              </div>
-          </div>
-          <!-- /.row -->
-          <!-- Pagination -->
-          <div class="row text-center">
-              <div class="col-lg-12">
-                  <ul class="pagination">
-                      <li>
-                          <a href="#">&laquo;</a>
-                      </li>
-                      <li class="active">
-                          <a href="#">1</a>
-                      </li>
-                      <li>
-                          <a href="#">2</a>
-                      </li>
-                      <li>
-                          <a href="#">3</a>
-                      </li>
-                      <li>
-                          <a href="#">4</a>
-                      </li>
-                      <li>
-                          <a href="#">5</a>
-                      </li>
-                      <li>
-                          <a href="#">&raquo;</a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-          <!-- /.row -->
+      <?php 
+        include 'include/paginador_noticias.php';
+      ?>
 
     </div>
   </section>
