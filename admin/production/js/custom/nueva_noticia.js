@@ -1,4 +1,6 @@
 var array_galeria = [];
+var borrador = 0;
+
 $(document).ready(function(){
 	iniciarDropzone('../../img/galeria/tmp/');
 });
@@ -13,9 +15,17 @@ $("select.image-select").on('change',function(){
 	}
 });
 
+$('.submit').on('click',function(){
+	if ($(this).attr('id')=='btnBorrador') {
+		borrador = 0;
+	}
+	if ($(this).attr('id')=='btnSave') {
+		borrador = 1;
+	}
+});
+
 $('form').on('submit',function(e){
 	e.preventDefault();
-
 	$("#descr").val($("#editor").html().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'));
 
 	$.each($('#galeria').children(),function(i,val){
@@ -24,17 +34,17 @@ $('form').on('submit',function(e){
 		}
 	});
 
-	options = $(this).serialize() + '&' + $.param({'galeria':array_galeria});
+	options = $(this).serialize()+ '&' + $.param({'estado':borrador}) + '&' + $.param({'galeria':array_galeria});
 	console.log(options);
 
 	$.post('../routes/noticias.php',options,function(data){
-		console.log(data);
-	},'json').done(function(data){
 		new PNotify({
 			title: data,
 			type: 'success',
 			styling: 'bootstrap3'
-		})
+		});
+	},'json').done(function(data){
+		window.location.reload();
 	}).error(function(){
 		new PNotify({
 			title: '¡Error al comunicarse con Base de Datos!',
