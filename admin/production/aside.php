@@ -103,7 +103,7 @@
                             <li class="<?php echo $portada_aside; ?>"><a class="<?php echo $portada_link; ?>" href="portada.php">Imágenes Portada</a></li>
                             <li class="<?php echo $quienes_aside; ?>"><a class="<?php echo $quienes_link; ?>" href="quienes_somos.php">Misión / Visión</a></li>
                             <li class="<?php echo $noticias_aside; ?>"><a class="<?php echo $noticias_link; ?>" href="noticias.php">Noticias</a></li>
-                            <li class="<?php echo $clientes_aside; ?>"><a class="<?php echo $clientes_link; ?>" href="clientes.php">Galeria de Imágenes</a></li>
+                            <li class="<?php echo $clientes_aside; ?>"><a class="<?php echo $clientes_link; ?>" href="galeria.php">Galeria de Imágenes</a></li>
                             <li class="<?php echo $contacto_aside; ?>"><a class="<?php echo $contacto_link; ?>" href="contacto.php">Contacto</a></li>
                         </ul>
                     </li>

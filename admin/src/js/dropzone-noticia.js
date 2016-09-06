@@ -41,7 +41,7 @@ function iniciarDropzone(url){
             });
         },
         url: "../controllers/upload-images.php?dir="+url,
-        maxFilesize: 10, //in MB
+        maxFilesize: 2, //in MB
         maxFiles: 5,
         parallelUploads: 5,
         addRemoveLinks: true,
@@ -50,6 +50,7 @@ function iniciarDropzone(url){
         dictCancelUploadConfirmation: "¿Estás seguro de cancelar la carga?",
         dictResponseError: "Ha ocurrido un error al intentar cargar el acrchivo",
         acceptedFiles: '.jpeg,.jpg,.JPEG,.JPG,.png,.PNG,.svg,.SVG,.JPEG,.jpeg',
+
         success : function(file, response){
             $.post('../controllers/listar_archivos.php', {dir:url},function(data){
                     $('select.image-select').empty();
