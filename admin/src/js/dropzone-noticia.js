@@ -102,6 +102,7 @@ function iniciarDropzone(url){
                 url: "../controllers/upload-images.php?delete=true&dir="+url,
                 data: "filename="+name,
                 success: function(data){
+                    var $select = $('select.image-select').val();
                     var json = JSON.parse(data);
                     if(json.res == true){
                         var element;
@@ -112,7 +113,18 @@ function iniciarDropzone(url){
                     $.post('../controllers/listar_archivos.php', {dir:url},function(data){
                         $('select.image-select').empty();
                         $('select.image-select').append('<option value="0"> Seleccionar Imagen </option>');
-                    }).done(function(data){
+                        $.each(data,function(index,value){
+                            $('select.image-select').append(value);
+                        });
+                    },'json').done(function(data){
+                        $('select.image-select').val($select);
+                        if ($('select.image-select').val()!=0 && $('select.image-select').val()!=null){
+                            $('img.portada-noticia').attr('src','../../img/galeria/tmp/'+$('select.image-select').val());
+                        }else{
+                            $('select.image-select').val(0);
+                            $('img.portada-noticia').attr('src','images/user.png');
+                        }
+
                         var count = Object.keys(data).length;
                         if (count==0){
                             thisDropzone.removeAllFiles();
