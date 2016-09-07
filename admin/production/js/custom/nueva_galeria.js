@@ -2,7 +2,15 @@ var array_galeria = [];
 $(document).ready(function(){
 	iniciarDropzone('../../img/galeria/home/');
 });
-
+$("select.image-select").on('change',function(){
+	var dir = '../../img/galeria/home/';
+	var option_value = $(this).val();
+	if (option_value != 0) {
+		$('img.portada-noticia').attr('src',dir+option_value);
+	}else{
+		$('img.portada-noticia').attr('src','images/user.png');
+	}
+});
 $('form').on('submit',function(e){
 	e.preventDefault();
 

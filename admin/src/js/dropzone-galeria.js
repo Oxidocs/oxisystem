@@ -42,7 +42,7 @@ function iniciarDropzone(url){
         },
         url: "../controllers/upload-images.php?dir="+url,
         maxFilesize: 2, //in MB
-        maxFiles: 20,
+        
         parallelUploads: 5,
         addRemoveLinks: true,
         dictMaxFilesExceeded: "Sólo puedes subir 5 imágenes a la vez",
@@ -143,7 +143,7 @@ function cargarGaleria(url, data){
     $('#galeria').empty();
     $.each(data,function(index,value){
         var img_galeria = "";
-        img_galeria += '<div class="col-md-55">';
+        img_galeria += '<div class="col-md-55 has-success">';
         img_galeria += '<div class="thumbnail form-control">';
         img_galeria += '<div class="image view view-first">';
         img_galeria += '<img src="'+url+value.name+'" alt="image" class="img-responsive center-block" />';
@@ -151,7 +151,7 @@ function cargarGaleria(url, data){
         img_galeria += '<p>&nbsp;</p>';
         // img_galeria += '<p>Your Text</p>';
         img_galeria += '<div class="tools tools-bottom">';
-        img_galeria += '<a class="check_img"><i class="fa fa-check"></i></a>';
+        img_galeria += '<a class="check_img"><i class="fa fa-times"></i></a>';
         img_galeria += '</div>';
         img_galeria += '</div>';
         img_galeria += '</div>';

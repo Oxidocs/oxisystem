@@ -61,13 +61,33 @@
                             </div>
                         </div>
                         <div class="x_panel cargar_galeria">
-                            <div class="x_title">
+                        <div class="x_title">
                                 <h2>Galería de Imágenes</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li class="pull-right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                                 </ul>
                                 <div class="clearfix"></div>
                             </div>
+                        <div class="row">
+                                    <div class="col-sm-4 col-xs-12 vcenter">
+                                        <img src="../../img/default.png" class="img-responsive portada-noticia center-block" alt="portada" style="max-height:200px;min-height:200px">
+                                    </div>
+                                    <div class="col-sm-7 col-xs-12 vcenter">
+                                        <div class="form-group">                               
+                                            <label>Portada Galeria</label>
+                                                <select id="portada" name="portada" class="form-control image-select text-center">
+                                                    <option>Selecionar Imagen</option>
+                                                </select>   
+                                        </div>     
+                                        <div class="form-group">                                
+                                            <label>Nombre Galeria</label>
+                                            <input id="titulo" type="text" name="titulo" class="col-lg-12 form-control" placeholder="Galeria Aniversario 10">
+                                        </div>                                    
+                                        
+                                    </div>
+                            </div> 
+                            <hr> 
+
                             <div id="galeria" class="x_content"></div>                            
                         </div>
                         <button id="btnSave" type="submit" class="btn btn-success pull-right"> Publicar Noticia </button>
@@ -110,7 +130,7 @@
     <script src="../vendors/pnotify/dist/pnotify.buttons.js"></script>
     <script src="../vendors/pnotify/dist/pnotify.nonblock.js"></script>
     <!--Custom JS-->
-    <script src="js/custom/galeria.js" type="text/javascript"></script>
+    <script src="js/custom/nueva_galeria.js" type="text/javascript"></script>
   
 </body>
 </html>

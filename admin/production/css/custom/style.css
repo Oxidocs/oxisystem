@@ -18,4 +18,9 @@ img.avatar{
 a{
 	cursor:pointer !important;
 }
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
 
