@@ -20,7 +20,7 @@ $('form').on('submit',function(e){
 		}
 	});
 
-	options = $.param({'galeria':array_galeria});
+	options = options = $(this).serialize()+'&' + $.param({'galeria':array_galeria});
 	console.log(options);
 
 	/*$.post('../routes/noticias.php',options,function(data){

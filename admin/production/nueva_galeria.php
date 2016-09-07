@@ -20,6 +20,8 @@
     <link href="../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
     <!-- bootstrap-wysiwyg -->
     <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!- Style smart wizard ->
+    <link rel="stylesheet" type="text/css" href="../vendors/jQuery-Smart-Wizard/styles/smart_wizard.css">
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
     <!-- Dropzone Style -->
@@ -44,7 +46,7 @@
                 <div class="row">
                     <form>
                         <div class="x_panel">
-                            <div class="x_title">
+                            <!-- <div class="x_title">
                                 <h2>Subir Imágenes</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li class="pull-right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
@@ -52,15 +54,77 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                                <div id="dropzone" class="dropzone">
+                                <div id="dropzone2" class="dropzone">
                                     <div class="dz-message">Carga aquí tus imágenes 
                                         <br /> 
                                         <i class="fa fa-cloud-upload fa-5x" aria-hidden="true" style="color: #a1d302;"></i>
                                     </div>
                                 </div>
+                            </div> -->
+                            <div class="x_content">
+                                <h2>Crear Galeria</h2>
+                    <!-- Tabs -->
+                    <div id="wizard" class="form_wizard wizard_horizontal">
+                      <ul class="list-unstyled wizard_steps">
+                        <li>
+                          <a href="#step-11">
+                            <span class="step_no">1</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#step-22">
+                            <span class="step_no">2</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#step-33">
+                            <span class="step_no">3</span>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <div id="step-11">
+                        <h2 class="StepTitle">Paso 1 carga tus imágenes </h2>
+                                <div id="dropzone" class="dropzone">
+                                    <div class="dz-message">Carga aquí tus imágenes Máx 100 por galeria
+                                        <br /> 
+                                        <i class="fa fa-cloud-upload fa-5x" aria-hidden="true" style="color: #a1d302;"></i>
+                                    </div>
+                                </div>
+                        
+                      </div>
+                      <div id="step-22">
+                        <h2 class="StepTitle">Paso 2 Nombra la Galeria</h2>
+                        <div class="row">
+                                    <div class="col-sm-3 col-xs-12 vcenter ">
+                                        <img src="../../img/default.png" class="img-responsive portada-noticia center-block" alt="portada" style="max-height:220px;min-height:220px">
+                                        
+                                    </div>
+                                    <div class="col-sm-8 col-xs-12 vcenter">
+                                        <div class="form-group">                                
+                                            <label>Nombre Galeria</label>
+                                            <input id="titulo" type="text" name="titulo" class="col-lg-12 form-control" placeholder="Galeria Aniversario 10">
+                                        </div>    
+                                        <div class="form-group">                               
+                                            <label>Portada Galeria</label>
+                                                <select id="portada" name="portada" class="form-control image-select text-center">
+                                                    <option>Selecionar Imagen</option>
+                                                </select>   
+                                        </div>                                
+                                        
+                                    </div>
+                            </div>
+                      </div>
+                      <div id="step-33">
+                        <h2 class="StepTitle">Paso 3 Selecciona y Finaliza</h2>
+                        <div id="galeria" class="x_content"></div>
+                      </div>
+                      
+                    </div>
+
                             </div>
                         </div>
-                        <div class="x_panel cargar_galeria">
+                    <!-- <div class="x_panel cargar_galeria">
                         <div class="x_title">
                                 <h2>Galería de Imágenes</h2>
                                 <ul class="nav navbar-right panel_toolbox">
@@ -69,10 +133,8 @@
                                 <div class="clearfix"></div>
                             </div>
                         <div class="row">
-                                    <div class="col-sm-4 col-xs-12 vcenter">
-                                        <img src="../../img/default.png" class="img-responsive portada-noticia center-block" alt="portada" style="max-height:200px;min-height:200px">
-                                    </div>
-                                    <div class="col-sm-7 col-xs-12 vcenter">
+                                    <div class="col-sm-3 col-xs-12 ">
+                                        <img src="../../img/default.png" class="img-responsive portada-noticia center-block" alt="portada" style="max-height:220px;min-height:220px">
                                         <div class="form-group">                               
                                             <label>Portada Galeria</label>
                                                 <select id="portada" name="portada" class="form-control image-select text-center">
@@ -82,16 +144,17 @@
                                         <div class="form-group">                                
                                             <label>Nombre Galeria</label>
                                             <input id="titulo" type="text" name="titulo" class="col-lg-12 form-control" placeholder="Galeria Aniversario 10">
-                                        </div>                                    
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-9 col-xs-12 ">
+                                        <div id="galeria" class="x_content"></div>                                   
                                         
                                     </div>
                             </div> 
-                            <hr> 
-
-                            <div id="galeria" class="x_content"></div>                            
-                        </div>
+                            <hr>                            
+                        </div> -->
+                        
                         <button id="btnSave" type="submit" class="btn btn-success pull-right"> Publicar Noticia </button>
-                        <button type="submit" class="btn btn-default pull-right"> Dejar como Borrador </button>
                     </form>
                 </div>
             </div>
@@ -116,6 +179,8 @@
     <script src="../vendors/nprogress/nprogress.js"></script>
     <!-- jQuery custom content scroller -->
     <script src="../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+
     <!-- bootstrap-wysiwyg -->
     <script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
     <script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
@@ -131,6 +196,127 @@
     <script src="../vendors/pnotify/dist/pnotify.nonblock.js"></script>
     <!--Custom JS-->
     <script src="js/custom/nueva_galeria.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+         $('#wizard').smartWizard({
+  // Properties
+    selected: 0,  // Selected Step, 0 = first step   
+    keyNavigation: true, // Enable/Disable key navigation(left and right keys are used if enabled)
+    enableAllSteps: false,  // Enable/Disable all steps on first load
+    transitionEffect: 'fade', // Effect on navigation, none/fade/slide/slideleft
+    contentURL:null, // specifying content url enables ajax content loading
+    contentURLData:null, // override ajax query parameters
+    contentCache:true, // cache step contents, if false content is fetched always from ajax url
+    cycleSteps: false, // cycle step navigation
+    enableFinishButton: false, // makes finish button enabled always
+    hideButtonsOnDisabled: false, // when the previous/next/finish buttons are disabled, hide them instead
+    errorSteps:[],    // array of step numbers to highlighting as error steps
+    labelNext:'Siguiente', // label for Next button
+    labelPrevious:'Atras', // label for Previous button
+    labelFinish:'Finalizar',  // label for Finish button        
+    noForwardJumping:true,
+    ajaxType: 'POST',
+  // Events
+    onLeaveStep:leaveAStepCallback,// triggers when leaving a step    
+    onShowStep: null,  // triggers when showing a step 
+    onFinish:onFinishCallback, // triggers when Finish button is clicked
+    includeFinishButton : true,   // Add the finish button
+    reverseButtonsOrder: true //shows buttons ordered as: prev, next and finish    
+}); 
+         $('.buttonNext').addClass('btn btn-success');
+        $('.buttonPrevious').addClass('btn btn-primary');
+        $('.buttonFinish').addClass('btn btn-default');
+   function leaveAStepCallback(obj){
+        var step_num= obj.attr('rel');
+        console.log(step_num);
+        return validateSteps(step_num);
+      }
+      
+      function onFinishCallback(){
+       if(validateAllSteps()){
+        $('form').submit();
+       }
+      }
+});
+        
+//------------------------------------------------------------------------------------------
+        function validateAllSteps(){
+       var isStepValid = true;
+       
+       if(validateStep1() == false){
+         isStepValid = false;
+         $('#wizard').smartWizard('setError',{stepnum:1,iserror:true});         
+       }else{
+         $('#wizard').smartWizard('setError',{stepnum:1,iserror:false});
+       }
+       
+       if(validateStep2() == false){
+         isStepValid = false;
+         $('#wizard').smartWizard('setError',{stepnum:2,iserror:true});         
+       }else{
+         $('#wizard').smartWizard('setError',{stepnum:2,iserror:false});
+       }
+       
+       if(!isStepValid){
+          $('#wizard').smartWizard('showMessage','Please correct the errors in the steps and continue');
+       }
+              
+       return isStepValid;
+    }  
+//--------------------------------------------------------------------------------------------------------- 
+        
+        
+        function validateSteps(step){
+          var isStepValid = true;
+      // validate step 1
+      if(step == 1){
+        if(validateStep1() == false ){
+          isStepValid = false; 
+          $('#wizard').smartWizard('showMessage','Por favor carga imágenes en la galería error paso '+step+ ' y haz click en siguiente.');
+          $('#wizard').smartWizard('setError',{stepnum:step,iserror:true});         
+        }else{
+          $('#wizard').smartWizard('hideMessage');
+          $('#wizard').smartWizard('setError',{stepnum:step,iserror:false});
+        }
+      }
+      
+      // validate step2
+      if(step == 2){
+        if(validateStep2() == false ){
+          isStepValid = false; 
+          $('#wizard').smartWizard('showMessage','Por favor ingresa los datos solicitados, error paso '+step+ '.');
+          $('#wizard').smartWizard('setError',{stepnum:step,iserror:true});         
+        }else{
+          $('#wizard').smartWizard('hideMessage');
+          $('#wizard').smartWizard('setError',{stepnum:step,iserror:false});
+        }
+      }
+      
+      return isStepValid;
+    }
+        
+function validateStep1(){
+var isValid = true; 
+// Validate Username
+
+return isValid;
+}
+    
+function validateStep2(){
+  var isValid = false;    
+  //validate email  email
+       
+  return isValid;
+}
+    
+    // Email Validation
+    function isValidEmailAddress(emailAddress) {
+      var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+      return pattern.test(emailAddress);
+    } 
+        
+
+    </script>
   
 </body>
 </html>

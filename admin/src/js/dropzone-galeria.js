@@ -55,6 +55,7 @@ function iniciarDropzone(url){
             $.post('../controllers/listar_archivos.php', {dir:url},function(data){
                     $('select.image-select').empty();
                     $('select.image-select').append('<option value="0"> Seleccionar Imagen </option>');
+                    console.log(data);
                     $.each(data,function(index,value){
                         $('select.image-select').append(value);
                     });
@@ -97,6 +98,7 @@ function iniciarDropzone(url){
         },
         removedfile: function(file, serverFileName){
             var name = file.name;
+
             $.ajax({
                 type: "POST",
                 url: "../controllers/upload-images.php?delete=true&dir="+url,
@@ -112,7 +114,11 @@ function iniciarDropzone(url){
                     $.post('../controllers/listar_archivos.php', {dir:url},function(data){
                         $('select.image-select').empty();
                         $('select.image-select').append('<option value="0"> Seleccionar Imagen </option>');
-                    }).done(function(data){
+                       console.log(data);
+                       $.each(data,function(index,value){
+                        $('select.image-select').append(value);
+                    });
+                    },'json').done(function(data){
                         var count = Object.keys(data).length;
                         if (count==0){
                             thisDropzone.removeAllFiles();
