@@ -110,6 +110,18 @@
                                                 <select id="portada" name="portada" class="form-control image-select text-center">
                                                     <option>Selecionar Imagen</option>
                                                 </select>   
+                                        </div> 
+                                        <div class="form-group">                               
+                                            <label>Estado</label>    
+                                        </div>
+                                        <div class="form-group">                               
+                                                                     
+                                            <label class="radio-inline text-success">
+                                                    <input id="activo" type="radio" name="estado" value="1" checked="">Activo
+                                            </label>
+                                            <label class="radio-inline text-danger">
+                                                    <input id="inactivo" type="radio" name="estado" value="0">Inactivo
+                                            </label>             
                                         </div>                                
                                         
                                     </div>
@@ -153,8 +165,6 @@
                             </div> 
                             <hr>                            
                         </div> -->
-                        
-                        <button id="btnSave" type="submit" class="btn btn-success pull-right"> Publicar Noticia </button>
                     </form>
                 </div>
             </div>
@@ -256,6 +266,13 @@
        }else{
          $('#wizard').smartWizard('setError',{stepnum:2,iserror:false});
        }
+
+       if(validateStep3() == false){
+         isStepValid = false;
+         $('#wizard').smartWizard('setError',{stepnum:3,iserror:true});         
+       }else{
+         $('#wizard').smartWizard('setError',{stepnum:3,iserror:false});
+       }
        
        if(!isStepValid){
           $('#wizard').smartWizard('showMessage','Please correct the errors in the steps and continue');
@@ -263,58 +280,134 @@
               
        return isStepValid;
     }  
-//--------------------------------------------------------------------------------------------------------- 
-        
-        
-        function validateSteps(step){
-          var isStepValid = true;
-      // validate step 1
-      if(step == 1){
+//----------------------------------------------------------------------------------------------        
+function validateSteps(step){
+    var isStepValid = true;
+    // validate step 1
+    if(step == 1){
         if(validateStep1() == false ){
-          isStepValid = false; 
-          $('#wizard').smartWizard('showMessage','Por favor carga imágenes en la galería error paso '+step+ ' y haz click en siguiente.');
-          $('#wizard').smartWizard('setError',{stepnum:step,iserror:true});         
+            isStepValid = false; 
+            $('#wizard').smartWizard('showMessage','Por favor carga imágenes en la galería error paso '+step);
+            $('#wizard').smartWizard('setError',{stepnum:step,iserror:true});         
         }else{
-          $('#wizard').smartWizard('hideMessage');
-          $('#wizard').smartWizard('setError',{stepnum:step,iserror:false});
+            $('#wizard').smartWizard('hideMessage');
+            $('#wizard').smartWizard('setError',{stepnum:step,iserror:false});
         }
-      }
-      
-      // validate step2
-      if(step == 2){
-        if(validateStep2() == false ){
-          isStepValid = false; 
-          $('#wizard').smartWizard('showMessage','Por favor ingresa los datos solicitados, error paso '+step+ '.');
-          $('#wizard').smartWizard('setError',{stepnum:step,iserror:true});         
-        }else{
-          $('#wizard').smartWizard('hideMessage');
-          $('#wizard').smartWizard('setError',{stepnum:step,iserror:false});
-        }
-      }
-      
-      return isStepValid;
     }
-        
+
+    // validate step2
+    if(step == 2){
+        if(validateStep2() == false ){
+            isStepValid = false; 
+           // $('#wizard').smartWizard('showMessage','Por favor ingresa los datos solicitados, error paso '+step);
+            $('#wizard').smartWizard('setError',{stepnum:step,iserror:true});         
+        }else{
+            $('#wizard').smartWizard('hideMessage');
+            $('#wizard').smartWizard('setError',{stepnum:step,iserror:false});
+        }
+    }
+    // validate step3
+    if(step == 3){
+        if(validateStep3() == false ){
+            isStepValid = false; 
+            //$('#wizard').smartWizard('showMessage','Por favor ingresa los datos solicitados, error paso '+step);
+            $('#wizard').smartWizard('setError',{stepnum:step,iserror:true});         
+        }else{
+            $('#wizard').smartWizard('hideMessage');
+            $('#wizard').smartWizard('setError',{stepnum:step,iserror:false});
+        }
+    }
+
+    return isStepValid;
+}
+//---- funcion para validar paso 1    
+var isValid = true;
 function validateStep1(){
-var isValid = true; 
-// Validate Username
+    validarGaleria().done(function(data){
+             if (data.length > 0) 
+             {
+                console.log("existe");
+                isValid = true;
+             }           
+             else
+             {
+                console.log("no existe");
+                isValid = false;
+             }
+    });
+return isValid;    
+}
+//---- funcion para validar paso 2
+    
+function validateStep2(){
+
+    if ($('#titulo').val() != "") 
+    {   $('#titulo').parent().removeClass('has-success');
+        $('#titulo').parent().removeClass('has-error');
+        $('#titulo').parent().addClass('has-success');
+    }   
+    else
+    {
+        $('#titulo').parent().removeClass('has-success');
+        $('#titulo').parent().removeClass('has-error');
+        $('#titulo').parent().addClass('has-error');
+    }
+    if($('#portada').val() != '0')
+    {
+        $('#portada').parent().removeClass('has-success');
+        $('#portada').parent().removeClass('has-error');
+        $('#portada').parent().addClass('has-success');
+    }
+    else
+    {
+        $('#portada').parent().removeClass('has-success');
+        $('#portada').parent().removeClass('has-error');
+        $('#portada').parent().addClass('has-error');
+    }
+    if ($('#titulo').val() != "" && $('#portada').val() != 0) 
+    {
+        isValid = true;
+    }
+    else
+    {
+        isValid = false;
+        new PNotify({
+            title: "Por favor ingresa los datos solicitados, error paso 2",
+            type: 'warning',
+            styling: 'bootstrap3'
+        })
+    }
 
 return isValid;
 }
+//---- funcion para validar paso 3
     
-function validateStep2(){
-  var isValid = false;    
+function validateStep3(){
+  var isValid = true;    
   //validate email  email
        
   return isValid;
 }
+//------validar galeria sincronico
+function validarGaleria(){
+    return $.ajax({
+        url: '../controllers/listar_archivos.php',
+        type: 'POST',
+        async: false,
+        dataType: 'json',
+        data: {dir_galeria:'../../img/galeria/home'},
+        success: function(data){
+            //console.log(data); // this is currently returning FALSE
+        }
+    });
+}
+//---------------------------------------------------------------------------------------   
+// Email Validation
+function isValidEmailAddress(emailAddress) {
+  var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+  return pattern.test(emailAddress);
+} 
     
-    // Email Validation
-    function isValidEmailAddress(emailAddress) {
-      var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-      return pattern.test(emailAddress);
-    } 
-        
 
     </script>
   

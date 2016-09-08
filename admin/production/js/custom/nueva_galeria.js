@@ -23,7 +23,7 @@ $('form').on('submit',function(e){
 	options = options = $(this).serialize()+'&' + $.param({'galeria':array_galeria});
 	console.log(options);
 
-	/*$.post('../routes/noticias.php',options,function(data){
+	$.post('../routes/crear_galeria.php',options,function(data){
 		console.log(data);
 	},'json').done(function(data){
 		new PNotify({
@@ -38,7 +38,7 @@ $('form').on('submit',function(e){
 			type: 'error',
 			styling: 'bootstrap3'
 		});
-	});*/
+	});
 
 });
 

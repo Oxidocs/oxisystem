@@ -2,8 +2,8 @@
 
 if (isset($_POST['dir'])) {
 	getFilesName($_POST['dir']);
-}elseif (isset($_POST['dir_galeria'])) {
-	getFilesGaleria($_POST['dir_galeria']);
+}elseif (isset($_REQUEST['dir_galeria'])) {
+	getFilesGaleria($_REQUEST['dir_galeria']);
 }
 
 function getFilesName($url){
