@@ -51,6 +51,9 @@
         <li>
           <a href="noticias.php?pagina=1">Noticias</a>
         </li>
+        <li>
+          <a href="galerias.php?pagina=1">Galerías Fotográficas</a>
+        </li>
         <li class="dropdown">
           <a href="publicaciones.php" class="dropdown-toggle" data-toggle="dropdown">Publicaciones <b class="caret"></b></a>
           <ul class="dropdown-menu">

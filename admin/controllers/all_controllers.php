@@ -22,7 +22,7 @@
 			
 			
 		}
-		public function createContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $imagenes , $redes_sociales, $link){
+		public function createContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $imagenes , $redes_sociales, $link, $url, $tmp){
 
 			$fecha_actual = date('Y-m-d H:i:s');
 
@@ -30,7 +30,7 @@
 				$mensaje = Contenido::createContent($secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_actual, $imagenes, $redes_sociales, $link);
 				if ($mensaje['idfk'] > 0) {
 					$id = $mensaje['idfk'];
-					$this->createFolder($id,$portada,$imagenes);
+					$this->createFolder($id,$portada,$imagenes, $url, $tmp);
 					return $mensaje['mensaje'];
 				}else{
 					return $mensaje['idfk'];
@@ -65,22 +65,22 @@
 			return $mensaje;			
 		}
 
-		private function createFolder($id, $portada, $imagenes){
+		private function createFolder($id, $portada, $imagenes, $url, $tmp){
 
-			if (!file_exists("../../img/galeria/noticias/".$id)) {
-				mkdir("../../img/galeria/noticias/".$id, 0777);
+			if (!file_exists("../../img/galeria/".$url."/".$id)) {
+				mkdir("../../img/galeria/".$url."/".$id, 0777);
 			}
 
-			if (file_exists("../../img/galeria/tmp/".$portada)) {
-				if (copy("../../img/galeria/tmp/".$portada, "../../img/galeria/noticias/".$id."/".$portada)) {
-					unlink("../../img/galeria/tmp/".$portada);
+			if (file_exists("../../img/galeria/".$tmp."/".$portada)) {
+				if (copy("../../img/galeria/".$tmp."/".$portada, "../../img/galeria/".$url."/".$id."/".$portada)) {
+					unlink("../../img/galeria/".$tmp."/".$portada);
 				}
 			}
 			if ($imagenes!="") {
 				foreach ($imagenes as $imagen) {
-					if (file_exists("../../img/galeria/tmp/".$imagen['path'])) {
-						if (copy("../../img/galeria/tmp/".$imagen['path'], "../../img/galeria/noticias/".$id."/".$imagen['path'])) {
-							unlink("../../img/galeria/tmp/".$imagen['path']);
+					if (file_exists("../../img/galeria/".$tmp."/".$imagen['path'])) {
+						if (copy("../../img/galeria/".$tmp."/".$imagen['path'], "../../img/galeria/".$url."/".$id."/".$imagen['path'])) {
+							unlink("../../img/galeria/".$tmp."/".$imagen['path']);
 						}
 					}
 				}
