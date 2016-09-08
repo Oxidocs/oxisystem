@@ -7,8 +7,8 @@ if (isset($_REQUEST['pagina']) && is_numeric($_REQUEST['pagina'])) {
 }
 $cant_noticias = file_get_contents('http://'.$domain.'/oxisystem/admin/routes/paginador_galerias.php');
 $objs2 = json_decode($cant_noticias);
-$numrows = count($objs2);
-$total_pages = ceil($numrows/3);
+$numrows = count($objs2) - 1;
+$total_pages = ceil($numrows/3) ;
 $objs = json_decode($json);
 setlocale(LC_TIME, 'es_ES.UTF-8');
 ?>

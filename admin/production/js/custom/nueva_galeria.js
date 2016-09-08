@@ -26,6 +26,8 @@ $('form').on('submit',function(e){
 	$.post('../routes/crear_galeria.php',options,function(data){
 		console.log(data);
 	},'json').done(function(data){
+		$(".buttonFinish").attr('disabled','disabled');
+		
 		new PNotify({
 			title: data,
 			type: 'success',
