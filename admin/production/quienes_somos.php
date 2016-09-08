@@ -19,6 +19,10 @@
     <link href="summernote/summernote.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+    <!-- PNotify -->
+    <link href="../vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="../vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="../vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -37,7 +41,7 @@
                                 <h2>Misión</h2>
                                 <div class="clearfix"></div>
                             </div>
-                            <form id="mision" action="../views/quienes_somos.php" method="POST">
+                            <form id="mision" action="../routes/quienes_somos.php" method="POST">
                                 <div class="x_content">
                                     <input type="hidden" id="id_mision" name="id_mision">
                                     <input type="hidden" class="seccion" value="2">
@@ -51,7 +55,7 @@
                                 <h2>Visión</h2>
                                 <div class="clearfix"></div>
                             </div>
-                            <form id="vision" action="../views/quienes_somos.php" method="POST">
+                            <form id="vision" action="../routes/quienes_somos.php" method="POST">
                                 <div class="x_content">
                                     <input type="hidden" id="id_vision" name="id_vision">
                                     <input type="hidden" class="seccion" value="3">
@@ -91,6 +95,10 @@
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
     <script src="js/custom/quienes.js"></script>
+    <!-- PNotify -->
+    <script src="../vendors/pnotify/dist/pnotify.js"></script>
+    <script src="../vendors/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="../vendors/pnotify/dist/pnotify.nonblock.js"></script>
 
 </body>
 </html>

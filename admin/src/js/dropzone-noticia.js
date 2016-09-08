@@ -119,7 +119,7 @@ function iniciarDropzone(url){
                     },'json').done(function(data){
                         $('select.image-select').val($select);
                         if ($('select.image-select').val()!=0 && $('select.image-select').val()!=null){
-                            $('img.portada-noticia').attr('src','../../img/galeria/tmp/'+$('select.image-select').val());
+                            $('img.portada-noticia').attr('src', url+$('select.image-select').val());
                         }else{
                             $('select.image-select').val(0);
                             $('img.portada-noticia').attr('src','images/user.png');

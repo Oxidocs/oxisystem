@@ -38,7 +38,7 @@
 				
 
 			}else{
-				$mensaje = Contenido::updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link);
+				$mensaje = Contenido::updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_actual, $imagenes, $redes_sociales, $link);
 
 				return $mensaje;
 			}

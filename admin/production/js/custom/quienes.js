@@ -22,8 +22,6 @@ $(document).ready(function() {
 		$('#id_vision').val(data[1][0].id);
 		$('#text_area_vision').summernote('code',data[1][0].descripcion);
 	});
-
-	
 });
 
 $('form').on('submit', function (e) {
@@ -38,7 +36,24 @@ $('form').on('submit', function (e) {
 	var inputid = $('#'+inputid_id).val();
 
 	$.post($(this).attr('action'),{id: inputid, data: text_area, section_id: section_id},function(data){
-		alert(data);
+		new PNotify({
+			title: data.mensaje,
+			type: 'success',
+			styling: 'bootstrap3'
+		});
+	},'json').error(function(){
+		new PNotify({
+			title: '¡Error al comunicarse con Base de Datos!',
+			text: 'Verifique su conexión a internet',
+			type: 'error',
+			styling: 'bootstrap3'
+		});
 	});
 
 });
+
+//recupera nombre de archivo ---------------------------------------------------------------------------------
+function recuperaPath(url) {
+	var result = url.match(/[-_\w]+[.][\w]+$/i)[0];
+	return result;
+};
