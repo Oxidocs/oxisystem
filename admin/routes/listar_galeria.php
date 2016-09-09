@@ -10,7 +10,7 @@
 				"<a href='editar_noticia.php?id=$obj->id'>$obj->titulo</a>",
 				"$obj->fecha_creacion",
 				"<img  src='../../img/galeria/galeria/$obj->id/$obj->portada_contenido' class='avatar avatar-portada0 center-block' alt='Avatar'>",
-				"<a href='editar_noticia.php?id=$obj->id'> Editar </a> <a onClick='eliminarNoticia($obj->id)';>Eliminar</a>"
+				"<a href='editar_noticia.php?id=$obj->id'> Editar </a> <a onClick='eliminarGaleria($obj->id)';>Eliminar</a>"
 			    );
 		array_push($result, $tmp);
 	}

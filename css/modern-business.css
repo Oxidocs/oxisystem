@@ -19,7 +19,11 @@ body {
 .img-portfolio {
     margin-bottom: 30px;
 }
-
+.img-portfolio2 {
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
 .img-hover:hover {
     opacity: 0.8;
 }

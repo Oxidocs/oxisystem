@@ -171,9 +171,9 @@
             responsive: true
         });
 
-        function eliminarNoticia($id){
-            if (confirm("Estas a punto de eliminar una noticia ¿Estás Seguro?")) {
-                $.post('../routes/eliminar_noticia.php', {id: $id}, function(data){
+        function eliminarGaleria($id){
+            if (confirm("Estas a punto de eliminar una galeria ¿Estás Seguro?")) {
+                $.post('../routes/eliminar_galeria.php', {id: $id}, function(data){
                      table.ajax.reload();
                 }).done(function(data){
                     new PNotify({
