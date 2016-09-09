@@ -445,4 +445,13 @@ footer {
   z-index: 2;
 }
 
+.cover {
+  height: 120px;
+  border: 1px solid black;
+  margin-bottom: 1em;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 /*# sourceMappingURL=estilo.css.map */

@@ -17,7 +17,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
 <div class="row aglutinador">
     <div class="row">
         <div class="aglunoticias">
-            <h4 class="col-lg-3 col-md-3 col-xs-12">Galerías Fotográficas</h4>
+            <h4 class="col-lg-3 col-md-3 col-xs-12">GALERÍAS FOTOGRÁFRICAS</h4>
         </div>
     </div>
     <?php
@@ -30,12 +30,12 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
         
     ?>
     <div class="col-md-4 img-portfolio">
-        <a href="single-galerias.php?id=<?php echo $obj->id; ?>">
-            <img class="img-responsive img-hover center-block" src="img/galeria/galeria/<?php echo $obj->id.'/'.$obj->portada_contenido; ?>" alt="" style="
-    max-height: 260px;min-height: 260px;">
+        <a href="single-galeria.php?id=<?php echo $obj->id; ?>">
+            <div class="col-md-3" style="height: 260px;width: 100%;border: 2px solid white;  background-repeat: no-repeat;background-size: cover;background-image: url(img/galeria/galeria/<?php echo $obj->id.'/'.$obj->portada_contenido; ?>);">              
+            </div>
         </a>
         <h3>
-            <a href="single-galerias.php?id=<?php echo $obj->id; ?>">
+            <a href="single-galeria.php?id=<?php echo $obj->id; ?>">
                 <?php echo $obj->titulo; ?>
             </a>
         </h3>
@@ -67,7 +67,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
             <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
         </a>
         <h3>
-        <a href="single-galerias.php">
+        <a href="single-galeria.php">
             Investigación de Académicas de Periodismo es Publicado por Sitio SciELO
         </a>
         </h3>
