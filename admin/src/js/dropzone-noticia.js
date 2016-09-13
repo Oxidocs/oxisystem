@@ -144,7 +144,7 @@ function iniciarDropzone(url){
                         });
                     }).error(function(e){
                         alert('Se ha producido un error al cargar, refresque la página para volver a intentarlo');
-                    });
+                });
                 }
             });
         }
@@ -170,5 +170,23 @@ function cargarGaleria(url, data){
         img_galeria += '</div>';
         img_galeria += '</div>';
         $('#galeria').append(img_galeria);
+    });
+    
+    $.get('../routes/article.php', {id: $id}, function(data){
+        $('#titulo').val(data[0].titulo);
+        $('#subtitulo').val(data[0].subtitulo);
+        $('#editor').append(convert(data[0].descripcion));
+        $("select.image-select").val(data[0].portada_contenido);
+        $('img.portada-noticia').attr('src',dir+data[0].portada_contenido);
+    },'json').done(function(data){
+        $.each(data[0].imagenes,function(i,val){
+            $.each($("#galeria > div > div > div > img.img-responsive.center-block"),function(index,value){
+                if (val.PATH == recuperaPath(value.src)) {
+                    value.id = val.ID;
+                    $('#'+val.ID).parent().parent().parent().addClass('has-success');
+                    $(value).parent().children().children().children().children().attr('class','fa fa-times');
+                }
+            });     
+        });
     });
 }

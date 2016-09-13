@@ -5,7 +5,6 @@ $(document).ready(function(){
 	dir = '../../img/galeria/noticias/'+$id+'/';
 	iniciarDropzone(dir);
 	$.get('../routes/article.php', {id: $id}, function(data){
-		console.log(data);
 		$('#titulo').val(data[0].titulo);
 		$('#subtitulo').val(data[0].subtitulo);
 		$('#editor').append(convert(data[0].descripcion));
@@ -40,7 +39,7 @@ $('form').on('submit',function(e){
 	});
 	options = $(this).serialize() + '&' + $.param({'galeria':array_galeria}) + '& id =' + $id;
 	$.post('../routes/editar_noticia.php',options,function(data){
-		console.log(data);
+
 	},'json').done(function(data){
 		new PNotify({
 			title: data.mensaje,

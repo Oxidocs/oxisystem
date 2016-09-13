@@ -188,6 +188,24 @@ class Contenido {
 		
 		if ($imagenes != "") {
 
+			$model = new Crud();
+			$model->select = 'PAT_ID';
+			$model->from = 'contenido_path';
+			$model->condition = "CON_ID = ".$idfk_contenido;
+			$model->Read();
+			$set_imagenes = $model->rows;
+			
+			foreach ($set_imagenes as $set_imagen) {
+				$model = new Crud();
+				$model->update = "path_imagenes";
+				$model->set = "ESTADOS_ID = 2";
+				$model->condition = "ID = ".$set_imagen['PAT_ID'];
+				$model->Update();
+
+				$contenido_response = array('idfk' => $id, 'mensaje' => $model->mensaje);
+			}
+			
+
 			foreach ($imagenes as $imagen) {
 
 				if ($imagen['id'] != "") {
