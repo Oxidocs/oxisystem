@@ -6,9 +6,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="sitio, institucional, userena, uls, periodismo" />
-	<meta name="description" content="Sitio de la carrera de Periodismo de la Universidad de La Serena" />
+	<meta name="description" content="">
+	<meta name="author" content="">
 
 	<title>ULS | Escuela de Periodismo</title>
 
@@ -160,7 +159,7 @@
 
 	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 
-
+	
 
 	<!-- para inicializar datable i/o -->
 
