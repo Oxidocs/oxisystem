@@ -29,9 +29,6 @@
             <li>
               <a href="escuela.php">Normativas</a>
             </li>
-            <li>
-              <a href="escuela.php">Pautas de investigación y exámenes</a>
-            </li>
           </ul>
         </li>
         <li class="dropdown">

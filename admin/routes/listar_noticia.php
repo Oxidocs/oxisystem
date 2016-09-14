@@ -3,7 +3,7 @@
 	require_once('../controllers/all_controllers.php');
 
 	$controller = new Controllers();
-	$objs = $controller->getContentNoticia('', 4, '', '', '', '','',false, false, false);
+	$objs = $controller->getContentNoticia('', 4, '', '', '', '','',false, false, false, '');
 	$result = array();
 	foreach ($objs as $obj) {	
 		$tmp = array(			

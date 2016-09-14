@@ -19,7 +19,49 @@ function iniciarDropzone(url){
                     $.each(data,function(index,value){
                         $('select.image-select').append(value);
                     });
-                },'json').error(function(e){
+                },'json').done(function(data){
+                    if (typeof($id) != "undefined") {
+                        $.get('../routes/single_galeria.php', {id: $id}, function(data){
+
+                            $('#titulo').val(data[0].titulo);
+                            $.each(data[0].imagenes,function(i,val){
+                                $.each($("#galeria > div > div > div > img.img-responsive.center-block"),function(index,value){
+                                    if (val.PATH == recuperaPath(value.src)) {
+                                        value.id = val.ID;
+                                        $('#'+val.ID).parent().parent().parent().addClass('has-success');
+                                        $(value).parent().children().children().children().children().attr('class','fa fa-times');
+                                    }
+                                });     
+                            });
+                        //$('#subtitulo').val(data[0].subtitulo);
+                        //$('#editor').append(convert(data[0].descripcion));
+
+
+                        },'json').done(function(data){
+
+                            $('img.portada-noticia').attr('src',dir+data[0].portada_contenido);
+                            SelectElement(data[0].portada_contenido,'portada');
+
+                            if (data[0].estados_id == '2') 
+                            {
+                                document.getElementById("inactivo").checked = true;
+                            }
+                            else
+                            {
+                                document.getElementById("activo").checked = true;
+                            }
+                            if ($id == "4") 
+                            {   
+                                document.getElementById("titulo").readOnly = true;
+                                $('img.portada-noticia').attr('src','../../img/home.png');
+                                //document.getElementById("portada").readOnly = true;
+                                $('select.image-select').empty();
+                                $('select.image-select').append('<option value="home.png"> home.png</option>');
+                                                                        
+                            }
+                        });
+                    }
+                }).error(function(e){
                     alert('Se ha producido un error al cargar, refresque la página para volver a intentarlo');
                 });
 

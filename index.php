@@ -77,46 +77,9 @@
 		</div>
 	</section>
 
-	<!-- Galerías -->
-	<section class="galerias">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<h2><i class="fa fa-camera" aria-hidden="true"></i> Galerías Fotográficas</h2>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<a  href="http://placehold.it/700x450&text=Galería 1" data-lightbox="logo" data-title="My caption">
-						<img class="img-responsive img-hover" src="http://placehold.it/700x450&text=Galería 1" alt="">
-					</a>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<a href="#">
-						<img class="img-responsive img-hover" src="http://placehold.it/700x450&text=Galería 2" alt="">
-					</a>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<a href="#">
-						<img class="img-responsive img-hover" src="http://placehold.it/700x450&text=Galería 3" alt="">
-					</a>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<a href="#">
-						<img class="img-responsive img-hover" src="http://placehold.it/700x450&text=Galería 4" alt="">
-					</a>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<a href="#">
-						<img class="img-responsive img-hover" src="http://placehold.it/700x450&text=Galería 5" alt="">
-					</a>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<a href="#">
-						<img class="img-responsive img-hover" src="http://placehold.it/700x450&text=Galería 6" alt="">
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+	<?php
+	include 'include/galeria_home.php';
+	?>
 
 <?php include 'include/footer.php'; ?>
 

@@ -5,10 +5,10 @@
 
 	class Controllers {
 
-		public function getContent($id, $id_seccion, $limit_desde, $limit_hasta,$limit, $order_by, $desc, $img_bool, $link_bool, $social_bool) {
+		public function getContent($id, $id_seccion, $limit_desde, $limit_hasta,$limit, $order_by, $desc, $img_bool, $link_bool, $social_bool, $estado) {
 
 			if (is_numeric($id)) {
-				$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit, $order_by, $desc, $img_bool, $link_bool, $social_bool);
+				$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit, $order_by, $desc, $img_bool, $link_bool, $social_bool, $estado);
 				return $content_list;
 			}else{
 				header('Location: ../../index.php');
@@ -16,8 +16,8 @@
 			}
 			
 		}
-		public function getContentNoticia($id, $id_seccion, $limit_desde, $limit_hasta,$limit, $order_by, $desc, $img_bool, $link_bool, $social_bool) {
-				$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit, $order_by, $desc, $img_bool, $link_bool, $social_bool);
+		public function getContentNoticia($id, $id_seccion, $limit_desde, $limit_hasta,$limit, $order_by, $desc, $img_bool, $link_bool, $social_bool, $estado) {
+				$content_list = Contenido::getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit, $order_by, $desc, $img_bool, $link_bool, $social_bool, $estado);
 				return $content_list;
 			
 			
@@ -50,7 +50,7 @@
 					if ($imagenes[$i]['estado'] == "true") {
 						$imagenes[$i]['estado'] = 1;
 					}else{
-						$imagenes[$i]['estado'] = 0;
+						$imagenes[$i]['estado'] = 2;
 					}
 				}
 
@@ -58,9 +58,9 @@
 			return $mensaje;
 		}
 
-		public function deleteContent($id) {
+		public function deleteContent($id,$url) {
 			$mensaje = Contenido::deleteContent($id);
-			$dir = "../../img/galeria/noticias/".$id."/";
+			$dir = "../../img/galeria/".$url."/".$id."/";
 			$this->deleteFolder($dir);
 			return $mensaje;			
 		}
