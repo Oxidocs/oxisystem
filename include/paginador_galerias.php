@@ -17,7 +17,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
 <div class="row aglutinador">
     <div class="row">
         <div class="aglunoticias">
-            <h4 class="col-lg-3 col-md-3 col-xs-12">GALERÍAS FOTOGRÁFRICAS</h4>
+            <h4 class="col-lg-3 col-md-3 col-xs-12">GALERÍAS FOTOGRÁFICAS</h4>
         </div>
     </div>
     <?php
@@ -27,11 +27,11 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
     {
         if ($obj->titulo != "Galeria Home") {
             # code...
-        
+
     ?>
     <div class="col-md-4 img-portfolio">
         <a href="single-galeria.php?id=<?php echo $obj->id; ?>">
-            <div class="col-md-3" style="height: 260px;width: 100%;border: 2px solid white;  background-repeat: no-repeat;background-size: cover;background-image: url(img/galeria/galeria/<?php echo $obj->id.'/'.$obj->portada_contenido; ?>);">              
+            <div class="col-md-3" style="height: 200px;width: 100%;border: 2px solid white;  background-repeat: no-repeat;background-size: cover;background-image: url(img/galeria/galeria/<?php echo $obj->id.'/'.$obj->portada_contenido; ?>);">
             </div>
         </a>
         <h3>
@@ -42,7 +42,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
         <p>
             <?php
         $texto =  strip_tags(html_entity_decode($obj->descripcion, ENT_NOQUOTES));
-        
+
         echo substr($texto, 0, 100)."...";
         ?>
         </p>
@@ -61,7 +61,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
     }
     else
     {
-    ?>        
+    ?>
     <div class="col-md-4 img-portfolio">
         <a href="portfolio-item.html">
             <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
@@ -75,7 +75,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
         </p>
     </div>
-    <?php 
+    <?php
     }
     ?>
 </div>
@@ -87,7 +87,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
             <li>
                 <a href="galerias.php?pagina=<?php echo $_REQUEST['pagina']-1;?>">&laquo;</a>
             </li>
-            <?php for ($i=1; $i <= $total_pages; $i++) { 
+            <?php for ($i=1; $i <= $total_pages; $i++) {
                 if ($_REQUEST['pagina'] == $i) {
                     $clase = "active";
                     # code...
@@ -97,18 +97,18 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
                     $clase = "";
                 }
             ?>
-            
+
             <li class="<?php echo $clase; ?>">
                 <a href="galerias.php?pagina=<?php echo $i;?>"><?php echo $i;?></a>
             </li>
-            
+
             <?php
             }
             ?>
             <li>
                 <a href="galerias.php?pagina=<?php echo $_REQUEST['pagina']+1;?>">&raquo;</a>
             </li>
-            
+
         </ul>
     </div>
 </div>

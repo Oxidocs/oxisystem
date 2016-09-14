@@ -192,9 +192,14 @@ footer {
   border-radius: 0px;
   margin-top: 20px; }
 
+.perfil img {
+  width: 100%;
+  background-size: cover; }
+
 .perfil h2 {
+  background-color: #820333;
   padding: 10px;
-  color: #466189; }
+  color: #f6f6f6; }
 
 .perfil p {
   padding: 10px;
@@ -222,12 +227,18 @@ footer {
   padding-bottom: 20px;
   background-color: #f5f5f5; }
   .docentes img {
-    padding: 30px; }
+    padding-top: 10px;
+    padding-left: 0px !important;
+    padding-right: 0px !important; }
   .docentes h1, .docentes h5 {
     color: #466189; }
 
 .docentesdatos {
   padding: 20px; }
+  .docentesdatos h5 {
+    background-color: #032b54;
+    padding: 10px;
+    color: #ececec; }
 
 .nombre-docente {
   background-color: #0f72d9;
@@ -240,16 +251,20 @@ footer {
 
 .tabla_antecedentes {
   background-color: #f5f5f5; }
+  .tabla_antecedentes td {
+    color: #820333; }
 
 .tabla_ingreso {
   background-color: #f5f5f5; }
+  .tabla_ingreso td {
+    color: #820333; }
 
 .tabla_ingreso, .tabla_antecedentes {
   margin-bottom: 10px; }
 
 .dato {
   background-color: #820333;
-  color: #f5f5f5;
+  color: #f5f5f5 !important;
   font-weight: bold; }
 
 .seccion-noticias {
@@ -271,12 +286,13 @@ footer {
   margin-left: -20px;
   margin-top: -20px; }
 
-.single-noticia {
+.single-noticia h2 {
+  color: #0f72d9;
   padding: 10px; }
-  .single-noticia img {
-    margin-bottom: 10px; }
-  .single-noticia p {
-    text-align: justify; }
+.single-noticia img {
+  margin-bottom: 10px; }
+.single-noticia p {
+  text-align: justify; }
 
 .fecha {
   color: #c0c0c0; }
@@ -365,6 +381,9 @@ footer {
   margin-top: 20px;
   padding: 10px; }
 
+.img-portfolio .col-md-3 {
+  margin-bottom: 25px; }
+
 @media(max-width:768px) {
   .hilonoticias {
     height: 1970px;
@@ -394,10 +413,13 @@ footer {
     padding: 10px;
     text-align: center; }
 
+  .perfil {
+    margin-top: -40px; }
+
   .perfil h2 {
     text-align: center;
     padding: 10px;
-    color: #466189; }
+    color: #f6f6f6; }
 
   .admision h2 {
     text-align: center; }
@@ -411,47 +433,29 @@ footer {
     text-align: center; }
 
   .nombre-docente {
-    width: 90%;
-    margin-left: 5px;
-    font-size: 20px;
-    padding: 5px; }
+    font-size: 20px; }
 
   .datoscontacto {
-    margin-top: 30px; } }
+    margin-top: 30px; }
 
-  .carousel-fade .carousel-inner .item {
-  opacity: 0.3;
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  transition-delay: 0.1s;
+  .img-portfolio .col-md-3 {
+    margin-bottom: -20px; } }
+.galerianoticia {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .galerianoticia .col-md-3 {
+    padding-left: 10px !important;
+    padding-right: 10px !important; }
+  .galerianoticia img {
+    padding: 0px;
+    margin: 0px; }
+  .galerianoticia .carousel-control {
+    padding-top: 5%;
+    width: 5%; }
+  .galerianoticia .carousel-control {
+    background-image: inherit !important; }
+  .galerianoticia .well {
+    background-color: white !important;
+    border: none; }
 
-}
-.carousel-fade .carousel-inner .active {
-  opacity: 1;
-}
-.carousel-fade .carousel-inner .active.left,
-.carousel-fade .carousel-inner .active.right {
-  left: 0;
-  opacity: 0;
-  z-index: 1;
-}
-.carousel-fade .carousel-inner .next.left,
-.carousel-fade .carousel-inner .prev.right {
-  opacity: 1;
-}
-.carousel-fade .carousel-control {
-  z-index: 2;
-}
-
-.cover {
-  height: 120px;
-  border: 1px solid black;
-  margin-bottom: 1em;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-
-/*# sourceMappingURL=estilo.css.map */
+/*# sourceMappingURL=estilos.css.map */

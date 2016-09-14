@@ -6,8 +6,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="sitio, institucional, userena, uls, periodismo" />
+	<meta name="description" content="Sitio de la carrera de Periodismo de la Universidad de La Serena" />
 
 	<title>ULS | Escuela de Periodismo</title>
 
@@ -49,7 +50,7 @@
     	<div class="container">
     		<div class="row">
     			<div class="hidden-xs hidden-sm col-md-6">
-                	<img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                	<img class="img-responsive" src="img/mision.png" alt="">
             	</div>
             	<div class="col-md-6">
 					<h2 class="text-right">Misión</h2>
@@ -70,7 +71,7 @@
 					</blockquote>
         </div>
         <div class="hidden-xs hidden-sm col-md-6">
-            <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+            <img class="img-responsive" src="img/vision.png" alt="">
         </div>
     	</div>
     </div>
