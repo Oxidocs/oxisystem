@@ -174,7 +174,7 @@ function cargarGaleria(url, data){
     if (typeof($id) != "undefined") {
     $.get('../routes/article.php', {id: $id}, function(data){
         $('#titulo').val(data[0].titulo);
-        $('#subtitulo').val(data[0].subtitulo);
+        $('#bajada').val(data[0].subtitulo);
         $('#editor').append(convert(data[0].descripcion));
         $("select.image-select").val(data[0].portada_contenido);
         $('img.portada-noticia').attr('src',dir+data[0].portada_contenido);
