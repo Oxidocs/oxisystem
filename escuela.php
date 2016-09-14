@@ -49,7 +49,7 @@
     	<div class="container">
     		<div class="row">
     			<div class="hidden-xs hidden-sm col-md-6">
-                	<img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                	<img class="img-responsive" src="img/mision.png" alt="">
             	</div>
             	<div class="col-md-6">
 					<h2 class="text-right">Misión</h2>
@@ -70,7 +70,7 @@
 					</blockquote>
         </div>
         <div class="hidden-xs hidden-sm col-md-6">
-            <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+            <img class="img-responsive" src="img/vision.png" alt="">
         </div>
     	</div>
     </div>

@@ -48,9 +48,9 @@
   <section class="perfil">
     <div class="container">
       <div class="row">
-        <h2>Perfil del Egresado</h2>
+        <h2 class="col-lg-3">Perfil del Egresado</h2>
         <div class="col-lg-12">
-          <img class="hidden-xs hidden-sm img-responsive" src="http://placehold.it/1200x300" alt="">
+          <img class="hidden-xs hidden-sm img-responsive" src="img/perfil.jpg" alt="">
           <p class="lead">
             El Periodista es un profesional de amplia formación general y sistemática, fundamentado científicamente, en las distintas áreas que abarcan las ciencias y técnicas de la Comunicación Social, capacitado en las diversas formas del Periodismo a través de los Medios Informativos, Relaciones Públicas, Publicidad, Medios Audiovisuales y Técnicas de Comunicación Social.
           </p>
@@ -68,7 +68,7 @@
         <p>El periodista es un profesional de amplia formación general y sistemática, fundamentado científicamente, en las distintas áreas que abarcan las ciencias y técnicas de la Comunicación Social. En este sentido, está capacitado en las diversas formas del periodismo: los medios informativos, comunicación organizacional, publicidad, relaciones públicas y medios audiovisuales.</p>
         <h3>Antecedentes Generales</h3>
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<div class="table-responsive tabla_antecedentes">
 							<table class="table table-striped">
 								<tr>
@@ -89,7 +89,7 @@
 				</div>
         <h3>Requisitos de Ingreso</h3>
       	<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<div class="table-responsive tabla_ingreso ">
 							<table class="table table-striped table">
 								<tr>

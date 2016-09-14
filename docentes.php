@@ -61,7 +61,7 @@
       <!-- docentes -->
 <div class="row docentesbg">
 	<div class="col-md-6">
-		<img class="img-responsive" src="http://placehold.it/600x300" alt="">
+		<img class="img-responsive center-block" src="img/arlyn.jpg" alt="">
 		<h3 class="nombre-docente">Arlyn Orellana McBride</h3>
 	</div>
 	<div class="col-md-6 docentesdatos">
