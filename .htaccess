@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteBase /oxisystem/
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^articulo/(\w+)$ articulo.php?id=$1
+Rewriterule ^galerias/([0-9]+)$ galerias.php?pagina=$1 [QSA,L]
