@@ -6,5 +6,5 @@
 
 	extract($_GET);
 
-	echo json_encode($controller->getContent($id, 5, '', '', '', '', '', true, false, false));
+	echo json_encode($controller->getContent($id, 5, '', '', '', '', '', true, false, false, ''));
 ?>

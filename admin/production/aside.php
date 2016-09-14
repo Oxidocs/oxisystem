@@ -334,8 +334,6 @@
                         <!-- class="current-page" -->
                             <li class="<?php echo $normativa_aside; ?>"><a class="<?php echo $normativa_link; ?>" href="normativas.php">Normativas</a></li>
                             <li class="<?php echo $pautas_de_investigación_y_examenes_aside; ?>"><a class="<?php echo $pautas_de_investigación_y_examenes_link; ?>" href="pautas_de_investigación_y_examenes.php">Pautas de Investigación y Exámenes</a></li>
-                            <li class="<?php echo $perfil_aside; ?>"><a class="<?php echo $perfil_link; ?>" href="perfil.php">Perfil</a></li>
-                            <li class="<?php echo $admisión_aside; ?>"><a class="<?php echo $admisión_link; ?>" href="admision.php">Admisión</a></li>
                             <li class="<?php echo $cuerpo_docente_aside; ?>"><a class="<?php echo $cuerpo_docente_link; ?>" href="cuerpo_docente.php">Cuerpo Docente</a></li>
                             <li class="<?php echo $publicaciones_aside; ?>"><a class="<?php echo $publicaciones_link; ?>" href="publicaciones.php">Publicaciones</a></li>
                         </ul>

@@ -16,3 +16,14 @@ function recuperaPath(url) {
 	var result = url.match(/[-_\w]+[.][\w]+$/i)[0];
 	return result;
 }
+//--------------------------------------------------------------------------------------------------------------
+function SelectElement(valueToSelect,id)
+{    
+	
+	var element = document.getElementById(id);
+	console.log(valueToSelect);
+
+	
+	element.value = valueToSelect;
+	console.log(element.value);
+}

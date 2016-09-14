@@ -117,7 +117,7 @@
                                         <div class="form-group">                               
                                                                      
                                             <label class="radio-inline text-success">
-                                                    <input id="activo" type="radio" name="estado" value="1" checked="">Activo
+                                                    <input id="activo" type="radio" name="estado" value="1">Activo
                                             </label>
                                             <label class="radio-inline text-danger">
                                                     <input id="inactivo" type="radio" name="estado" value="0">Inactivo
@@ -199,13 +199,15 @@
     <script src="../build/js/custom.min.js"></script>
     <!-- Dropzone Scripts -->
     <script src="../src/js/dropzone.js"></script>
+    <script src="js/custom/main.js" type="text/javascript"></script>
     <script src="../src/js/dropzone-galeria.js" type="text/javascript"></script>
     <!-- PNotify -->
     <script src="../vendors/pnotify/dist/pnotify.js"></script>
     <script src="../vendors/pnotify/dist/pnotify.buttons.js"></script>
     <script src="../vendors/pnotify/dist/pnotify.nonblock.js"></script>
     <!--Custom JS-->
-    <script src="js/custom/nueva_galeria.js" type="text/javascript"></script>
+    
+    <script src="js/custom/editar_galeria.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function(){
          $('#wizard').smartWizard({
@@ -395,7 +397,7 @@ function validarGaleria(){
         type: 'POST',
         async: false,
         dataType: 'json',
-        data: {dir_galeria:'../../img/galeria/home'},
+        data: {dir_galeria: dir},
         success: function(data){
             //console.log(data); // this is currently returning FALSE
         }

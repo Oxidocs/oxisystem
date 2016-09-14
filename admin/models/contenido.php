@@ -39,16 +39,24 @@ class Contenido {
 		$this->links = $links;
 	}
 	
-	public static function getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit2, $order_by, $desc, $img_bool, $link_bool, $social_bool) {
+	public static function getContent($id, $id_seccion, $limit_desde, $limit_hasta, $limit2, $order_by, $desc, $img_bool, $link_bool, $social_bool, $estado) {
 
 		$imgs = array();
 		$social_media = array();
 		$enlaces = array();
 		$exist_img = false;
 		$limit ="";
+		
 
 		if ($id!="") {
 			$id = "`contenido`.`ID` = $id and";
+		}
+		if ($estado!="") {
+			$estado = "AND `contenido`.`ESTADOS_ID` = $estado ";
+		}
+		else
+		{
+			$estado = " ";
 		}
 		if ($order_by!="") {
 			$order_by = "ORDER BY $order_by ";
@@ -63,7 +71,7 @@ class Contenido {
 			$limit = "LIMIT $limit_desde , $limit2";
 		}
 		$filtro = $order_by.$desc.$limit;
-
+		
 		$content_list = array();
 		
 		if ($id_seccion > 0) {
@@ -79,7 +87,7 @@ class Contenido {
 							`contenido`.`PORTADA_CONTENIDO`,
 							`contenido`.`SUBTITULO`";
 			$model->from = "`contenido`";
-			$model->condition = "$id `contenido`.`SECCIONES_ID` = $id_seccion AND `contenido`.`ESTADOS_ID` = 1 $filtro";
+			$model->condition = "$id `contenido`.`SECCIONES_ID` = $id_seccion $estado $filtro";
 			$model->Read();
 			$response = $model->rows;
 
@@ -281,8 +289,7 @@ class Contenido {
 				$model->condition = "ID = ".$fk['PAT_ID'];
 				$model->Delete();
 			}
-		}
-		
+		}	
 
 		$model = new Crud();
 		$model->deletefrom = "contenido";
