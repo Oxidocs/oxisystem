@@ -171,7 +171,7 @@ function cargarGaleria(url, data){
         img_galeria += '</div>';
         $('#galeria').append(img_galeria);
     });
-    
+    if (typeof($id) != "undefined") {
     $.get('../routes/article.php', {id: $id}, function(data){
         $('#titulo').val(data[0].titulo);
         $('#subtitulo').val(data[0].subtitulo);
@@ -188,5 +188,5 @@ function cargarGaleria(url, data){
                 }
             });     
         });
-    });
+    });}
 }
