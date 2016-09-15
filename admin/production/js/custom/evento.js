@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 $('form').on('submit',function(e){
 	e.preventDefault();
-	if ($('#fecha_inicio').val() != "") {
+	if ($('#fecha_inicio').val() != "" && $('#fecha_fin').val() != "") {
 	console.log($(this).serialize());
 	$.post('../controllers/controlador_calendario.php',$(this).serialize(),function(data){
 		console.log(data);
