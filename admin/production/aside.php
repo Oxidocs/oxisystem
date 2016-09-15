@@ -335,7 +335,7 @@
                             <li class="<?php echo $normativa_aside; ?>"><a class="<?php echo $normativa_link; ?>" href="normativas.php">Normativas</a></li>
                             <li class="<?php echo $cuerpo_docente_aside; ?>"><a class="<?php echo $cuerpo_docente_link; ?>" href="cuerpo.php">Cuerpo Docente</a></li>
                             <li class="<?php echo $publicaciones_aside; ?>"><a class="<?php echo $publicaciones_link; ?>" href="articulos_academicos.php">Artículos Académicos</a></li>
-                            <li class=""><a class="" href="articulos_academicos.php">Seminarios de Investigación</a></li>
+                            <li class=""><a class="" href="seminarios.php">Seminarios de Investigación</a></li>
                         </ul>
                     </li>
                 </ul>
