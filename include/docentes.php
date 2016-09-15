@@ -21,29 +21,29 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
 	<?php
 	    if(!$objs == null){
 		    $i=0;
-		    
+
 	?>
 	<div class="container docentesbg">
-	<?php 
+	<?php
 	 foreach ($objs as $obj)
 		    {
 		    	$texto =  html_entity_decode($obj->descripcion, ENT_NOQUOTES);
 	?>
 		<div class="row">
-			<div class="col-md-6" style="padding-top: 2%;">		
-	            <div 
-		            <?php 
+			<div class="col-md-6" style="padding-top: 2%;">
+	            <div
+		            <?php
 			            echo 'style="
 			            height: 200px;
 			            width: 100%;
-			            border: 2px solid white;  
+			            border: 2px solid white;
 			            background-repeat: no-repeat;
 			            background-position: center;
 			            background-size: contain;
 			            background-image: url( img/galeria/cuerpo/'.$obj->id.'/'.$obj->portada_contenido.');"';
 		            ?>
 	            >
-	            </div>		
+	            </div>
 				<h3 class="nombre-docente"><?php echo $obj->titulo.' '.$obj->subtitulo; ?></h3>
 			</div>
 			<div class="col-md-6 docentesdatos">
@@ -57,9 +57,10 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
 	}
 	?>
 	</div>
+  <hr>
 	<?php
 		}
-	
+
 	?>
 </div><!--fin contenedor-->
 </section>
