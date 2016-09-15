@@ -462,5 +462,8 @@ footer {
   .galerianoticia .well {
     background-color: white !important;
     border: none; }
-    
+    .bubble {
+    table-layout: fixed;
+    width: 60% !important;
+}
 /*# sourceMappingURL=estilos.css.map */

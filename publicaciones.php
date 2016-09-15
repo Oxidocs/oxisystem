@@ -46,108 +46,9 @@
 	<?php
 	include 'include/header.php';
 	include 'include/nav.php';
+	include 'include/articulos.php';
+	include 'include/investigacion.php';
 	?>
-  <section class="descargas">
-    <div class="container">
-      <div class="row">
-        <h2>Artículos de Académicos</h2>
-				<div class="col-md-12">
-					<div class="table-responsive">
-						<table id="example" class="table-descargas table table-bordered table-striped table-hover display">
-							<tr>
-								<th>
-									Titulo
-								</th>
-								<th>
-									Descripción
-								</th>
-								<th>
-									Autor
-								</th>
-								<th>
-									Descargar
-								</th>
-							</tr>
-							<tr>
-								<td class="enlace-titulo">
-									<a href="#"><h4>Periodismo en el Siglo XXI</h4></a>
-								</td>
-								<td>
-									<small>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-									</small>
-								</td>
-								<td>
-									<p class="text-center">
-										Juan Goméz Honorato
-									</p>
-								</td>
-								<td>
-									<p class="text-center descarga">
-
-											<a href="#">
-												<i class="fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i>
-											</a>
-
-									</p>
-								</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-      </div>
-    </div>
-  </section>
-
-	<section class="seminarios-investigacion">
-		<div class="container">
-			<div class="row">
-				<div class="pull-right">
-					<h2 class="text-right">Seminarios de Investigación</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-md-12">
-					<div class="table-responsive">
-						<table class="tabla-seminarios table table-striped">
-							<tr>
-								<th>
-									Seminario
-								</th>
-								<th>
-									Descripción
-								</th>
-								<th>
-									Descargar
-								</th>
-							</tr>
-							<tr>
-								<td>
-									<a href="#">
-										<h4>Seminario de Inducción a Redes Sociales</h4>
-									</a>
-								</td>
-								<td>
-									<small>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-									</small>
-								</td>
-								<td>
-									<p class="text-center">
-
-											<a href="#">
-												<i class="fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i>
-											</a>
-
-									</p>
-								</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 <?php include 'include/footer.php'; ?>
 
   <!-- jQuery -->
@@ -158,7 +59,7 @@
 
   <script src="js/main.js"></script>
 
-	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 
 
 
