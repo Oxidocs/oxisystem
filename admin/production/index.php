@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Nombre Empresa | Administración</title>
+    <title>Periodismo | Panel de Administración</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
-        <?php 
+        <?php
             include("aside.php");
             include("nav.php");
         ?>
@@ -41,7 +41,7 @@
                     <div class="page-title">
                         <div class="title_left">
                             <h3>Panel Principal</h3>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="clearfix"></div>
                     <div class="row">
