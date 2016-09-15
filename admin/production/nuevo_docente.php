@@ -30,11 +30,12 @@
     <link href="../vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
     <!-- Custom Style -->
     <link href="css/custom/style.css" type="text/css" rel="stylesheet" />
+    <link href="../build/css/adminstyle.css" rel="stylesheet">
 </head>
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
-            <?php 
+            <?php
                 include("aside.php");
                 include("nav.php");
             ?>
@@ -53,8 +54,8 @@
                             </div>
                             <div class="x_content">
                                 <div id="dropzone" class="dropzone">
-                                    <div class="dz-message">Carga aquí tus imágenes 
-                                        <br /> 
+                                    <div class="dz-message">Carga aquí tus imágenes
+                                        <br />
                                         <i class="fa fa-cloud-upload fa-5x" aria-hidden="true" style="color: #a1d302;"></i>
                                     </div>
                                 </div>
@@ -82,11 +83,11 @@
                                         </div>
                                         <div class="col-xs-12 text-center">
                                             <label>Nombre</label>
-                                            <input id="titulo" type="text" name="titulo" class="col-lg-12 form-control table-input">                                    
+                                            <input id="titulo" type="text" name="titulo" class="col-lg-12 form-control table-input">
                                         </div>
                                         <div class="col-xs-12 text-center">
                                             <label>Apellidos</label>
-                                            <input id="bajada" type="text" name="bajada" class="col-lg-12 form-control table-input">                                    
+                                            <input id="bajada" type="text" name="bajada" class="col-lg-12 form-control table-input">
                                         </div>
                                     </div>
                                 </div>
@@ -169,10 +170,10 @@
                                 </ul>
                                 <div class="clearfix"></div>
                             </div>
-                            <div id="galeria" class="x_content"></div>                            
+                            <div id="galeria" class="x_content"></div>
                         </div>
                         <button id="btnSave" type="submit" class="btn btn-success pull-right submit"> Crear Docente </button>
-                       
+
                     </form>
                 </div>
             </div>
