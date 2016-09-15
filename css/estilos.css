@@ -3,6 +3,11 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   font-family: "Roboto", sans-serif; }
+  .vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
 
 .pager {
   padding-top: 40px; }
@@ -457,5 +462,5 @@ footer {
   .galerianoticia .well {
     background-color: white !important;
     border: none; }
-
+    
 /*# sourceMappingURL=estilos.css.map */
