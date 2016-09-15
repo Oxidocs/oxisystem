@@ -30,11 +30,12 @@
     <link href="../vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
     <!-- Custom Style -->
     <link href="css/custom/style.css" type="text/css" rel="stylesheet" />
+    <link href="../build/css/adminstyle.css" rel="stylesheet">
 </head>
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
-            <?php 
+            <?php
                 include("aside.php");
                 include("nav.php");
             ?>
@@ -52,8 +53,8 @@
                         </div>
                         <div class="x_content">
                             <div class="text-center">
-                                <a type="button" href="nueva_noticia.php" class="btn btn-default"><span><i class="fa fa-pencil-square-o fa-3x center"></i></span> <span>Crear Noticia</span> </a>
-                            </div>                            
+                                <a type="button" href="nueva_noticia.php" class="btn btn-info crearnoticia"><span><i class="fa fa-pencil-square-o fa-2x center"></i></span> <span>Crear Noticia</span> </a>
+                            </div>
                             <div class="table-responsive">
                                 <table id="datatable-keytable" class="table table-striped table-bordered">
                                     <thead>
@@ -61,7 +62,7 @@
                                             <th>Titulo</th> <!-- Titulo -->
                                             <th>Bajada</th> <!-- Bajada -->
                                             <th>Imágen</th> <!-- Imagen -->
-                                            <th>Acciones</th> <!-- Acciones -->                                           
+                                            <th>Acciones</th> <!-- Acciones -->
                                         </tr>
                                     </thead>
                                 </table>
@@ -116,7 +117,7 @@
     <script src="../vendors/pnotify/dist/pnotify.nonblock.js"></script>
 
     <script type="text/javascript">
-    
+
         var table = $('#datatable-keytable').DataTable({
             dom: "Bfrtip",
             lengthMenu: [
@@ -141,7 +142,7 @@
             scrollY: 380,
             scrollCollapse: true,
             keys: true,
-            
+
             buttons: [
             {
               extend: "pageLength",
