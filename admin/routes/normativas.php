@@ -6,5 +6,5 @@
 
 	extract($_GET);
 
-	echo json_encode($controller->getContentNoticia('', 6, '', '', '', '', '', true, false, false)[0]);
+	echo json_encode($controller->getContentNoticia('', 6, '', '', '', '', '', true, false, false,'')[0]);
 ?>
