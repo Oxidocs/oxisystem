@@ -33,6 +33,12 @@
 	<!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
 
 	<link rel="apple-touch-icon" href="favicon.png">
+	<link rel="stylesheet" href="css/monthly.css">
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,6 +63,9 @@
 				<div class="col-md-3 aside">
 					<div>
 						<h4><i class="fa fa-calendar" aria-hidden="true"></i> Calendario Académico</h4>
+						<div style="width:100%; max-width:600px; display:inline-block;">
+			<div class="monthly" id="mycalendar"></div>
+		</div>
 						
 					</div>
 				</div>
@@ -95,13 +104,9 @@
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
 
-<!-- jQuery -->
-	<script src="js/jquery.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
-
+    <script type="text/javascript" src="js/monthly.js"></script>
 	<!-- Script to Activate the Carousel -->
 	<script>
 		$('#myCarousel').carousel({
@@ -113,6 +118,26 @@
 	<script type="text/javascript">
 		$(window).resize(function(){$('.fb-comments iframe,.fb-comments span:first-child').css({'width':$('#commentboxcontainer').width()});});
 	</script>
+
+<script type="text/javascript">
+	$(window).load( function() {
+		$('#mycalendar').monthly({
+			mode: 'event',
+			jsonUrl: 'events.json',
+			dataType: 'json'
+			
+		});
+		
+	switch(window.location.protocol) {
+	case 'http:':
+	case 'https:':
+	// running on a server, should be good.
+	break;
+	case 'file:':
+	alert('Just a heads-up, events will not work when run locally.');
+	}
+	});
+</script>
 
 </body>
 
