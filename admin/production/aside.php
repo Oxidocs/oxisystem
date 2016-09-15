@@ -325,10 +325,9 @@
                             <li class="<?php echo $quienes_aside; ?>"><a class="<?php echo $quienes_link; ?>" href="quienes_somos.php">Misión / Visión</a></li>
                             <li class="<?php echo $noticias_aside; ?>"><a class="<?php echo $noticias_link; ?>" href="noticias.php">Noticias</a></li>
                             <li class="<?php echo $clientes_aside; ?>"><a class="<?php echo $clientes_link; ?>" href="galerias.php">Galeria de Imágenes</a></li>
-                            <li class="<?php echo $contacto_aside; ?>"><a class="<?php echo $contacto_link; ?>" href="contacto.php">Contacto</a></li>
+                            <li class="<?php echo $contacto_aside; ?>"><a class="<?php echo $contacto_link; ?>" href="contacto.php">Configuración de Correo</a></li>
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-share-alt"></i> Editar Redes Sociales </a></li>
                     <li><a><i class="fa fa-th-large"></i> Secciones <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                         <!-- class="current-page" -->
