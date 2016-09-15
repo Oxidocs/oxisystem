@@ -58,7 +58,7 @@
                                 </li>
                                 <li>
                                     <a href="#step-22">
-                                        <span class="step_no">1</span>
+                                        <span class="step_no">2</span>
                                         <span class="step_descr">
                                             Paso 2<br />
                                             <small>Subir Documentos</small>
@@ -67,7 +67,7 @@
                                 </li>
                                 <li>
                                     <a href="#step-33">
-                                        <span class="step_no">2</span>
+                                        <span class="step_no">3</span>
                                         <span class="step_descr">
                                             Paso 3<br />
                                             <small>Introducir Contenido</small>
@@ -163,7 +163,7 @@
      <!-- jQuery Smart Wizard -->
     <script src="../vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
     <!--Custom JS-->
-    <script src="js/custom/nueva_normativa.js" type="text/javascript"></script>
+    <script src="js/custom/publicaciones.js" type="text/javascript"></script>
   
 </body>
 </html>
