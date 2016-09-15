@@ -24,6 +24,8 @@
         $cuerpo_docente_link="";
         $publicaciones_aside="";
         $publicaciones_link="";
+        $calendario_aside="";
+        $calendario_link="";
 
     }else if(strpos($_SERVER['REQUEST_URI'], 'portada.php')) {
         $index_aside= "";
@@ -49,6 +51,8 @@
         $cuerpo_docente_link="";
         $publicaciones_aside="";
         $publicaciones_link="";
+        $calendario_aside="";
+        $calendario_link="";
 
     }else if(strpos($_SERVER['REQUEST_URI'], 'quienes_somos.php')) {
         $index_aside= "";
@@ -74,6 +78,8 @@
         $cuerpo_docente_link="";
         $publicaciones_aside="";
         $publicaciones_link="";
+        $calendario_aside="";
+        $calendario_link="";
 
     }else if(strpos($_SERVER['REQUEST_URI'], 'noticias.php')) {
         $index_aside= "";
@@ -99,6 +105,8 @@
         $cuerpo_docente_link="";
         $publicaciones_aside="";
         $publicaciones_link="";
+        $calendario_aside="";
+        $calendario_link="";
 
     }else if(strpos($_SERVER['REQUEST_URI'], 'clientes.php')) {
         $index_aside= "";
@@ -124,6 +132,8 @@
         $cuerpo_docente_link="";
         $publicaciones_aside="";
         $publicaciones_link="";
+        $calendario_aside="";
+        $calendario_link="";
         
     }else if(strpos($_SERVER['REQUEST_URI'], 'contacto.php')) {
         $index_aside= "";
@@ -149,6 +159,8 @@
         $cuerpo_docente_link="";
         $publicaciones_aside="";
         $publicaciones_link="";
+        $calendario_aside="";
+        $calendario_link="";
         
     }else if(strpos($_SERVER['REQUEST_URI'], 'nueva_normativa.php') || strpos($_SERVER['REQUEST_URI'], 'normativas.php')) {
         $index_aside= "";
@@ -174,6 +186,8 @@
         $cuerpo_docente_link="";
         $publicaciones_aside="";
         $publicaciones_link="";
+        $calendario_aside="";
+        $calendario_link="";
         
     }else if(strpos($_SERVER['REQUEST_URI'], 'pautas_de_investigación_y_examenes.php')) {
         $index_aside= "";
@@ -199,6 +213,8 @@
         $cuerpo_docente_link="";
         $publicaciones_aside="";
         $publicaciones_link="";
+        $calendario_aside="";
+        $calendario_link="";
         
     }else if(strpos($_SERVER['REQUEST_URI'], 'perfil.php')) {
         $index_aside= "";
@@ -224,6 +240,8 @@
         $cuerpo_docente_link="";
         $publicaciones_aside="";
         $publicaciones_link="";
+        $calendario_aside="";
+        $calendario_link="";
         
     }else if(strpos($_SERVER['REQUEST_URI'], 'admision.php')) {
         $index_aside= "";
@@ -249,6 +267,8 @@
         $cuerpo_docente_link="";
         $publicaciones_aside="";
         $publicaciones_link="";
+        $calendario_aside="";
+        $calendario_link="";
         
     }else if(strpos($_SERVER['REQUEST_URI'], 'cuerpo_docente.php')) {
         $index_aside= "";
@@ -274,6 +294,8 @@
         $cuerpo_docente_link="current-page";
         $publicaciones_aside="";
         $publicaciones_link="";
+        $calendario_aside="";
+        $calendario_link="";
         
     }else if(strpos($_SERVER['REQUEST_URI'], 'publicaciones.php')) {
         $index_aside= "";
@@ -299,6 +321,36 @@
         $cuerpo_docente_link="";
         $publicaciones_aside="active";
         $publicaciones_link="current-page";
+        $calendario_aside="";
+        $calendario_link="";
+        
+    }
+    else if(strpos($_SERVER['REQUEST_URI'], 'publicaciones.php')) {
+        $index_aside= "";
+        $portada_aside = "";
+        $portada_link = "";
+        $quienes_aside = "";
+        $quienes_link = "";
+        $noticias_aside="";
+        $noticias_link="";
+        $clientes_aside="";
+        $clientes_link="";
+        $contacto_aside="";
+        $contacto_link="";
+        $normativa_aside="";
+        $normativa_link="";
+        $pautas_de_investigación_y_examenes_aside="";
+        $pautas_de_investigación_y_examenes_link="";
+        $perfil_aside="";
+        $perfil_link=""; 
+        $admisión_aside="";
+        $admisión_link="";
+        $cuerpo_docente_aside="";
+        $cuerpo_docente_link="";
+        $publicaciones_aside="";
+        $publicaciones_link="";
+        $calendario_aside="active";
+        $calendario_link="current-page";
         
     }
 
@@ -335,6 +387,8 @@
                             <li class="<?php echo $cuerpo_docente_aside; ?>"><a class="<?php echo $cuerpo_docente_link; ?>" href="cuerpo.php">Cuerpo Docente</a></li>
                             <li class="<?php echo $publicaciones_aside; ?>"><a class="<?php echo $publicaciones_link; ?>" href="articulos_academicos.php">Artículos Académicos</a></li>
                             <li class=""><a class="" href="seminarios.php">Seminarios de Investigación</a></li>
+                            <li class="<?php echo $calendario_aside; ?>"><a class="<?php echo $calendario_link; ?>" href="listar_calendario.php">Calendario de eventos</a></li>
+                            
                         </ul>
                     </li>
                 </ul>

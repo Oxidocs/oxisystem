@@ -123,7 +123,7 @@
 	$(window).load( function() {
 		$('#mycalendar').monthly({
 			mode: 'event',
-			jsonUrl: 'events.json',
+			jsonUrl: 'admin/controllers/controlador_calendario.php',
 			dataType: 'json'
 			
 		});

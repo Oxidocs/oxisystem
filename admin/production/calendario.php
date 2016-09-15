@@ -115,8 +115,8 @@
                                                <label>url: </label> 
                                             </div>
                                             <div class="col-sm-11">
-                                                <input type="hidden" name="id" value="8">
-                                                <input type="text" id="url" name="url" class="form-control">
+                                                <input type="hidden" name="id" value="">
+                                                <input type="text" id="url" name="url" class="form-control" placeholder="https://google.cl">
                                             </div>
 
                                         </div>

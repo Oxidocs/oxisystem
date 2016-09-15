@@ -7,9 +7,9 @@ $('form').on('submit',function(e){
 	if ($('#fecha_inicio').val() != "" && $('#fecha_fin').val() != "") {
 	console.log($(this).serialize());
 	$.post('../controllers/controlador_calendario.php',$(this).serialize(),function(data){
-		console.log(data);
+		
 	},'json').done(function(data){
-		console.log(data);
+		
 		$(".buttonFinish").attr('disabled','disabled');
 		new PNotify({
 			title: data,
