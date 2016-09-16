@@ -76,7 +76,8 @@
 			</div>
 				<!-- twitter-->
 				<div class="col-md-3 aside">
-					<div class="center-block">
+					<div class="center-block" style="
+    text-align: center;">
 						<h4><i id="icono" class="fa fa-share-square-o"></i> Redes Sociales</h4>
 						<hr>
 						<div class="fb-page" data-href="https://www.facebook.com/periodismo.uls" data-tabs="timeline,messages,events" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/periodismo.uls" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/periodismo.uls">Periodismo Uls</a></blockquote></div>
