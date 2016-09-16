@@ -28,7 +28,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
     ?>
     <div class="col-md-4 img-portfolio">
         <a href="single-noticias.php?id=<?php echo $obj->id; ?>">
-            <div class="col-md-3" style="height: 200px;width: 100%; border: 2px solid white;  background-repeat: no-repeat;background-size: cover;background-image: url(img/galeria/noticias/<?php echo $obj->id.'/'.$obj->portada_contenido; ?>);">
+            <div class="col-md-3 cover" style="background-image: url(img/galeria/noticias/<?php echo $obj->id.'/'.$obj->portada_contenido; ?>);">
             </div>
         </a>
         <br>

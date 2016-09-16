@@ -9,6 +9,7 @@ $(document).ready(function(){
 		$('#subtitulo').val(data[0].subtitulo);
 		$('#editor').val('');
 		//$('#editor').append(convert(data[0].descripcion));
+		console.log(data[0].descripcion);
 		$("select.image-select").val(data[0].portada_contenido);
 		$('img.portada-noticia').attr('src',dir+data[0].portada_contenido);
 	},'json').done(function(data){
@@ -19,7 +20,7 @@ $(document).ready(function(){
 					$('#'+val.ID).parent().parent().parent().addClass('has-success');
 					$(value).parent().children().children().children().children().attr('class','fa fa-times');
 				}
-			});		
+			});
 		});
 	});
 });
@@ -36,7 +37,7 @@ $('form').on('submit',function(e){
 	e.preventDefault();
 	$("#descr").val('');
 	$("#descr").val($("#editor").html().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'));
-	console.log($("#descr").val());
+
 	$.each($('#galeria').children(),function(i,val){
 		array_galeria.push({'id':val.children[0].children[0].children[0].id ,'estado': $(val).hasClass('has-success'),'path':recuperaPath(val.children[0].children[0].children[0].src)});
 	});
@@ -51,7 +52,8 @@ $('form').on('submit',function(e){
 			styling: 'bootstrap3'
 		});
 		options = "";
-		
+		$("#descr").val('');
+
 	}).error(function(){
 		new PNotify({
 			title: '!Error al comunicarse con Base de Datos!',

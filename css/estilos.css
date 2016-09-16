@@ -16,6 +16,27 @@ p {
   background-color: #ffffff;
   padding: 20px; }
 
+.cover{
+  height: 200px;
+  width: 100%;
+  border: 2px solid white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.contain{
+  height: 200px;
+  width: 100%;
+  border: 2px solid white;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+}
+
+
+
 .logosmovil {
   background-color: #FFFFFF;
   padding: 10px; }
@@ -449,8 +470,8 @@ footer {
   margin-top: 20px;
   margin-bottom: 20px; }
   .galerianoticia .col-md-3 {
-    padding-left: 10px !important;
-    padding-right: 10px !important; }
+    padding-left: 0px !important;
+    padding-right: 0px !important; }
   .galerianoticia img {
     padding: 0px;
     margin: 0px; }
