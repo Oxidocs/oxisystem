@@ -47,14 +47,19 @@
           ?>
 
           <div class="row galerianoticia">
+            <h3>Imágenes Relacionadas</h3>
           <?php
             foreach ($articles[0]->imagenes as $imagen) {
 
           ?>
             <div class="col-md-3">
               <a href="img/galeria/noticias/<?php print_r($id.'/'.$imagen->PATH);?>" data-lightbox="logo" data-title="<?php print_r($imagen->TITULO);?>">
-                <img class="img-responsive img-hover" src="img/galeria/noticias/<?php print_r($id.'/'.$imagen->PATH);?>" alt="">
+              <div class="col-md-3 cover" style="background-image: url(img/galeria/noticias/<?php print_r($id.'/'.$imagen->PATH);?>);">
+
+              </div>
               </a>
+
+
             </div>
           <?php
             }
@@ -65,12 +70,12 @@
            ?>
         </div>
 
-        <div class="redessociales pull-left hidden-xs hidden-sm col-md-3">
+        <div  class="text-center redessociales pull-left hidden-xs hidden-sm col-md-3">
 
 
 
           <!-- twitter-->
-          <div class="fb-page" data-href="https://www.facebook.com/periodismo.uls/" data-tabs="timeline" data-height="450" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/periodismo.uls/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/periodismo.uls/">Periodismo Uls</a></blockquote></div>
+          <div class="fb-page" data-href="https://www.facebook.com/periodismo.uls" data-tabs="timeline,messages,events" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/periodismo.uls" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/periodismo.uls">Periodismo Uls</a></blockquote></div>
           <a class="twitter-timeline" data-height="400" href="https://twitter.com/userena">Tweets by userena</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
       </div>
