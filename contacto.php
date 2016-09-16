@@ -94,31 +94,31 @@
         <div class="row">
             <div class="col-md-8">
                 <h3 class="envianos">Envianos un mensaje</h3>
-                <form class="formulario" name="sentMessage" id="contactForm" novalidate>
+                <form method="POST" class="formulario" name="sentMessage" id="contactForm" novalidate>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Nombre y Apellido:</label>
-                            <input type="text" class="form-control" id="name" required data-validation-required-message="Ingresa tu nombre.">
+                            <input type="text" class="form-control" id="name" name="name" required data-validation-required-message="Ingresa tu nombre.">
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Dirección de correo eléctronico:</label>
-                            <input type="email" class="form-control" id="email" required data-validation-required-message="Ingresa tu mail.">
+                            <input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Ingresa tu mail.">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Asunto:</label>
-                            <input type="text" class="form-control" id="name">
+                            <input type="text" class="form-control" id="asunto" name="asunto">
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Mensaje:</label>
-                            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Ingresa tu mensaje" maxlength="999" style="resize:none"></textarea>
+                            <textarea rows="10" cols="100" class="form-control" id="message" name="message" required data-validation-required-message="Ingresa tu mensaje" maxlength="999" style="resize:none"></textarea>
                         </div>
                     </div>
                     <div id="success"></div>
