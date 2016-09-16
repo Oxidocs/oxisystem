@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include('is_login.php');
+?>
 <?php 
 require_once '../routes/contenido_slider_back.php';
 ?>
