@@ -411,6 +411,15 @@ footer {
   margin-bottom: 25px; }
 
 @media(max-width:768px) {
+
+  .aglunoticias h4 {
+    background-color: #78B800;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    margin-left: 0px;
+    margin-top: -50px; }
+
   .hilonoticias {
     height: auto;
     margin-top: 20px;
@@ -451,7 +460,7 @@ footer {
     text-align: center; }
 
   .docentesdatos h5 {
-    background-color: #5da423;
+    background-color: #032b54;
     color: #ffffff;
     padding: 10px; }
 
