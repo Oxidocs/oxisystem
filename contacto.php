@@ -62,13 +62,13 @@
             <!-- Map Column -->
             <div class="col-md-8">
                 <!-- Embedded Google Map -->
-                <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2215.78546786209!2d-71.24224745868456!3d-29.91357476168025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x90293ea2ee353648!2sUniversidad+Serena!5e1!3m2!1ses!2scl!4v1474049398923" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
             <!-- Contact Details Column -->
             <div class="col-md-4 datoscontacto">
                 <h3 class="ubic">Ubicación</h3>
                 <p><i class="marcador fa fa-map-marker fa-2x"></i>
-                    Campus Andrés Bello<br>Avenida Raúl Bitrán Nachary S/N<br>
+                    Campus Andrés Bello<br>Avenida Raúl Bitrán Nachary #1305<br>
                 </p>
                 <p><i class="fa fa-phone"></i>
                     <abbr title="Phone">F</abbr>: <a href="tel:+56512204352">+56 (51) 2204352</a>
