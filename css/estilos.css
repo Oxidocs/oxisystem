@@ -391,7 +391,7 @@ footer {
 
 @media(max-width:768px) {
   .hilonoticias {
-    height: 1970px;
+    height: auto;
     margin-top: 20px;
     background-color: #ffffff;
     padding: 20px;

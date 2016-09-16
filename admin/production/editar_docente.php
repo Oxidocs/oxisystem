@@ -65,7 +65,7 @@
                         </div>
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Editar Noticia</h2>
+                                <h2>Editar Docente</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li class="pull-right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                                 </ul>
@@ -84,11 +84,11 @@
                                                 </select>
                                         </div>
                                         <div class="col-xs-12 text-center">
-                                            <label>Titulo Noticia</label>
+                                            <label>Nombre</label>
                                             <input id="titulo" type="text" name="titulo" class="col-lg-12 form-control table-input">                                    
                                         </div>
                                         <div class="col-xs-12 text-center">
-                                            <label>Bajada Noticia</label>
+                                            <label>Apellidos</label>
                                             <input id="bajada" type="text" name="bajada" class="col-lg-12 form-control table-input">                                    
                                         </div>
                                     </div>

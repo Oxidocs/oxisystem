@@ -1,3 +1,12 @@
+<?php
+if (isset($_GET['pagina']) && is_numeric($_GET['pagina'])) {
+ 	# code...
+ }
+ else
+ {
+ 	header('Location: ./');
+ }
+?>
 <!DOCTYPE html>
 <html lang="es">
 

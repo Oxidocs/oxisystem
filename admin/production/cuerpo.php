@@ -49,7 +49,7 @@
                 <div class="row">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Noticias</h2>
+                            <h2>Cuerpo Docente</h2>
                             <ul class="nav navbar-right panel_toolbox">
                                 <li class="pull-right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                             </ul>

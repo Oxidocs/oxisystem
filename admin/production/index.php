@@ -65,7 +65,7 @@
                               <i class="fa fa-image fa-lg"></i>
                             </a>
                             <div class="media-body">
-                              <a class="title" href="../production/portada.php">Añadir imagenes a Portada</a>
+                              <a class="title" href="../production/portada.php">Añadir imágenes a Portada</a>
                               <p>
                                 Personaliza el slide de bienvenida del sitio. <small>
                                   <i>(Recomendamos un tamaño de 1900x490px)</i>
@@ -100,7 +100,7 @@
                               <i class="fa fa-file-image-o fa-lg"></i>
                             </a>
                             <div class="media-body">
-                              <a class="title" href="../production/galerias.php">Añade Galerias de imágenes</a>
+                              <a class="title" href="../production/galerias.php">Añade Galerías de Imágenes</a>
                               <p>
                                 Sube un set de fotos y crea una galería.
                               </p>
@@ -147,9 +147,9 @@
                               <i class="fa fa-graduation-cap fa-lg"></i>
                             </a>
                             <div class="media-body">
-                              <a class="title" href="../production/articulos_academicos.php">Articulos Acádemicos</a>
+                              <a class="title" href="../production/articulos_academicos.php">Artículos Académicos</a>
                               <p>
-                                Publica y administra los articulos acádemicos que desea publicar en tu sitio desde este enlace.
+                                Publica y administra los artículos académicos que deseas publicar en tu sitio desde este enlace.
                               </p>
                             </div>
                           </li>
@@ -160,7 +160,7 @@
                             <div class="media-body">
                               <a class="title" href="../production/seminarios.php">Seminarios de Investigación</a>
                               <p>
-                                Publica y administra los articulos referentes a seminarios de investigación desde este enlace.
+                                Publica y administra los artículos referentes a seminarios de investigación desde este enlace.
                               </p>
                             </div>
                           </li>

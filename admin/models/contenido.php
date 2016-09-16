@@ -202,18 +202,18 @@ class Contenido {
 			$model->condition = "CON_ID = ".$idfk_contenido;
 			$model->Read();
 			$set_imagenes = $model->rows;
-			
-			foreach ($set_imagenes as $set_imagen) {
-				$model = new Crud();
-				$model->update = "path_imagenes";
-				$model->set = "ESTADOS_ID = 2";
-				$model->condition = "ID = ".$set_imagen['PAT_ID'];
-				$model->Update();
+			if ($set_imagenes != "") {
+				foreach ($set_imagenes as $set_imagen) {
+					$model = new Crud();
+					$model->update = "path_imagenes";
+					$model->set = "ESTADOS_ID = 2";
+					$model->condition = "ID = ".$set_imagen['PAT_ID'];
+					$model->Update();
 
-				$contenido_response = array('idfk' => $id, 'mensaje' => $model->mensaje);
+					$contenido_response = array('idfk' => $id, 'mensaje' => $model->mensaje);
+				}
+				# code...
 			}
-			
-
 			foreach ($imagenes as $imagen) {
 
 				if ($imagen['id'] != "") {
