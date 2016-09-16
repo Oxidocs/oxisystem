@@ -21,6 +21,12 @@
           <a href="escuela.php" class="dropdown-toggle" data-toggle="dropdown">Escuela <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li>
+              <a href="bienvenidos.php">Bienvenidos</a>
+            </li>
+            <li>
+              <a href="equipo.php">Equipo de trabajo</a>
+            </li>
+            <li>
               <a href="escuela.php">Misión</a>
             </li>
             <li>

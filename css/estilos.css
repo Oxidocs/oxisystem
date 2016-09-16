@@ -496,4 +496,18 @@ footer {
     table-layout: fixed;
     width: 60% !important;
 }
-/*# sourceMappingURL=estilos.css.map */
+.textobienvenida {
+  color: #002445;
+  text-align: justify;
+
+}
+
+
+.nombre{
+  margin-top: 40px;
+  text-align: center;
+}
+
+.firma{
+  padding-top: 20px
+}
