@@ -1,8 +1,6 @@
 <?php
     session_start();
     include('is_login.php');
-    $user = $_SESSION['user'];
-    echo $user;
 ?>
 <!DOCTYPE html>
 <html lang="ES-CL">

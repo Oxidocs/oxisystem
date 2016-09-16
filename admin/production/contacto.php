@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include('is_login.php');
+?>
 <!DOCTYPE html>
 <html lang="ES-CL">
 <head>

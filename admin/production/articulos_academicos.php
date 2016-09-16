@@ -1,4 +1,8 @@
-<?include('../controllers/listar_archivos.php');?>
+<?php
+    session_start();
+    include('is_login.php');
+    include('../controllers/listar_archivos.php');
+?>
 <!DOCTYPE html>
 <html lang="ES-CL">
 <head>
