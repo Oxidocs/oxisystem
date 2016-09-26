@@ -15,9 +15,9 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
 		    {
 	?>
 	<a href="single-noticias.php?id=<?php echo $obj->id; ?>">
-		<img class="img-responsive" src="img/galeria/noticias/<?php echo $obj->id.'/'.$obj->portada_contenido; ?>" alt="">
-	</a>
-
+            <div class="cover" style="background-image: url(img/galeria/noticias/<?php echo $obj->id.'/'.$obj->portada_contenido;?>);">
+            </div>
+        </a>
 	<h2>
 	<a href="single-noticias.php?id=<?php echo $obj->id; ?>"><?php echo $obj->titulo; ?></a>
 	</h2>
@@ -36,6 +36,8 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
 		?>
 	</p>
 	<a id="leermas" class="btn btn-primary pull-right" href="single-noticias.php?id=<?php echo $obj->id; ?>">Leer más <i class="fa fa-angle-right"></i></a>
+	<div class="clearfix">
+	</div>
 	<?php
 		}
 	}

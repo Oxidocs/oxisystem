@@ -12,7 +12,7 @@
       <!--                <a class="navbar-brand" href="index.php">Start Bootstrap</a>-->
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse mobilnav" id="bs-example-navbar-collapse-1">
       <ul id="nav"  class="nav navbar-nav navbar-right">
         <li >
           <a href="index.php">Home</a>
@@ -58,15 +58,7 @@
           <a href="galerias.php?pagina=1">Galerías Fotográficas</a>
         </li>
         <li class="dropdown">
-          <a href="publicaciones.php" class="dropdown-toggle" data-toggle="dropdown">Publicaciones <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li>
-              <a href="publicaciones.php">Artículos de Académicos</a>
-            </li>
-            <li>
-              <a href="publicaciones.php">Seminarios de Investigación</a>
-            </li>
-          </ul>
+          <a href="publicaciones.php">Publicaciones</a>
         </li>
         <li >
           <a href="contacto.php">Contacto</a>

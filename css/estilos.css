@@ -411,6 +411,17 @@ footer {
   margin-bottom: 25px; }
 
 @media(max-width:768px) {
+  .antipadding{
+
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  }
+  .mobilnav{
+    position: absolute;
+    z-index: 1000;
+    background-color: #466189;
+    width: 100%;
+  }
 
   .aglunoticias h4 {
     background-color: #78B800;
