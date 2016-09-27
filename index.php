@@ -81,7 +81,7 @@
 						<h4><i id="icono" class="fa fa-share-square-o"></i> Redes Sociales</h4>
 						<hr>
 						<div class="fb-page" data-href="https://www.facebook.com/periodismo.uls" data-tabs="timeline,messages,events" data-width="500" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/periodismo.uls" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/periodismo.uls">Periodismo Uls</a></blockquote></div>
-						<a class="twitter-timeline" data-height="400" href="https://twitter.com/userena">Tweets by userena</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+						<a class="twitter-timeline" data-height="400" href="https://twitter.com/periodismo_uls">Tweets by userena</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 					</div>
 				</div>
 			</div>

@@ -1,14 +1,4 @@
-<?php
 
-  if ($_REQUEST['id'] && is_numeric($_REQUEST['id'])) {
-
-    $id = $_REQUEST['id'];
-    $domain = $_SERVER['HTTP_HOST'];
-    $articles = file_get_contents('http://'.$domain.'/oxisystem/admin/routes/article.php?id='.$id);
-    $articles = json_decode($articles);
-  }
-
-?>
 <!-- contenido -->
 <article class="single-noticia">
     <div class="container">
@@ -25,16 +15,10 @@
 							<div class="smallt">
                 <ul class="list-unstyled list-inline list-social-icons">
                     <li>
-                        <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+                        <div class="fb-share-button" data-href="<?php echo $actual_link;?>" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo $actual_link;?>">Compartir</a></div>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-via="periodismo_uls" data-hashtags="userena" data-related="userena" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </li>
                 </ul>
               </div>

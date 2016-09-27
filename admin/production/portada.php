@@ -81,7 +81,7 @@ require_once '../routes/contenido_slider_back.php';
                                         <tr>
                                             <th>Miniatura</th>
                                             <th>Imagen</th>
-                                            <th>Titulo</th>
+                                            <th>Url</th>
                                             <th>Descripción</th>
                                             <th>Estado</th>
                                             <th>Acción</th>
@@ -108,7 +108,7 @@ require_once '../routes/contenido_slider_back.php';
                                     </select>
                                     </td>
                                     <td class="center">
-                                    <input id="titulo<?php echo $i ?>" name="titulo<?php echo $i ?>" type="text" class="form-control table-input" size="20" placeholder="Ingresa un titulo">
+                                    <input id="titulo<?php echo $i ?>" name="titulo<?php echo $i ?>" type="text" class="form-control table-input" size="20" placeholder="http://www.google.cl">
                                     </td>
                                     <td class="center">
                                     <input id="descripcion<?php echo $i ?>" name="descripcion<?php echo $i ?>" type="text" class="form-control table-input" size="30" placeholder="Descripcion de la Imagen o Portada">

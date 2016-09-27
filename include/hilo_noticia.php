@@ -35,7 +35,10 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
 		echo substr($texto, 0, 100)."...";
 		?>
 	</p>
-	<a id="leermas" class="btn btn-primary pull-right" href="single-noticias.php?id=<?php echo $obj->id; ?>">Leer más <i class="fa fa-angle-right"></i></a>
+	<a id="leermas" class="btn btn-primary pull-right" href="single-noticias.php?id=<?php echo $obj->id; ?>">
+		Leer más 
+		<i class="fa fa-angle-right"></i>
+	</a>
 	<div class="clearfix">
 	</div>
 	<?php

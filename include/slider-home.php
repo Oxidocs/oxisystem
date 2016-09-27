@@ -26,21 +26,22 @@
 			    {
 		    ?>
 				<div class="item <?php if($i==0){echo "active";}$i++;?>">
-
-					<div class="fill" style="background-image:url('<?php
-						if ($obj->PATH=="default.png")
-						{
-							echo "img/".$obj->PATH;
-						}
-						else
-						{
-							echo "img/slider-img/".$obj->PATH;
-						}?>');
-					">
-					</div>
-					<div class="carousel-caption">
-						<h2><?php echo $obj->DESCRIPCION;?></h2>
-					</div>
+				    <a href="<?php echo $obj->TITULO;?>"> 
+						<div class="fill" style="background-image:url('<?php
+							if ($obj->PATH=="default.png")
+							{
+								echo "img/".$obj->PATH;
+							}
+							else
+							{
+								echo "img/slider-img/".$obj->PATH;
+							}?>');
+						">
+						</div>
+						<div class="carousel-caption">
+							<h2><?php echo $obj->DESCRIPCION;?></h2>
+						</div>
+					</a>
 
 				</div>
 			<?php

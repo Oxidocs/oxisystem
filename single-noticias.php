@@ -1,8 +1,25 @@
+<?php
+
+  if ($_REQUEST['id'] && is_numeric($_REQUEST['id'])) {
+
+    $id = $_REQUEST['id'];
+    $domain = $_SERVER['HTTP_HOST'];
+    $articles = file_get_contents('http://'.$domain.'/oxisystem/admin/routes/article.php?id='.$id);
+    $articles = json_decode($articles);
+    $actual_link = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+  }
+  else
+  {
+  	header('Location: ./');
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
 
+	<title><?php echo $articles[0]->titulo;?></title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +27,15 @@
 	<meta name="keywords" content="sitio, institucional, userena, uls, periodismo" />
 	<meta name="description" content="Sitio de la carrera de Periodismo de la Universidad de La Serena" />
 
-	<title>ULS | Escuela de Periodismo</title>
+	<meta property="og:url"           content="<?php echo $actual_link;?>" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="<?php echo $articles[0]->titulo;?>" />
+	<meta property="og:description"   content='<?php echo stripslashes(strip_tags(html_entity_decode($articles[0]->descripcion, ENT_NOQUOTES)))?>' />
+	<meta property="og:image"         content="<?php echo "http://$domain/oxisystem/img/galeria/noticias/".$id."/".$articles[0]->portada_contenido; ?>" />
+
+
+
+	
 
 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
