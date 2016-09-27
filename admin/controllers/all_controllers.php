@@ -58,6 +58,10 @@
 			return $mensaje;
 		}
 
+		public function delete($variable, $id, $table){
+			$mensaje = Contenido::delete($variable, $id, $table);
+		}
+
 		public function deleteContent($id,$url) {
 			$mensaje = Contenido::deleteContent($id);
 			$dir = "../../img/galeria/".$url."/".$id."/";

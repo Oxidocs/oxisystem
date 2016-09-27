@@ -3,6 +3,7 @@
 
 var etapa = 1;
 var url = '../../docs/normativas/';
+var seccion = 6;
 $(document).ready(function(){
 
 	$('#wizard').smartWizard({
@@ -32,7 +33,7 @@ $(document).ready(function(){
 	}); 
 
 
-	iniciarDropzone(url);
+	iniciarDropzone(url, seccion);
     $('#wizard').smartWizard();
 
     $('#wizard_verticle').smartWizard({

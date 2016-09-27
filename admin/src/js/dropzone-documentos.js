@@ -1,4 +1,4 @@
-function iniciarDropzone(url){
+function iniciarDropzone(url, seccion){
     Dropzone.options.dropzone = {
         accept: function(file, done) {
             var thumbnail = $('.dropzone .dz-preview.dz-file-preview .dz-image:last');
@@ -71,6 +71,11 @@ function iniciarDropzone(url){
                         (element = file.previewElement) != null ? 
                         element.parentNode.removeChild(file.previewElement) : 
                         false;
+                        $.post('../routes/eliminar_documento.php',{id: seccion, filename: name},function(data){
+                            console.log(data)
+                        }).error(function(e){
+                            console.log('error: '+e)
+                        });
                     }
                 }
             });

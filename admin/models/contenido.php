@@ -299,6 +299,15 @@ class Contenido {
 		return $model->mensaje;
 
 	}
+
+	public static function delete($variable, $id, $table) {
+		$model = new Crud();
+		$model->deletefrom = "$table";
+		$model->condition = "$variable = $id";
+		$model->Delete();
+
+		return $model->mensaje;
+	}
 }
 
 ?>

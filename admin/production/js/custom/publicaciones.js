@@ -3,6 +3,7 @@
 
 var etapa = 1;
 var url = '../../docs/articulos_academicos/';
+var seccion = 8;
 $(document).ready(function(){
 
 	$('#wizard').smartWizard({
@@ -32,7 +33,7 @@ $(document).ready(function(){
 	}); 
 
 
-	iniciarDropzone(url);
+	iniciarDropzone(url, seccion);
     $('#wizard').smartWizard();
 
     $('#wizard_verticle').smartWizard({
@@ -216,17 +217,7 @@ function validateSteps(step){
 //---- funcion para validar paso 1    
 var isValid = true;
 function validateStep1(){
-    validarGaleria().done(function(data){
-		if (data.length > 0) 
-		{
-			isValid = true;
-		}           
-		else
-		{
-			isValid = false;
-		}
-    });
-return isValid;    
+	return isValid;    
 }
 
 //---- funcion para validar paso 2
@@ -265,19 +256,4 @@ function validateStep2(){
 	});
 
 	return isValid;
-}
-
-
-//------validar galeria sincronico
-function validarGaleria(){
-    return $.ajax({
-        url: '../controllers/listar_archivos.php',
-        type: 'POST',
-        async: false,
-        dataType: 'json',
-        data: {dir_galeria: url},
-        success: function(data){
-            //console.log(data); // this is currently returning FALSE
-        }
-    });
 }
