@@ -14,7 +14,7 @@
 							<small class="comp">COMPARTIR:</small>
 							<div class="smallt">
                 <ul class="list-unstyled list-inline list-social-icons">
-                    <li>
+                    <li style="vertical-align: super;">
                         <div class="fb-share-button" data-href="<?php echo $actual_link;?>" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo $actual_link;?>">Compartir</a></div>
                     </li>
                     <li>
