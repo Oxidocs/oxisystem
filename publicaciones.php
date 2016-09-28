@@ -18,6 +18,10 @@
 
 	<link rel="stylesheet" href="css/estilos.css">
 
+	<!-- margin publicaciones -->
+
+	<link rel="stylesheet" href="css/publicaciones.css">
+
 
 	<link href="css/modern-business.css" rel="stylesheet">
 
