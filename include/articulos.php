@@ -8,7 +8,7 @@
 <section class="descargas">
     <div class="container">
       <div class="row">
-        <h2>Artículos de Académicos <?php print_r($articulos[0]->imagenes);?></h2>
+        <h2>Artículos de Académicos</h2>
 				<div class="col-md-12">
 					<div class="table-responsive">
 						<table id="example" class="table-descargas table table-bordered table-striped table-hover display">

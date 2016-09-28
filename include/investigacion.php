@@ -1,8 +1,9 @@
 <?php
     $id = 7;
     $domain = $_SERVER['HTTP_HOST'];
-    $articulos = file_get_contents('http://'.$domain.'/oxisystem/admin/routes/single_articulo.php?id='.$id);
+    $articulos = file_get_contents('http://'.$domain.'/oxisystem/admin/routes/single_seminario.php?id='.$id);
     $articulos = json_decode($articulos);
+    if(!$articulos[0]->imagenes == null){
 ?>
 <section class="seminarios-investigacion">
 		<div class="container">
@@ -26,30 +27,45 @@
 									Descargar
 								</th>
 							</tr>
+							<?php
+					       
+					        $i=0;
+					        foreach ($articulos[0]->imagenes as $articulo)
+					        {
+					        ?>
 							<tr>
-								<td>
-									<a href="#">
-										<h4>Seminario de Inducción a Redes Sociales</h4>
-									</a>
+								<td class="enlace-titulo">
+									<a target="_blank" href="docs/seminarios_de_investigacion/<?php echo $articulo->PATH;?>"><h4><?php echo $articulo->TITULO;?></h4></a>
 								</td>
 								<td>
 									<small>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+										<?php echo $articulo->DESCRIPCION;?>
 									</small>
 								</td>
 								<td>
-									<p class="text-center">
+									<p class="text-center descarga">
 
-											<a href="#">
+											<a target="_blank" href="docs/seminarios_de_investigacion/<?php echo $articulo->PATH;?>">
 												<i class="fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i>
 											</a>
 
 									</p>
 								</td>
 							</tr>
+							<?php
+							}
+							?>
 						</table>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	<?php 
+  }
+  else{
+  ?>
+  <h2>No existen registros</h2>
+  <?php
+}
+  ?>

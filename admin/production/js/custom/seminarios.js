@@ -2,7 +2,7 @@
 // var borrador = 0;
 
 var etapa = 1;
-var url = '../../docs/seminarios_de_investigación/';
+var url = '../../docs/seminarios_de_investigacion/';
 var seccion = 9;
 $(document).ready(function(){
 
