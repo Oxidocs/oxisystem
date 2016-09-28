@@ -3,11 +3,12 @@
     $domain = $_SERVER['HTTP_HOST'];
     $articulos = file_get_contents('http://'.$domain.'/oxisystem/admin/routes/single_articulo.php?id='.$id);
     $articulos = json_decode($articulos);
+    if(!$articulos[0]->imagenes == null){
 ?>
 <section class="descargas">
     <div class="container">
       <div class="row">
-        <h2>Artículos de Académicos</h2>
+        <h2>Artículos de Académicos <?php print_r($articulos[0]->imagenes);?></h2>
 				<div class="col-md-12">
 					<div class="table-responsive">
 						<table id="example" class="table-descargas table table-bordered table-striped table-hover display">
@@ -24,7 +25,7 @@
 								</th>
 							</tr>
 							<?php
-					        if(!$articulos == null){
+					       
 					        $i=0;
 					        foreach ($articulos[0]->imagenes as $articulo)
 					        {
@@ -49,7 +50,7 @@
 								</td>
 							</tr>
 							<?php
-							}}
+							}
 							?>
 						</table>
 					</div>
@@ -57,3 +58,6 @@
       </div>
     </div>
   </section>
+  <?php 
+  }
+  ?>
