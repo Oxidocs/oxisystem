@@ -7,6 +7,10 @@
     $articles = file_get_contents('http://'.$domain.'/oxisystem/admin/routes/article.php?id='.$id);
     $articles = json_decode($articles);
     $actual_link = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+    if (count($articles)== 0) {
+    	# code...
+    		header('Location: ./');
+    }
   }
   else
   {

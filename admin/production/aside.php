@@ -413,7 +413,7 @@
 <div class="col-md-3 left_col menu_fixed">
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><img width="50px" src="https://oxidocs.com/img/logo.svg"> <span>EasyWeb</span></a>
+            <a href="index.php" class="site_title"><img width="50px" src="https://oxidocs.com/img/logo.svg"> <span>EasyWeb</span></a>
         </div>
         <div class="clearfix"></div>
        

@@ -10,13 +10,17 @@ $('form').on('submit',function(e){
 		
 	},'json').done(function(data){
 		
-		$(".buttonFinish").attr('disabled','disabled');
+		$(".btn-success").attr('disabled','disabled');
 		new PNotify({
 			title: data,
 			type: 'success',
 			styling: 'bootstrap3'
 		})
-	}).error(function(){
+	}).success(function(data){
+		
+		location.reload();
+	})
+	.error(function(){
 		new PNotify({
 			title: '¡Error al comunicarse con Base de Datos!',
 			text: 'Verifique su conexión a internet',

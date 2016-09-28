@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-9 single">
-          <h2><?php echo $articles[0]->titulo; ?></h2>
+        <h2><?php echo $articles[0]->titulo; ?></h2>
           <p class="fecha"><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo 'Publicado el : '.$articles[0]->fecha_creacion; ?></p>
           <a href="<?php echo "img/galeria/noticias/".$id."/".$articles[0]->portada_contenido; ?>" data-lightbox="logo" data-title="">
             <img src='<?php echo "img/galeria/noticias/".$id."/".$articles[0]->portada_contenido; ?>' alt="" class="img-responsive center-block">

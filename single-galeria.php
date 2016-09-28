@@ -1,3 +1,21 @@
+<?php
+
+  if ($_REQUEST['id'] && is_numeric($_REQUEST['id'])) {
+    $id = $_REQUEST['id'];
+    $domain = $_SERVER['HTTP_HOST'];
+    $galerias = file_get_contents('http://'.$domain.'/oxisystem/admin/routes/single_galeria.php?id='.$id);
+    $galerias = json_decode($galerias);
+    if (count($galerias)== 0) {
+    	# code...
+    		header('Location: ./');
+    }
+  }
+  else
+  {
+  	header('Location: ./');
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 

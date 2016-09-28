@@ -24,7 +24,7 @@ function iniciarDropzone(url){
                 });
 
                 $.post('../controllers/upload-images.php?dir='+url, {dir:'dir_galeria'},function(data){
-                    cargarGaleria(url,data);
+                    cargarGaleria(url,data,0);
                 },'json').done(function(){
                     $('.check_img').on('click',function(){
                         if ($(this).parent().parent().parent().parent().parent().attr('class').indexOf('success') == -1) {
@@ -58,12 +58,24 @@ function iniciarDropzone(url){
                     $.each(data,function(index,value){
                         $('select.image-select').append(value);
                     });
+                    var img_portada = document.getElementsByClassName('portada-noticia')[0].src;
+                    // console.log(img_portada);
+                    var result = recuperaPath(img_portada);
+                    console.log(result);
+                    if (result == "user.png") 
+                    {
+                        $('#portada').val(0);
+                    }
+                    else
+                    {
+                        $('#portada').val(result);
+                    }
                 },'json').error(function(e){
                 alert('Se ha producido un error al cargar, refresque la página para volver a intentarlo');
             });
 
             $.post('../controllers/upload-images.php?dir='+url, {dir:'dir_galeria'},function(data){
-                    cargarGaleria(url,data);
+                    cargarGaleria(url,data,1);
                 },'json').done(function(){
                     $('.check_img').on('click',function(){
                         if ($(this).parent().parent().parent().parent().parent().attr('class').indexOf('success') == -1) {
@@ -131,7 +143,7 @@ function iniciarDropzone(url){
                         }
                     });
                     $.post('../controllers/upload-images.php?dir='+url, {dir:'dir_galeria'},function(data){
-                        cargarGaleria(url,data);
+                        cargarGaleria(url,data,1);
                     },'json').done(function(){
                         $('.check_img').on('click',function(){
                             if ($(this).parent().parent().parent().parent().parent().attr('class').indexOf('success') == -1) {
@@ -151,8 +163,8 @@ function iniciarDropzone(url){
     });
 }
 
-function cargarGaleria(url, data){
-    
+function cargarGaleria(url, data, validate){
+    $('#galeria').empty();
     $.each(data,function(index,value){
         var img_galeria = "";
         img_galeria += '<div class="col-md-55">';
@@ -172,22 +184,25 @@ function cargarGaleria(url, data){
         $('#galeria').append(img_galeria);
     });
     if (typeof($id) != "undefined") {
-    $.get('../routes/listar_funcionario_back.php', {id: $id}, function(data){
-        $('#editor').empty();
-        $('#titulo').val(data[0].titulo);
-        $('#bajada').val(data[0].subtitulo);
-        $('#editor').append(convert(data[0].descripcion));
-        $("select.image-select").val(data[0].portada_contenido);
-        $('img.portada-noticia').attr('src',dir+data[0].portada_contenido);
-    },'json').done(function(data){
-        $.each(data[0].imagenes,function(i,val){
-            $.each($("#galeria > div > div > div > img.img-responsive.center-block"),function(index,value){
-                if (val.PATH == recuperaPath(value.src)) {
-                    value.id = val.ID;
-                    $('#'+val.ID).parent().parent().parent().addClass('has-success');
-                    $(value).parent().children().children().children().children().attr('class','fa fa-times');
-                }
-            });     
-        });
-    });}
+        if (validate==0) {
+            $.get('../routes/listar_funcionario_back.php', {id: $id}, function(data){
+                $('#titulo').val(data[0].titulo);
+                $('#bajada').val(data[0].subtitulo);
+                $('#editor').append(convert(data[0].descripcion));
+                $("select.image-select").val(data[0].portada_contenido);
+                $('img.portada-noticia').attr('src',dir+data[0].portada_contenido);
+            },'json').done(function(data){
+                $.each(data[0].imagenes,function(i,val){
+                    $.each($("#galeria > div > div > div > img.img-responsive.center-block"),function(index,value){
+                        if (val.PATH == recuperaPath(value.src)) {
+                            value.id = val.ID;
+                            $('#'+val.ID).parent().parent().parent().addClass('has-success');
+                            $(value).parent().children().children().children().children().attr('class','fa fa-times');
+                        }
+                    });
+                });
+            });
+
+        }
+    }
 }

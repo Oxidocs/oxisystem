@@ -19,7 +19,7 @@
 				<?php foreach ($galerias[0]->imagenes as $imagen) { ?>
 				<div class="col-md-3 col-sm-6">
 					<a href="img/galeria/galeria/4<?php print_r('/'.$imagen->PATH);?>" data-lightbox="logo" data-title="<?php print_r($imagen->TITULO);?>">
-            <div class="col-md-3 hover" style="height: 256px;width: 100%;border: 2px solid white;  background-repeat: no-repeat;background-size: cover;background-image: url(img/galeria/galeria/4<?php print_r('/'.$imagen->PATH);?>);">
+            <div class="col-md-3 hover" style="height: 256px;width: 100%;border: 2px solid white;  background-repeat: no-repeat;background-size: cover;background-position: center; background-image: url(img/galeria/galeria/4<?php print_r('/'.$imagen->PATH);?>);">
               
             </div>
             </a>
