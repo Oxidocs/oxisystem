@@ -15,6 +15,7 @@ class Contenido {
 	public $descripcion;
 	public $fecha_creacion;
 	public $fecha_modificacion;
+	public $fecha_publicacion;
 	public $portada_contenido;
 	public $subtitulo;
 	public $mensaje;
@@ -24,7 +25,7 @@ class Contenido {
 	public $links = array();
 
 	public function __construct($id, $secciones_id, $estados_id, $titulo, $descripcion,$fecha_creacion
-,$fecha_modificacion ,$portada_contenido, $subtitulo, $imagenes, $redes_sociales, $links) {
+,$fecha_modificacion,$fecha_publicacion ,$portada_contenido, $subtitulo, $imagenes, $redes_sociales, $links) {
 		$this->id = $id;
 		$this->secciones_id = $secciones_id;
 		$this->estados_id = $estados_id;
@@ -32,6 +33,7 @@ class Contenido {
 		$this->descripcion = $descripcion;
 		$this->fecha_creacion = $fecha_creacion;
 		$this->fecha_modificacion = $fecha_modificacion;
+		$this->fecha_publicacion = $fecha_publicacion;
 		$this->portada_contenido = $portada_contenido;
 		$this->subtitulo = $subtitulo;
 		$this->imagenes = $imagenes;
@@ -84,6 +86,7 @@ class Contenido {
 							`contenido`.`DESCRIPCION`,
 							`contenido`.`FECHA_CREACION`,
 							`contenido`.`FECHA_MODIFICACION`,
+							`contenido`.`FECHA_PUBLICACION`,
 							`contenido`.`PORTADA_CONTENIDO`,
 							`contenido`.`SUBTITULO`";
 			$model->from = "`contenido`";
@@ -138,10 +141,7 @@ class Contenido {
 						$model->Read();
 						$enlaces = $model->rows;
 					}
-
-					
-
-					$contenido = new Contenido($id, $content['SECCIONES_ID'],$content['ESTADOS_ID'],$content['TITULO'],$content['DESCRIPCION'],$content['FECHA_CREACION'],$content['FECHA_MODIFICACION'],$content['PORTADA_CONTENIDO'],$content['SUBTITULO'],$imgs,$social_media, $enlaces);
+					$contenido = new Contenido($id, $content['SECCIONES_ID'],$content['ESTADOS_ID'],$content['TITULO'],$content['DESCRIPCION'],$content['FECHA_CREACION'],$content['FECHA_MODIFICACION'],$content['FECHA_PUBLICACION'],$content['PORTADA_CONTENIDO'],$content['SUBTITULO'],$imgs,$social_media, $enlaces);
 					array_push($content_list, $contenido);
 				}
 			}
@@ -150,12 +150,12 @@ class Contenido {
 		return $content_list;
 	}
 
-	public static function createContent($secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link) {
+	public static function createContent($secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $fecha_modificacion ,$fecha_publicacion, $imagenes, $redes_sociales, $link) {
 
 		$model = new Crud();
 		$model->insertInto = "contenido";
-		$model->insertColumns = "SECCIONES_ID, ESTADOS_ID, TITULO, DESCRIPCION, FECHA_CREACION, PORTADA_CONTENIDO, SUBTITULO";
-		$model->insertValues = "$secciones_id, $estados_id, '$titulo', '$descripcion', '$fecha_creacion', '$portada', '$bajada'";
+		$model->insertColumns = "SECCIONES_ID, ESTADOS_ID, TITULO, DESCRIPCION, FECHA_CREACION, FECHA_PUBLICACION, FECHA_MODIFICACION, PORTADA_CONTENIDO, SUBTITULO";
+		$model->insertValues = "$secciones_id, $estados_id, '$titulo', '$descripcion', '$fecha_creacion', '$fecha_publicacion', '$fecha_modificacion', '$portada', '$bajada'";
 		$model->Create();
 		$idfk_contenido = $model->id;
 		$contenido_response = array('idfk' => $model->id, 'mensaje' => $model->mensaje);

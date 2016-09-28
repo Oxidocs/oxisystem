@@ -22,12 +22,12 @@
 			
 			
 		}
-		public function createContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $imagenes , $redes_sociales, $link, $url, $tmp){
+		public function createContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_modificacion, $fecha_publicacion, $imagenes , $redes_sociales, $link, $url, $tmp){
 
 			$fecha_actual = date('Y-m-d H:i:s');
 
 			if ($id == '') {
-				$mensaje = Contenido::createContent($secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_actual, $imagenes, $redes_sociales, $link);
+				$mensaje = Contenido::createContent($secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_actual, $fecha_modificacion, $fecha_publicacion, $imagenes, $redes_sociales, $link);
 				if ($mensaje['idfk'] > 0) {
 					$id = $mensaje['idfk'];
 					$this->createFolder($id,$portada,$imagenes, $url, $tmp);

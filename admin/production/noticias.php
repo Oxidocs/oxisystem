@@ -66,6 +66,10 @@
                                             <th>Titulo</th> <!-- Titulo -->
                                             <th>Bajada</th> <!-- Bajada -->
                                             <th>Imágen</th> <!-- Imagen -->
+                                            <th>Fecha de Publicación</th>
+                                            <th>Fecha de Modificación</th>
+                                            <th>Fecha de Creación</th>
+                                            <th>Estado</th>
                                             <th>Acciones</th> <!-- Acciones -->
                                         </tr>
                                     </thead>

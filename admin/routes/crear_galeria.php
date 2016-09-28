@@ -7,6 +7,6 @@
 	if(!isset($galeria)){
 		$galeria = '';
 	}
-	echo json_encode($controller->createContent('', 5, $estado, $titulo , $titulo, $titulo, $portada , $galeria , '', '', 'galeria', 'home'));
+	echo json_encode($controller->createContent('', 5, $estado, $titulo , $titulo, $titulo, $portada ,'', '', $galeria , '', '', 'galeria', 'home'));
 	
 ?>
