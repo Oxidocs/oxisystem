@@ -183,11 +183,15 @@ class Contenido {
 
 	}
 
-	public static function updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link){
+	public static function updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_modificacion, $fecha_publicacion, $imagenes, $redes_sociales, $link){
+
+		if ($fecha_publicacion!="") {
+			$fecha_publicacion = ", FECHA_PUBLICACION = '".$fecha_publicacion."'";
+		}
 
 		$model = new Crud();
 		$model->update = "contenido";
-		$model->set = "SECCIONES_ID = $secciones_id, ESTADOS_ID = $estados_id, TITULO = '$titulo', DESCRIPCION = '$descripcion', PORTADA_CONTENIDO = '$portada', SUBTITULO = '$bajada'";
+		$model->set = "SECCIONES_ID = $secciones_id, ESTADOS_ID = $estados_id, TITULO = '$titulo', DESCRIPCION = '$descripcion', PORTADA_CONTENIDO = '$portada', SUBTITULO = '$bajada', FECHA_MODIFICACION = '$fecha_modificacion' $fecha_publicacion";
 		$model->condition = "ID = $id";
 		$model->Update();
 		$idfk_contenido = $id;

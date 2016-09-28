@@ -38,13 +38,13 @@
 				
 
 			}else{
-				$mensaje = Contenido::updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_actual, $imagenes, $redes_sociales, $link);
+				$mensaje = Contenido::updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_modificacion, $fecha_publicacion, $imagenes, $redes_sociales, $link);
 
 				return $mensaje;
 			}
 		}
 
-		public function updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link) {
+		public function updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_modificacion, $fecha_publicacion, $imagenes, $redes_sociales, $link) {
 
 				for ($i=0; $i < count($imagenes); $i++) { 
 					if ($imagenes[$i]['estado'] == "true") {
@@ -54,7 +54,7 @@
 					}
 				}
 
-			$mensaje = Contenido::updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_creacion, $imagenes, $redes_sociales, $link);
+			$mensaje = Contenido::updateContent($id, $secciones_id, $estados_id, $titulo, $bajada, $descripcion, $portada, $fecha_modificacion, $fecha_publicacion,  $imagenes, $redes_sociales, $link);
 			return $mensaje;
 		}
 

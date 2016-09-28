@@ -174,8 +174,8 @@
                             </div>
                             <div id="galeria" class="x_content"></div>                            
                         </div>
-                        <button id="btnSave" type="submit" class="btn btn-success pull-right"> Actualizar Noticia </button>
-                        <button type="submit" class="btn btn-default pull-right"> Dejar como Borrador </button>
+                        <button id="btnSave" type="submit" class="submit btn btn-success pull-right"> Guardar y Publicar Noticia </button>
+                        <button type="submit" class="submit btn btn-default pull-right"> Guardar y Dejar como Borrador </button>
                     </form>
                 </div>
             </div>

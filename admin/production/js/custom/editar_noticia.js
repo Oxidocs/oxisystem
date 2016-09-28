@@ -1,4 +1,5 @@
 var array_galeria = [];
+var borrador = 0;
 var $id, dir;
 $(document).ready(function(){
 	$id = getParameterByName('id');
@@ -32,6 +33,14 @@ $("select.image-select").on('change',function(){
 		$('img.portada-noticia').attr('src','images/user.png');
 	}
 });
+$('.submit').on('click',function(){
+	if ($(this).attr('id')=='btnBorrador') {
+		borrador = 0;
+	}
+	if ($(this).attr('id')=='btnSave') {
+		borrador = 1;
+	}
+});
 $('form').on('submit',function(e){
 	array_galeria = [];
 	e.preventDefault();
@@ -41,7 +50,7 @@ $('form').on('submit',function(e){
 	$.each($('#galeria').children(),function(i,val){
 		array_galeria.push({'id':val.children[0].children[0].children[0].id ,'estado': $(val).hasClass('has-success'),'path':recuperaPath(val.children[0].children[0].children[0].src)});
 	});
-	options = $(this).serialize() + '&' + $.param({'galeria':array_galeria}) + '& id =' + $id;
+	options = $(this).serialize()+ '&' + $.param({'estado':borrador}) + '&' + $.param({'galeria':array_galeria}) + '& id =' + $id;
 	console.log(options);
 	$.post('../routes/editar_noticia.php',options,function(data){
 
