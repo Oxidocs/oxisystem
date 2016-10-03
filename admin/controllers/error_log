@@ -1,0 +1,10 @@
+[29-Sep-2016 13:46:30 UTC] PHP Warning:  mb_convert_encoding(): Illegal character encoding specified in /home/oxidocs/public_html/oxisystem/admin/controllers/upload-images.php on line 66
+[29-Sep-2016 13:48:03 UTC] PHP Warning:  mb_convert_encoding(): Illegal character encoding specified in /home/oxidocs/public_html/oxisystem/admin/controllers/upload-images.php on line 66
+[29-Sep-2016 13:50:51 UTC] PHP Warning:  mb_convert_encoding(): Illegal character encoding specified in /home/oxidocs/public_html/oxisystem/admin/controllers/upload-images.php on line 66
+[29-Sep-2016 13:51:37 UTC] PHP Warning:  mb_convert_encoding(): Illegal character encoding specified in /home/oxidocs/public_html/oxisystem/admin/controllers/upload-images.php on line 66
+[29-Sep-2016 13:55:58 UTC] PHP Warning:  mb_convert_encoding(): Illegal character encoding specified in /home/oxidocs/public_html/oxisystem/admin/controllers/upload-images.php on line 66
+[29-Sep-2016 14:18:23 UTC] PHP Warning:  mb_convert_encoding(): Illegal character encoding specified in /home/oxidocs/public_html/oxisystem/admin/controllers/upload-images.php on line 66
+[29-Sep-2016 14:23:07 UTC] PHP Warning:  mb_convert_encoding(): Illegal character encoding specified in /home/oxidocs/public_html/oxisystem/admin/controllers/upload-images.php on line 66
+[29-Sep-2016 14:25:24 UTC] PHP Warning:  mb_convert_encoding(): Illegal character encoding specified in /home/oxidocs/public_html/oxisystem/admin/controllers/upload-images.php on line 66
+[29-Sep-2016 14:37:23 UTC] PHP Warning:  mb_convert_encoding(): Illegal character encoding specified in /home/oxidocs/public_html/oxisystem/admin/controllers/upload-images.php on line 66
+[29-Sep-2016 14:46:18 UTC] PHP Warning:  mb_convert_encoding(): Illegal character encoding specified in /home/oxidocs/public_html/oxisystem/admin/controllers/upload-images.php on line 66

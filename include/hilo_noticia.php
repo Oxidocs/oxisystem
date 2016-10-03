@@ -15,7 +15,13 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
 		    {
 	?>
 	<a href="single-noticias.php?id=<?php echo $obj->id; ?>">
-            <div class="cover" style="background-image: url(img/galeria/noticias/<?php echo $obj->id.'/'.$obj->portada_contenido;?>);">
+            <div style="height: 300px;
+									  width: 100%;
+									  border: 2px solid white;
+									  background-repeat: no-repeat;
+									  background-size: cover;
+									  background-position: center;
+									  background-image: url(img/galeria/noticias/<?php echo $obj->id.'/'.$obj->portada_contenido;?>);">
             </div>
         </a>
 	<h2>
@@ -54,7 +60,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
 	<img class="img-responsive" src="http://placehold.it/900x400&text=Imagen Noticias 2" alt="">
 
 	<h2>
-	<a href="single-noticias.html">Jefe de Carrera Asiste a Encuentro Nacional de Directores de Escuelas de Periodismo</a>
+	<a href="#">Jefe de Carrera Asiste a Encuentro Nacional de Directores de Escuelas de Periodismo</a>
 	</h2>
 	<p class="fecha"><i class="fa fa-clock-o"></i> Publicado el 5 de Agosto, 2016</p>
 	<hr>

@@ -368,7 +368,7 @@ footer {
 
 .datoscontacto {
   background-color: #002445;
-  padding: 10px; }
+  padding: 35px; }
   .datoscontacto h3, .datoscontacto p {
     color: white; }
   .datoscontacto a {
@@ -393,15 +393,13 @@ footer {
 
 .seccioncontacto {
   background-color: #19344e;
-  width: 350px;
   padding: 10px;
   color: white; }
 
 .envianos {
   background-color: #ed0000;
   padding: 10px;
-  color: white;
-  width: 450px; }
+  color: white; }
 
 .formulario {
   margin-top: 20px;
